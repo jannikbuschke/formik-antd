@@ -1,0 +1,32 @@
+{
+  "name": "@jbuschke/formik-antd",
+  "version": "0.4.0",
+  "private": false,
+  "files": [
+    "lib",
+    "main.js"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/types.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "watch": "tsc --watch",
+    "cleanbuild": "rm -r node_modules && npm install && tsc"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "antd": ">= 3.12.1 < 4",
+    "formik": ">= 1.4.1 < 2",
+    "react": ">= 16.8.0-aplha.0 < 17",
+    "react-dom": ">= 16.8-alpha.0 < 17"
+  },
+  "devDependencies": {
+    "moment": "^2.23.0",
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.18",
+    "@types/react-dom": "^16.0.11",
+    "antd": "^3.12.1",
+    "formik": "^1.4.1",
+    "typescript": "^3.2.2"
+  }
+}
