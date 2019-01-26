@@ -3,3 +3,7 @@
 # formik-antd
 
 This library provides components that wrap and connect a **FormikField** with different **ant-d** components, so you don't have to do it yourself.
+
+
+## samples / playground
+[codesandbox](https://codesandbox.io/s/ooo94m4q5y)
