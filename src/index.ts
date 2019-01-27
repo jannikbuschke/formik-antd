@@ -10,3 +10,4 @@ export * from "./ListEditor";
 export * from "./FormItem";
 export * from "./DateTimeAsStringField";
 export * from "./Action";
+export * from "./SelectField";
