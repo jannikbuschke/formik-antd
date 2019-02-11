@@ -9,13 +9,14 @@ export const FormItem = (props: {
 }) => (
   <Field {...props}>
     {({ field, form }: { field: any; form: FormikProps<any> }) => {
-      const hasError = form.errors && form.errors[field.name.toLowerCase()];
+      const { name } = field;
+      const hasError = form.errors && form.errors[name] && form.touched[name];
       return (
         <Form.Item
           label={props.label}
           validateStatus={hasError ? "error" : undefined}
           hasFeedback={false}
-          help={hasError ? form.errors[field.name.toLowerCase()] : undefined}
+          help={hasError ? form.errors[name] : undefined}
         >
           {props.children}
         </Form.Item>
