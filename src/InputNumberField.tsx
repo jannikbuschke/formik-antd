@@ -1,18 +1,18 @@
 import { InputNumber } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
+import { InputNumberProps } from "antd/lib/input-number";
 
-export const InputNumberField = (props: any) => (
+export const InputNumberField = (
+  props: { name: string } & InputNumberProps
+) => (
   <Field {...props}>
-    {(p: FieldProps) => {
+    {({ field, form }: FieldProps) => {
       return (
         <InputNumber
+          value={field.value}
+          onChange={value => form.setFieldValue(props.name, value)}
           {...props}
-          {...p.field}
-          onChange={
-            // tslint:disable-next-line:jsx-no-lambda
-            value => p.form.setFieldValue(props.name, value)
-          }
         />
       );
     }}

@@ -1,17 +1,16 @@
 import { Input } from "antd";
-import { Field, FormikProps } from "formik";
+import { Field, FieldProps } from "formik";
 import * as React from "react";
+import { InputProps } from "antd/lib/input";
 
-export const InputField = ({
-  name,
-  placeholder
-}: {
-  name: string;
-  placeholder?: string;
-}) => (
-  <Field name={name}>
-    {({ field }: { field: any; form: FormikProps<any> }) => (
-      <Input placeholder={placeholder} {...field} />
+export const InputField = (
+  props: {
+    name: string;
+  } & InputProps
+) => (
+  <Field name={props.name}>
+    {({ field }: FieldProps) => (
+      <Input value={field.value} onChange={field.onChange} {...props} />
     )}
   </Field>
 );
