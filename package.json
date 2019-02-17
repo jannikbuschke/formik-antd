@@ -1,10 +1,9 @@
 {
   "name": "@jbuschke/formik-antd",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": false,
   "files": [
-    "lib",
-    "main.js"
+    "lib"
   ],
   "main": "./lib/index.js",
   "types": "./lib/types.d.ts",
@@ -17,8 +16,8 @@
   "peerDependencies": {
     "antd": ">= 3.12.1 < 4",
     "formik": ">= 1.4.1 < 2",
-    "react": ">= 16.8.0-aplha.0 < 17",
-    "react-dom": ">= 16.8-alpha.0 < 17"
+    "react": ">= 16.8.0 < 17",
+    "react-dom": ">= 16.8.0 < 17"
   },
   "devDependencies": {
     "moment": "^2.23.0",
