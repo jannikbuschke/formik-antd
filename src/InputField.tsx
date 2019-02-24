@@ -9,8 +9,15 @@ export const InputField = (
   } & InputProps
 ) => (
   <Field name={props.name}>
-    {({ field }: FieldProps) => (
-      <Input value={field.value} onChange={field.onChange} {...props} />
-    )}
+    {({ field }: FieldProps) => {
+      return (
+        <Input
+          value={field.value}
+          onChange={field.onChange}
+          onBlur={field.onBlur}
+          {...props}
+        />
+      );
+    }}
   </Field>
 );
