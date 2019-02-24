@@ -3,8 +3,21 @@
 
 # formik-antd
 
-This library provides components that wrap and connect a **FormikField** with different **ant-d** components, so you don't have to do it yourself.
+This library provides a simple declarative integration for input components of the UI component library [Ant Design](https://ant.design/docs/react/introduce) and the form-state library [Formik](https://github.com/jaredpalmer/formik).
 
+## API
 
-## samples / playground
+Ant Designs input components like <Input />, <Checkbox />, <Switch /> etc. are augmented with a name property of type string, which connects them to a form field. The augmented components names are composed of the original Ant Designs name suffixed with 'Field'. So Input becomes InputField, Checkbox becomes CheckboxField etc.
+
+## Examples / Payground
+
+`
+
+<Formik initialValues={{ firstName:"", age: 20 }}>
+<InputField name="firstName" />
+<InputNumberField name="age" min={0} />
+</Formik>
+
+`
+
 [codesandbox](https://codesandbox.io/s/ooo94m4q5y)
