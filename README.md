@@ -7,17 +7,15 @@ This library provides a simple declarative integration for input components of t
 
 ## API
 
-Ant Designs input components like <Input />, <Checkbox />, <Switch /> etc. are augmented with a name property of type string, which connects them to a form field. The augmented components names are composed of the original Ant Designs name suffixed with 'Field'. So Input becomes InputField, Checkbox becomes CheckboxField etc.
+Ant Designs input components like `<Input />, <Checkbox />, <Switch />` etc. are augmented with a **name** property of type string, which connects them to a form field. The original features and props of the components stay the same (besides the additional name property).
+
+The augmented components **names** are composed of the original Ant Designs name suffixed with 'Field'. So `<Input />` becomes `<InputField />`, `<Checkbox />` becomes `<CheckboxField />` etc.
 
 ## Examples / Payground
-
-`
-
+```
 <Formik initialValues={{ firstName:"", age: 20 }}>
-<InputField name="firstName" />
-<InputNumberField name="age" min={0} />
+  <InputField name="firstName" />
+  <InputNumberField name="age" min={0} />
 </Formik>
-
-`
-
-[codesandbox](https://codesandbox.io/s/ooo94m4q5y)
+```
+[More examples on CodeSandbox](https://codesandbox.io/s/ooo94m4q5y)
