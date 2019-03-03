@@ -1,16 +1,22 @@
 import { DatePicker } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
+import { DatePickerProps } from "antd/lib/date-picker/interface";
+import * as moment from "moment";
 
-export const DateEditor = (props: any) => (
-  <Field {...props}>
-    {(p: FieldProps) => (
+export const DatePickerField = (
+  props: {
+    name: string;
+  } & DatePickerProps
+) => (
+  <Field name={props.name}>
+    {(field: FieldProps) => (
       <DatePicker
-        value={p.field.value}
-        // tslint:disable-next-line:jsx-no-lambda
+        value={moment(field.field.value)}
         onChange={date => {
-          p.form.setFieldValue(props.name, date);
+          field.form.setFieldValue(props.name, date.toISOString());
         }}
+        {...props}
       />
     )}
   </Field>
