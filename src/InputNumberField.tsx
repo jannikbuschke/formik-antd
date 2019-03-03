@@ -12,6 +12,7 @@ export const InputNumberField = (
         <InputNumber
           value={field.value}
           onChange={value => form.setFieldValue(props.name, value)}
+          onBlur={field.onBlur}
           {...props}
         />
       );
