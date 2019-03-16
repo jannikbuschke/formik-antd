@@ -19,7 +19,8 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": false,
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "lib",

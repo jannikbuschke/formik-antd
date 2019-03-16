@@ -2,7 +2,7 @@ import { DatePicker } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { DatePickerProps } from "antd/lib/date-picker/interface";
-import * as moment from "moment";
+import moment from "moment";
 
 export const DatePickerField = (
   props: {
