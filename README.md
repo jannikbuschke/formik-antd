@@ -28,8 +28,12 @@ The augmented components **names** are composed of the original component name s
 
 ## Components
 
-| antd     | formik-antd   |
-| -------- | ------------- |
-| Input    | InputField    |
-| Checkbox | CheckboxField |
-| TextArea | TextAreaField |
+| antd          | formik-antd        |
+| ------------- | ------------------ |
+| Checkbox      | CheckboxField      |
+| DatePicker    | DatePickerField    |
+| Input         | InputField         |
+| InputNumber   | InputNumberField   |
+| InputPassword | InputPasswordField |
+| Switch        | SwitchField        |
+| TextArea      | TextAreaField      |
