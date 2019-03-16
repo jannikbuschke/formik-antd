@@ -1,21 +1,35 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
+[CodeSandbox](https://codesandbox.io/s/ooo94m4q5y)
+
 # formik-antd
 
-This library provides a simple declarative integration for input components of the UI component library [Ant Design](https://ant.design/docs/react/introduce) and the form-state library [Formik](https://github.com/jaredpalmer/formik).
+Simple declarative bindingings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/formik).
 
-## API
+## Example
 
-Ant Designs input components like `<Input />, <Checkbox />, <Switch />` etc. are augmented with a **name** property of type string, which connects them to a form field. The original features and props of the components stay the same (besides the additional name property).
-
-The augmented components **names** are composed of the original Ant Designs name suffixed with 'Field'. So `<Input />` becomes `<InputField />`, `<Checkbox />` becomes `<CheckboxField />` etc.
-
-## Examples / Payground
 ```
 <Formik initialValues={{ firstName:"", age: 20 }}>
-  <InputField name="firstName" />
+  <InputField name="firstName" placeholder="first name" />
   <InputNumberField name="age" min={0} />
 </Formik>
 ```
-[More examples on CodeSandbox](https://codesandbox.io/s/ooo94m4q5y)
+
+## install
+
+`npm install @jbuschke/formik-antd`
+
+## API
+
+Ant Designs input components like `<Input />, <Checkbox />, <Switch />` etc. are augmented with a **name** property of type string, which connects them to a form field. All other properties belong to the antd component, so their api and behaviour stays as is and can be looked up in the official docs.
+
+The augmented components **names** are composed of the original component name suffixed with 'Field'. So `<Input />` becomes `<InputField />`, `<Checkbox />` becomes `<CheckboxField />` etc.
+
+## Components
+
+| antd     | formik-antd   |
+| -------- | ------------- |
+| Input    | InputField    |
+| Checkbox | CheckboxField |
+| TextArea | TextAreaField |
