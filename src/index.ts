@@ -14,3 +14,4 @@ export * from "./Action";
 export * from "./SelectField";
 export * from "./SubmitButton";
 export * from "./HtmlTextField";
+export * from "./CheckboxField";
