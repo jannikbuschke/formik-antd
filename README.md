@@ -1,7 +1,7 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox](https://codesandbox.io/s/ooo94m4q5y)
+[CodeSandbox](https://codesandbox.io/s/ry3x068pmo)
 
 # formik-antd
 
@@ -10,9 +10,10 @@ Simple declarative bindingings for [Ant Design](https://ant.design/docs/react/in
 ## Example
 
 ```
-<Formik initialValues={{ firstName:"", age: 20 }}>
+<Formik initialValues={{ firstName: "", age: 20, newsletter: false }}>
   <InputField name="firstName" placeholder="first name" />
   <InputNumberField name="age" min={0} />
+  <Checkbox name="newsletter" />
 </Formik>
 ```
 
