@@ -5,7 +5,7 @@
 
 # formik-antd
 
-Simple declarative bindingings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/formik).
+Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/formik).
 
 ## Example
 
