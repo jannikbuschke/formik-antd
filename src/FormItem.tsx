@@ -7,7 +7,7 @@ export const FormItem = (props: {
   name: string;
   children: React.ReactNode;
 }) => (
-  <Field {...props}>
+  <Field name={name}>
     {({ field, form }: { field: any; form: FormikProps<any> }) => {
       const { name } = field;
       const hasError = form.errors && form.errors[name] && form.touched[name];
