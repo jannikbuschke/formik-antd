@@ -3,9 +3,9 @@ import { Field, FormikProps } from "formik";
 import { Form } from "antd";
 
 export const FormItem = (props: {
-  label: string;
+  label?: string;
   name: string;
-  children: any;
+  children: React.ReactNode;
 }) => (
   <Field {...props}>
     {({ field, form }: { field: any; form: FormikProps<any> }) => {
