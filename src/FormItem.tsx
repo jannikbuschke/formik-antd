@@ -16,7 +16,13 @@ export const FormItem = (props: {
           label={props.label}
           validateStatus={hasError ? "error" : undefined}
           hasFeedback={false}
-          help={hasError ? form.errors[name] : undefined}
+          help={
+            hasError
+              ? (form.errors[name] as any).map((error: string) => (
+                  <li>{error}</li>
+                ))
+              : undefined
+          }
         >
           {props.children}
         </Form.Item>
