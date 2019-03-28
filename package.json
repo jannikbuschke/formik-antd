@@ -1,6 +1,16 @@
 {
   "name": "@jbuschke/formik-antd",
   "version": "0.8.2",
+  "author": "Jannik Buschke",
+  "description": "declarative bindings for formik and ant design",
+  "displayName": "formik-antd",
+  "keywords": [
+    "formik",
+    "antd",
+    "ant design",
+    "form"
+  ],
+  "license": "MIT",
   "private": false,
   "files": [
     "lib"
