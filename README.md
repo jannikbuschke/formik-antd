@@ -21,20 +21,21 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 `npm install @jbuschke/formik-antd`
 
-## API
+## Input components
 
-Ant Designs input components like `<Input />, <Checkbox />, <Switch />` etc. are augmented with a **name** property of type string, which connects them to a form field. All other properties belong to the antd component, so their api and behaviour stays as is and can be looked up in the official docs.
+| Name               | Props                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| CheckboxField      | name: string + [Checkbox](https://ant.design/components/checkbox/)                                   |
+| DatePickerField    | name: string + [DatePicker](https://ant.design/components/date-picker/)                              |
+| InputField         | name: string + [Input](https://ant.design/components/input/)                                         |
+| InputNumberField   | name: string + [InputNumber](https://ant.design/components/input-number/)                            |
+| InputPasswordField | name: string + [InputPassword](https://ant.design/components/input/)                                 |
+| SwitchField        | name: string + [Switch](https://ant.design/components/switch/)                                       |
+| TextAreaField      | name: string + [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
 
-The augmented components **names** are composed of the original component name suffixed with 'Field'. So `<Input />` becomes `<InputField />`, `<Checkbox />` becomes `<CheckboxField />` etc.
+## Buttons
 
-## Components
-
-| antd          | formik-antd        |
-| ------------- | ------------------ |
-| Checkbox      | CheckboxField      |
-| DatePicker    | DatePickerField    |
-| Input         | InputField         |
-| InputNumber   | InputNumberField   |
-| InputPassword | InputPasswordField |
-| Switch        | SwitchField        |
-| TextArea      | TextAreaField      |
+| Name         | Props                                           | Description                                          |
+| ------------ | ----------------------------------------------- | ---------------------------------------------------- |
+| SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form dirty |
+| ResetButtom  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
