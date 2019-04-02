@@ -23,15 +23,17 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ## Input components
 
-| Name               | Props                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------- |
-| CheckboxField      | name: string + [Checkbox](https://ant.design/components/checkbox/)                                   |
-| DatePickerField    | name: string + [DatePicker](https://ant.design/components/date-picker/)                              |
-| InputField         | name: string + [Input](https://ant.design/components/input/)                                         |
-| InputNumberField   | name: string + [InputNumber](https://ant.design/components/input-number/)                            |
-| InputPasswordField | name: string + [InputPassword](https://ant.design/components/input/)                                 |
-| SwitchField        | name: string + [Switch](https://ant.design/components/switch/)                                       |
-| TextAreaField      | name: string + [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
+formik-antd components props expose the `name` (`string`) and `validate` ( `(value: any) => undefined | string | Promise<any>` ) props of a [Formik Field prop](https://jaredpalmer.com/formik/docs/api/field#reference) + the corresponding Antd components props.
+
+| Name               | Props                                                                                                      |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| CheckboxField      | { name, validate } & [Checkbox](https://ant.design/components/checkbox/)                                   |
+| DatePickerField    | { name, validate } & [DatePicker](https://ant.design/components/date-picker/)                              |
+| InputField         | { name, validate } & [Input](https://ant.design/components/input/)                                         |
+| InputNumberField   | { name, validate } & [InputNumber](https://ant.design/components/input-number/)                            |
+| InputPasswordField | { name, validate } & [InputPassword](https://ant.design/components/input/)                                 |
+| SwitchField        | { name, validate } & [Switch](https://ant.design/components/switch/)                                       |
+| TextAreaField      | { name, validate } & [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
 
 ## Buttons
 
