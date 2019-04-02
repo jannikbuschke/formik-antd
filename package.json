@@ -31,15 +31,15 @@
   },
   "devDependencies": {
     "moment": "2.24.0",
-    "@types/jest": "24.0.9",
-    "@types/node": "11.10.4",
-    "@types/react-dom": "16.8.2",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.0",
+    "@types/react-dom": "16.8.3",
     "tslib": "1.9.3",
-    "@types/react": "16.8.8",
-    "antd": "3.15.2",
-    "formik": "1.5.1",
+    "@types/react": "16.8.10",
+    "antd": "3.16.1",
+    "formik": "1.5.2",
     "typescript": "3.4.1",
-    "react": "16.8.3",
-    "react-dom": "16.8.3"
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   }
 }
