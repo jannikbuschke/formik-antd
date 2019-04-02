@@ -1,11 +1,11 @@
-import { Switch, Checkbox } from "antd";
-import { Field, FormikProps, FieldProps } from "formik";
+import { Switch } from "antd";
+import { Field, FormikProps } from "formik";
 import * as React from "react";
 import { SwitchProps } from "antd/lib/switch";
-import { CheckboxProps } from "antd/lib/checkbox/Checkbox";
+import { FormikFieldProps } from "./FieldProps";
 
-export const SwitchField = (props: { name: string } & SwitchProps) => (
-  <Field name={props.name}>
+export const SwitchField = (props: FormikFieldProps & SwitchProps) => (
+  <Field name={props.name} validate={props.validate}>
     {({ field, form }: { field: any; form: FormikProps<any> }) => (
       <Switch
         checked={field.value}
