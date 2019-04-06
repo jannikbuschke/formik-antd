@@ -23,7 +23,7 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ## Input components
 
-formik-antd components props expose the `name` (`string`) and `validate` ( `(value: any) => undefined | string | Promise<any>` ) props of a [Formik Field prop](https://jaredpalmer.com/formik/docs/api/field#reference) + the corresponding Antd components props.
+formik-antd components props expose the `name: string` and `validate: (value: any) => undefined | string | Promise<any>` ) props of a [Formik Field prop](https://jaredpalmer.com/formik/docs/api/field#reference) + the corresponding Antd components props.
 
 | Name               | Props                                                                                                      |
 | ------------------ | ---------------------------------------------------------------------------------------------------------- |
@@ -41,3 +41,7 @@ formik-antd components props expose the `name` (`string`) and `validate` ( `(val
 | ------------ | ----------------------------------------------- | ---------------------------------------------------- |
 | SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form dirty |
 | ResetButtom  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
+
+## Playground / Contributions
+
+If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
