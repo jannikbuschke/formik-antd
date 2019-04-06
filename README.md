@@ -45,3 +45,15 @@ formik-antd components props expose the `name: string` and `validate: (value: an
 ## Playground / Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
+
+## Validation & Lists
+
+Some topics are in the pipeline but are not yet well thought through. Validation can be accomplished with the `FormItem` component. The feature and its api will very likely change, but it is already included in the library
+
+```
+<FormItem name="firstName" >
+  <InputField name="firstName" >
+</FormItem>
+```
+
+How to handle lists with formiks `<FieldArray>` component will also come at some point. However how the api will look like and when it is going to be implemented is not yet known.
