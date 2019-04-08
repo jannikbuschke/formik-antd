@@ -1,30 +1,28 @@
 import * as React from "react";
+import get from "lodash.get";
 import { Field, FormikProps } from "formik";
 import { Form } from "antd";
 import { FormItemProps } from "antd/lib/form/FormItem";
 
 export const FormItem = (
-  props: { name: string; children: React.ReactNode } & FormItemProps
+  { name, label, children, ...restProps } : { name: string; children: React.ReactNode } & FormItemProps
 ) => (
   <Field name={name}>
     {({ field, form }: { field: any; form: FormikProps<any> }) => {
-      const { name } = field;
-      const hasError = form.errors && form.errors[name] && form.touched[name];
+      const { name: fieldName } = field;
+      const { errors = {}, touched = {} } = form;
+      const error = get( errors, fieldName, undefined );
+      const isTouched = get( touched, fieldName, false );
+      const hasError = error !== undefined && isTouched;
       return (
         <Form.Item
-          label={props.label}
+          label={label}
           validateStatus={hasError ? "error" : undefined}
           hasFeedback={false}
-          help={
-            hasError
-              ? (form.errors[name] as any).map((error: string) => (
-                  <li>{error}</li>
-                ))
-              : undefined
-          }
-          {...props}
+          help={hasError && <li>{error}</li>}
+          {...restProps}
         >
-          {props.children}
+          {children}
         </Form.Item>
       );
     }}
