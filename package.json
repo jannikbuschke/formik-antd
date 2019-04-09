@@ -30,16 +30,18 @@
     "react-dom": ">= 16.8.0 < 17"
   },
   "devDependencies": {
-    "moment": "2.24.0",
     "@types/jest": "24.0.11",
+    "@types/lodash.get": "^4.4.6",
     "@types/node": "11.13.0",
-    "@types/react-dom": "16.8.3",
-    "tslib": "1.9.3",
     "@types/react": "16.8.10",
+    "@types/react-dom": "16.8.3",
     "antd": "3.16.1",
     "formik": "1.5.2",
-    "typescript": "3.4.1",
+    "lodash.get": "^4.4.2",
+    "moment": "2.24.0",
     "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "tslib": "1.9.3",
+    "typescript": "3.4.1"
   }
 }
