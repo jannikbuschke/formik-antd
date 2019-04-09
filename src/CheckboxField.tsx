@@ -4,12 +4,12 @@ import * as React from "react";
 import { CheckboxProps } from "antd/lib/checkbox/Checkbox";
 import { FormikFieldProps } from "./FieldProps";
 
-export const CheckboxField = (props: FormikFieldProps & CheckboxProps) => (
-  <Field name={props.name} validate={props.validate}>
-    {({ field }: FieldProps) => {
-      return (
-        <Checkbox checked={field.value} onChange={field.onChange} {...props} />
-      );
-    }}
+export const CheckboxField = (
+  { name, validate, ...restProps }: FormikFieldProps & CheckboxProps
+) => (
+  <Field name={name} validate={validate}>
+    {({ field: { name: fieldName, value, onChange } }: FieldProps) => (
+      <Checkbox name={fieldName} checked={value} onChange={onChange} {...restProps} />
+    )}
   </Field>
 );

@@ -3,14 +3,18 @@ import { Field, FormikProps } from "formik";
 import * as React from "react";
 import { ButtonProps } from "antd/lib/button";
 
-export const ResetButton = (props: ButtonProps) => (
+export const ResetButton = (
+  { children, ...restProps }: ButtonProps
+) => (
   <Field>
-    {({ form }: { field: any; form: FormikProps<any> }) => (
+    {({ form: { resetForm, isValid } }: { field: any; form: FormikProps<any> }) => (
       <Button
-        onClick={() => form.resetForm()}
-        disabled={!form.isValid}
-        {...props}
-      />
+        onClick={() => resetForm()}
+        disabled={!isValid}
+        {...restProps}
+      >
+        {children}
+      </Button>
     )}
   </Field>
 );

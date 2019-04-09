@@ -1,4 +1,5 @@
 import * as React from "react";
+import get from "lodash.get";
 import { Field, FieldArray, FormikProps } from "formik";
 import { Button, Tabs } from "antd";
 
@@ -10,8 +11,8 @@ export const TabArrayEditor = ({
   itemEditor: any;
 }) => (
   <Field>
-    {({ form }: { form: FormikProps<any> }) => {
-      const data = form.values[name];
+    {({ form: { values } }: { form: FormikProps<any> }) => {
+      const data = get( values, name, [] );
       return (
         <FieldArray
           name={name}
@@ -87,8 +88,8 @@ export const ArrayEditor = ({
   itemEditor: any;
 }) => (
   <Field>
-    {({ form }: { form: FormikProps<any> }) => {
-      const data = form.values[name];
+    {({ form: { values } }: { form: FormikProps<any> }) => {
+      const data = get( values, name, [] );
 
       return (
         <FieldArray

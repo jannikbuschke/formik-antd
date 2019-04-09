@@ -10,9 +10,9 @@ export const DateTimeAsStringField = ({
   format?: string;
 }) => (
   <Field name={name}>
-    {({ field, form }: { field: any; form: FormikProps<any> }) =>
+    {({ field: { value }, form }: { field: any; form: FormikProps<any> }) =>
       moment
-        .utc(field.value)
+        .utc(value)
         .local()
         .format(format)
     }
