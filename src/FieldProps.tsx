@@ -3,7 +3,7 @@ export interface FormikFieldProps {
   validate?: (value: any) => undefined | string | Promise<any>;
 }
 
-export interface iDataSourceObject {
+export interface IDataSourceObject {
   value: ( string | number );
   label: ( string | React.ReactNode );
 }
