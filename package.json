@@ -1,6 +1,6 @@
 {
   "name": "@jbuschke/formik-antd",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "author": "Jannik Buschke",
   "description": "declarative bindings for formik and ant design",
   "displayName": "formik-antd",
