@@ -4,7 +4,7 @@ import * as React from "react";
 import { RadioGroupProps } from "antd/lib/radio/interface";
 import { FormikFieldProps, IDataSourceObject } from "./FieldProps";
 
-export const EnumStringEditor = ({
+export const RadioGroupField = ({
   name,
   validate,
   dataSource,

@@ -1,5 +1,5 @@
 export * from "./DatePickerField";
-export * from "./EnumStringEditor";
+export * from "./RadioGroupField";
 export * from "./FormikDebugField";
 export * from "./InputField";
 export * from "./InputNumberField";
