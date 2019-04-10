@@ -9,10 +9,10 @@ export const SelectField = (
 ) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { name: fieldName, value: fieldValue }, form: { setFieldValue } }: { field: any; form: FormikProps<any> }) => (
+      {({ field: { value }, form: { setFieldValue } }: { field: any; form: FormikProps<any> }) => (
         <Select
-          onChange={value => setFieldValue(fieldName, value)}
-          value={fieldValue}
+          onChange={v => setFieldValue(name, v)}
+          value={value}
           {...restProps}
         >
           {children}
