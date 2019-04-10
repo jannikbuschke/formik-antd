@@ -40,7 +40,7 @@ formik-antd components props expose the `name: string` and `validate: (value: an
 | Name         | Props                                           | Description                                          |
 | ------------ | ----------------------------------------------- | ---------------------------------------------------- |
 | SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form dirty |
-| ResetButtom  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
+| ResetButton  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
 
 ## Playground / Contributions
 
