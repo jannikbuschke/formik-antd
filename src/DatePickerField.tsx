@@ -5,15 +5,15 @@ import { DatePickerProps } from "antd/lib/date-picker/interface";
 import moment from "moment";
 import { FormikFieldProps } from "./FieldProps";
 
-export const DatePickerField = (props: FormikFieldProps & DatePickerProps) => (
-  <Field name={props.name} validate={props.validate}>
-    {({ field, form }: FieldProps) => (
+export const DatePickerField = (
+  { name, validate, ...restProps }: FormikFieldProps & DatePickerProps
+) => (
+  <Field name={name} validate={validate}>
+    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <DatePicker
-        value={field.value ? moment(field.value) : undefined}
-        onChange={date => {
-          form.setFieldValue(props.name, date ? date.toISOString() : null);
-        }}
-        {...props}
+        value={value ? moment(value) : undefined}
+        onChange={date => setFieldValue(name, date ? date.toISOString() : null)}
+        {...restProps}
       />
     )}
   </Field>

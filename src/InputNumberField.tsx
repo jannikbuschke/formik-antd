@@ -5,18 +5,17 @@ import { InputNumberProps } from "antd/lib/input-number";
 import { FormikFieldProps } from "./FieldProps";
 
 export const InputNumberField = (
-  props: FormikFieldProps & InputNumberProps
+  { name, validate, ...restProps }: FormikFieldProps & InputNumberProps
 ) => (
-  <Field name={props.name} validate={props.validate}>
-    {({ field, form }: FieldProps) => {
-      return (
-        <InputNumber
-          value={field.value}
-          onChange={value => form.setFieldValue(props.name, value)}
-          onBlur={field.onBlur}
-          {...props}
-        />
-      );
-    }}
+  <Field name={name} validate={validate}>
+    {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
+      <InputNumber
+        name={name}
+        value={value}
+        onChange={v => setFieldValue(name, v)}
+        onBlur={onBlur}
+        {...restProps}
+      />
+    )}
   </Field>
 );

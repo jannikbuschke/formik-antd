@@ -1,4 +1,4 @@
-import { Field, FormikProps } from "formik";
+import { Field, FieldProps } from "formik";
 import * as React from "react";
 import * as moment from "moment";
 
@@ -10,9 +10,9 @@ export const DateTimeAsStringField = ({
   format?: string;
 }) => (
   <Field name={name}>
-    {({ field, form }: { field: any; form: FormikProps<any> }) =>
+    {({ field: { value } }: FieldProps) =>
       moment
-        .utc(field.value)
+        .utc(value)
         .local()
         .format(format)
     }

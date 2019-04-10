@@ -4,17 +4,18 @@ import * as React from "react";
 import { InputProps } from "antd/lib/input";
 import { FormikFieldProps } from "./FieldProps";
 
-export const InputField = (props: FormikFieldProps & InputProps) => (
-  <Field name={props.name} validate={props.validate}>
-    {({ field }: FieldProps) => {
-      return (
-        <Input
-          value={field.value}
-          onChange={field.onChange}
-          onBlur={field.onBlur}
-          {...props}
-        />
-      );
-    }}
+export const InputField = (
+  { name, validate, ...restProps }: FormikFieldProps & InputProps
+) => (
+  <Field name={name} validate={validate}>
+    {({ field: { value, onChange, onBlur } }: FieldProps) => (
+      <Input
+        name={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        {...restProps}
+      />
+    )}
   </Field>
 );

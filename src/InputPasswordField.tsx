@@ -1,17 +1,20 @@
 import { Input } from "antd";
-import { Field, FormikProps } from "formik";
+import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { FormikFieldProps } from "./FieldProps";
 import { PasswordProps } from "antd/lib/input/Password";
 
-export const InputPasswordField = (props: FormikFieldProps & PasswordProps) => (
-  <Field name={props.name} validate={props.validate}>
-    {({ field, form }: { field: any; form: FormikProps<any> }) => (
+export const InputPasswordField = (
+  { name, validate, ...restProps }: FormikFieldProps & PasswordProps
+) => (
+  <Field name={name} validate={validate}>
+    {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <Input.Password
-        value={field.value}
-        onChange={value => form.setFieldValue(props.name, value)}
-        onBlur={field.onBlur}
-        {...props}
+        name={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        {...restProps}
       />
     )}
   </Field>

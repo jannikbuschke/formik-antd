@@ -1,6 +1,6 @@
 import * as React from "react";
 import get from "lodash.get";
-import { Field, FormikProps } from "formik";
+import { Field, FieldProps } from "formik";
 import { Form } from "antd";
 import { FormItemProps } from "antd/lib/form/FormItem";
 
@@ -8,11 +8,9 @@ export const FormItem = (
   { name, label, children, ...restProps } : { name: string; children: React.ReactNode } & FormItemProps
 ) => (
   <Field name={name}>
-    {({ field, form }: { field: any; form: FormikProps<any> }) => {
-      const { name: fieldName } = field;
-      const { errors = {}, touched = {} } = form;
-      const error = get( errors, fieldName, undefined );
-      const isTouched = get( touched, fieldName, false );
+    {({ form: { errors = {}, touched = {} } }: FieldProps) => {
+      const error = get( errors, name, undefined );
+      const isTouched = get( touched, name, false );
       const hasError = error !== undefined && isTouched;
       return (
         <Form.Item
