@@ -20,7 +20,11 @@ export const EnumStringEditor = ({
       <Radio.Group {...restProps}>
         {Array.isArray(dataSource) &&
           dataSource.map(({ value, label }: IDataSourceObject) => (
-            <Radio key={`radio-${value}`} value={value}>
+            <Radio
+              key={`radio-${value}`}
+              value={value}
+              onChange={e => form.setFieldValue(name, e.target.value)}
+            >
               {label}
             </Radio>
           ))}
