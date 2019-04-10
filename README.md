@@ -28,6 +28,7 @@ formik-antd components props expose the `name: string` and `validate: (value: an
 | Name               | Props                                                                                                      |
 | ------------------ | ---------------------------------------------------------------------------------------------------------- |
 | CheckboxField      | { name, validate } & [Checkbox](https://ant.design/components/checkbox/)                                   |
+| CheckboxGroupField | { name, validate } & [CheckboxGroup](https://ant.design/components/checkbox/#Checkbox-Group)               |
 | DatePickerField    | { name, validate } & [DatePicker](https://ant.design/components/date-picker/)                              |
 | InputField         | { name, validate } & [Input](https://ant.design/components/input/)                                         |
 | InputNumberField   | { name, validate } & [InputNumber](https://ant.design/components/input-number/)                            |
