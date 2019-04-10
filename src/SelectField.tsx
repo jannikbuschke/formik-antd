@@ -1,5 +1,5 @@
 import { Select } from "antd";
-import { Field, FormikProps } from "formik";
+import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { SelectProps } from "antd/lib/select";
 import { FormikFieldProps } from "./FieldProps";
@@ -9,7 +9,7 @@ export const SelectField = (
 ) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue } }: { field: any; form: FormikProps<any> }) => (
+      {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
         <Select
           onChange={v => setFieldValue(name, v)}
           value={value}

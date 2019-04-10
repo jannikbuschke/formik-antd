@@ -8,9 +8,9 @@ export const TextAreaField = (
   { name, validate, ...restProps }: FormikFieldProps & TextAreaProps
 ) => (
   <Field name={name} validate={validate}>
-    {({ field: { name: fieldName, value, onChange, onBlur } }: FieldProps) => (
+    {({ field: { name, value, onChange, onBlur } }: FieldProps) => (
       <Input.TextArea
-        name={fieldName}
+        name={name}
         value={value}
         onChange={onChange}
         onBlur={onBlur}

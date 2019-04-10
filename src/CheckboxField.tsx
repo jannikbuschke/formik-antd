@@ -8,8 +8,8 @@ export const CheckboxField = (
   { name, validate, ...restProps }: FormikFieldProps & CheckboxProps
 ) => (
   <Field name={name} validate={validate}>
-    {({ field: { name: fieldName, value, onChange } }: FieldProps) => (
-      <Checkbox name={fieldName} checked={value} onChange={onChange} {...restProps} />
+    {({ field: { name, value, onChange } }: FieldProps) => (
+      <Checkbox name={name} checked={value} onChange={onChange} {...restProps} />
     )}
   </Field>
 );

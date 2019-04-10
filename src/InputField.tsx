@@ -8,9 +8,9 @@ export const InputField = (
   { name, validate, ...restProps }: FormikFieldProps & InputProps
 ) => (
   <Field name={name} validate={validate}>
-    {({ field: { name: fieldName, value, onChange, onBlur } }: FieldProps) => (
+    {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <Input
-        name={fieldName}
+        name={name}
         value={value}
         onChange={onChange}
         onBlur={onBlur}
