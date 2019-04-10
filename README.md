@@ -46,17 +46,6 @@ with the the corresponding Antd components props.
 | SwitchField        | { name, validate } & [Switch](https://ant.design/components/switch/)                                       |
 | TextAreaField      | { name, validate } & [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
 
-## Buttons
-
-| Name         | Props                                           | Description                                          |
-| ------------ | ----------------------------------------------- | ---------------------------------------------------- |
-| SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form valid |
-| ResetButton  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
-
-## Playground / Contributions
-
-If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
-
 ## Validation
 
 Showing validation messages can be accomplished with the `FormItem` component. It renders error messages if the field has been touched and the corresponding field has a validation error.
@@ -74,3 +63,14 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax for th
 ```
 <InputField name="friends[0].firstName" />
 ```
+
+## Buttons
+
+| Name         | Props                                           | Description                                          |
+| ------------ | ----------------------------------------------- | ---------------------------------------------------- |
+| SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form valid |
+| ResetButton  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
+
+## Playground / Contributions
+
+If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
