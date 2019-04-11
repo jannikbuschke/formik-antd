@@ -23,7 +23,7 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ## Input components
 
-formik-antd components usually combine [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference)
+formik-antd components usually combine [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference):
 
 ```
 {
@@ -32,7 +32,7 @@ formik-antd components usually combine [Formik Field Props](https://jaredpalmer.
 }
 ```
 
-with the the corresponding Antd components props.
+with the the corresponding Antd components props:
 
 | Name               | Props                                                                                                      |
 | ------------------ | ---------------------------------------------------------------------------------------------------------- |
