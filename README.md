@@ -28,7 +28,7 @@ formik-antd components usually combine [Formik Field Props](https://jaredpalmer.
 ```
 {
   name: string,
-  validate: (value: any) => undefined | string | Promise<any>` )
+  validate: (value: any) => undefined | string | Promise<any>
 }
 ```
 
@@ -58,7 +58,7 @@ Showing validation messages can be accomplished with the `FormItem` component. I
 
 ## Lists / Nested objects
 
-Nested objects and arrays can be accessed with lodash-like bracket syntax for the **name** property as described in the [formik documentation](https://jaredpalmer.com/formik/docs/guides/arrays)
+Nested objects and arrays can be accessed with lodash-like bracket syntax for the **name** property as described in the [formik documentation](https://jaredpalmer.com/formik/docs/guides/arrays).
 
 ```
 <InputField name="friends[0].firstName" />
