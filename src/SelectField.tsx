@@ -1,28 +1,27 @@
 import { Select } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { SelectProps } from "antd/lib/select";
-import { FormikFieldProps, IDataSourceObject } from "./FieldProps";
+import { SelectProps, OptionProps } from "antd/lib/select";
+import { FormikFieldProps } from "./FieldProps";
 
 export const SelectField = (
-  { name, validate, dataSource, children, ...restProps }: FormikFieldProps & SelectProps<any> & { dataSource?: Array<IDataSourceObject>, children?: React.ReactNode }
+  { name, validate, children, ...restProps }: FormikFieldProps & SelectProps<any> & { children: React.ReactNode }
 ) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
+      {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
         <Select
-          name={name}
-          value={value}
           onChange={v => setFieldValue(name, v)}
-          onBlur={onBlur}
+          value={value}
           {...restProps}
         >
-          {Array.isArray( dataSource ) && dataSource.map( ({ value, label }: IDataSourceObject ) => (
-            <Select.Option key={`option-${value}`} value={value}>{label}</Select.Option>
-          ))}
           {children}
         </Select>
       )}
     </Field>
   );
 };
+
+type Option = OptionProps & { label: ( React.ReactNode | string | number ) };
+SelectField.renderOptions = (options: Option[]) =>
+  options.map(({ label,...restProps }, index) => <Select.Option key={`select-option-${index}`} {...restProps} >{label}</Select.Option>);
