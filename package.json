@@ -1,6 +1,6 @@
 {
   "name": "@jbuschke/formik-antd",
-  "version": "0.10.0",
+  "version": "0.11.1",
   "author": "Jannik Buschke",
   "description": "declarative bindings for formik and ant design",
   "displayName": "formik-antd",
@@ -31,13 +31,13 @@
   },
   "devDependencies": {
     "@types/jest": "24.0.11",
-    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.get": "4.4.6",
     "@types/node": "11.13.0",
     "@types/react": "16.8.10",
     "@types/react-dom": "16.8.3",
     "antd": "3.16.1",
     "formik": "1.5.2",
-    "lodash.get": "^4.4.2",
+    "lodash.get": "4.4.2",
     "moment": "2.24.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
