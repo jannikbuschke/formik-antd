@@ -22,7 +22,9 @@
     "watch": "tsc --watch",
     "cleanbuild": "rm -r node_modules && npm install && tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.get": "4.4.2"
+  },
   "peerDependencies": {
     "antd": ">= 3.12.1 < 4",
     "formik": ">= 1.4.1 < 2",
@@ -37,7 +39,6 @@
     "@types/react-dom": "16.8.3",
     "antd": "3.16.1",
     "formik": "1.5.2",
-    "lodash.get": "4.4.2",
     "moment": "2.24.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
