@@ -11,9 +11,9 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ```
 <Formik initialValues={{ firstName: "", age: 20, newsletter: false }}>
-  <InputField name="firstName" placeholder="first name" />
-  <InputNumberField name="age" min={0} />
-  <Checkbox name="newsletter" />
+  <Input name="firstName" placeholder="first name" />
+  <InputNumber name="age" min={0} />
+  <Checkbox name="newsletter">Newsletter</Checkbox>
 </Formik>
 ```
 
@@ -23,7 +23,7 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ## Input components
 
-formik-antd components usually combine [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference):
+Formik-antd components usually combine [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference):
 
 ```
 {
@@ -32,19 +32,19 @@ formik-antd components usually combine [Formik Field Props](https://jaredpalmer.
 }
 ```
 
-with the the corresponding Antd components props:
+with the corresponding Antd component props:
 
-| Name               | Props                                                                                                      |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| CheckboxField      | { name, validate } & [Checkbox](https://ant.design/components/checkbox/)                                   |
-| CheckboxGroupField | { name, validate } & [CheckboxGroup](https://ant.design/components/checkbox/#Checkbox-Group)               |
-| DatePickerField    | { name, validate } & [DatePicker](https://ant.design/components/date-picker/)                              |
-| InputField         | { name, validate } & [Input](https://ant.design/components/input/)                                         |
-| InputNumberField   | { name, validate } & [InputNumber](https://ant.design/components/input-number/)                            |
-| InputPasswordField | { name, validate } & [InputPassword](https://ant.design/components/input/)                                 |
-| RadioGroupField    | { name, validate } & [RadioGroup](https://ant.design/components/radio/#RadioGroup)                         |
-| SwitchField        | { name, validate } & [Switch](https://ant.design/components/switch/)                                       |
-| TextAreaField      | { name, validate } & [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
+| Name           | Props                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| Checkbox       | { name, validate } & [Checkbox](https://ant.design/components/checkbox/)                                   |
+| Checkbox.Group | { name, validate } & [CheckboxGroup](https://ant.design/components/checkbox/#Checkbox-Group)               |
+| DatePicker     | { name, validate } & [DatePicker](https://ant.design/components/date-picker/)                              |
+| Input          | { name, validate } & [Input](https://ant.design/components/input/)                                         |
+| InputNumber    | { name, validate } & [InputNumber](https://ant.design/components/input-number/)                            |
+| Input.Password | { name, validate } & [InputPassword](https://ant.design/components/input/)                                 |
+| Radio.Group    | { name, validate } & [RadioGroup](https://ant.design/components/radio/#RadioGroup)                         |
+| Switch         | { name, validate } & [Switch](https://ant.design/components/switch/)                                       |
+| Input.TextArea | { name, validate } & [Input.TextArea](https://ant.design/components/input/#components-input-demo-textarea) |
 
 ## Validation
 
