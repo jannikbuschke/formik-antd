@@ -1,15 +1,17 @@
-import { Radio } from "antd";
+import { Radio as $Radio } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { RadioGroupProps } from "antd/lib/radio/interface";
-import { FormikFieldProps, IDataSourceObject } from "./FieldProps";
+import { FormikFieldProps } from "./FieldProps";
 
-export const RadioGroupField = (
-  { name, validate, ...restProps }: FormikFieldProps & RadioGroupProps
-) => (
+export const Radio = ({
+  name,
+  validate,
+  ...restProps
+}: FormikFieldProps & RadioGroupProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
-      <Radio.Group 
+      <$Radio
         value={value}
         onChange={e => setFieldValue(name, e.target.value)}
         {...restProps}
@@ -17,3 +19,21 @@ export const RadioGroupField = (
     )}
   </Field>
 );
+
+Radio.Group = ({
+  name,
+  validate,
+  ...restProps
+}: FormikFieldProps & RadioGroupProps) => (
+  <Field name={name} validate={validate}>
+    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+      <$Radio.Group
+        value={value}
+        onChange={e => setFieldValue(name, e.target.value)}
+        {...restProps}
+      />
+    )}
+  </Field>
+);
+
+Radio.Button = $Radio.Button;
