@@ -8,7 +8,7 @@ export const RadioGroupField = (
   { name, validate, ...restProps }: FormikFieldProps & RadioGroupProps
 ) => (
   <Field name={name} validate={validate}>
-    {({ field: { name, value }, form: { setFieldValue } }: FieldProps) => (
+    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <Radio.Group 
         value={value}
         onChange={e => setFieldValue(name, e.target.value)}
