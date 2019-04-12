@@ -1,7 +1,7 @@
 import { Select } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { SelectProps } from "antd/lib/select";
+import { SelectProps, OptionProps } from "antd/lib/select";
 import { FormikFieldProps } from "./FieldProps";
 
 export const SelectField = (
@@ -21,3 +21,7 @@ export const SelectField = (
     </Field>
   );
 };
+
+type Option = OptionProps & { label: ( React.ReactNode | string | number ) };
+SelectField.renderOptions = (options: Option[]) =>
+  options.map(({ label,...restProps }, index) => <Select.Option key={`select-option-${index}`} {...restProps} >{label}</Select.Option>);
