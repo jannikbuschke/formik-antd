@@ -13,4 +13,4 @@ export * from "./SubmitButton";
 export * from "./ResetButton";
 export * from "./HtmlTextField";
 export * from "./Checkbox";
-export * from "./RadioGroupField";
+export * from "./Radio";
