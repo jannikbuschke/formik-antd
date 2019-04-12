@@ -2,9 +2,14 @@ import { Field } from "formik";
 import * as React from "react";
 import { isDevelopmentMode } from "./utils";
 
-export const FormikDebug = () =>
+export const FormikDebug = (
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >
+) =>
   isDevelopmentMode() ? (
-    <div style={{ padding: 15 }}>
+    <div style={{ padding: 15, ...props }}>
       <Field>{({ form }: any) => <DebugView {...form} />}</Field>
     </div>
   ) : null;
