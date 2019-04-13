@@ -17,9 +17,14 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 </Formik>
 ```
 
-## install
+## Getting started
 
-`npm install @jbuschke/formik-antd`
+```
+npx create-react-app my-app
+cd my-app
+npm install formik antd @jbuschke/formik-antd
+npm run start
+```
 
 ## Input components
 
