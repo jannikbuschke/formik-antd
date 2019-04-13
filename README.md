@@ -28,7 +28,7 @@ npm run start
 
 ## Input components
 
-As forms deal with user input this library aims to provide bindings for all **AntD input components** (the ones in the [Data Entry](https://ant.design/components/auto-complete/) section). All data entry components have the same api (name and props) and additionally expose [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference):
+As forms deal with user input this library aims to provide bindings for all Ant Design *input* components (the ones in the [Data Entry](https://ant.design/components/auto-complete/) section). All bound components have the same api as there Antd counterpart (component name and props) and additionally expose [Formik Field Props](https://jaredpalmer.com/formik/docs/api/field#reference):
 
 ```
 {
@@ -37,7 +37,7 @@ As forms deal with user input this library aims to provide bindings for all **An
 }
 ```
 
-The `name: string` property is always required and creates a binding between the component and a field of the form. I.e. `<Input name="firstName"/>` declares a textbox control that is bound to the `firstName` field of the data the formik form operates on. To learn about Antd components just visit the official docs. Then import the corresponding _formik-antd_ component from `@jbuschke/formik-antd` and provide the `name` property.
+The `name: string` property is always required and creates a binding between the component and a field of the form. I.e. `<Input name="firstName"/>` declares a textbox that is bound to the `firstName` field of the data that formik controls. To learn about Antd components just visit the official docs. Then import the corresponding _formik-antd_ component from `@jbuschke/formik-antd` and provide the `name` property.
 
 |              | Name           | Props                                                                                                       |
 | --------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- |
