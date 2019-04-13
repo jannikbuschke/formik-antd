@@ -34,7 +34,7 @@ As forms deal with user input this library aims to provide bindings for all **An
 
 The `name: string` property is always required and creates a binding between the component and a field of the form. I.e. `<Input name="firstName"/>` declares a textbox control that is bound to the `firstName` field of the data the formik form operates on. To learn about Antd components just visit the official docs. Then import the corresponding _formik-antd_ component from `@jbuschke/formik-antd` and provide the `name` property.
 
-| Supported             | Name           | Props                                                                                                       |
+|              | Name           | Props                                                                                                       |
 | --------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- |
 | :white_check_mark:    | Checkbox       | { name, validate } & [Checkbox](https://ant.design/components/checkbox/)                                    |
 | :white_check_mark:    | Checkbox.Group | { name, validate } & [CheckboxGroup](https://ant.design/components/checkbox/#Checkbox-Group)                |
