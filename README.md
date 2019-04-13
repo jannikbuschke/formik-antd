@@ -90,8 +90,9 @@ If you want to dig into the source code and test locally you can use https://git
 
 ## TypeScript
 
-Types for the components are included.
+Types are included.
 
+## Typechecking limitations
 Form values currently cannot be typechecked (at least to my knowledge). For example the following ideally would give a compile error:
 
 ```
@@ -102,7 +103,6 @@ Form values currently cannot be typechecked (at least to my knowledge). For exam
 
 Typescript cannot (yet) enforce types of children. In the future this hopefully will  be possible.
 
-
-
 ## License
+
 MIT
