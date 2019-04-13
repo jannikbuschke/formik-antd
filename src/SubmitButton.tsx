@@ -9,7 +9,11 @@ export const SubmitButton = ({ children, ...restProps }: ButtonProps) => (
       form: { handleSubmit, isSubmitting, isValid, setSubmitting }
     }: FieldProps) => (
       <Button
-        onClick={() => handleSubmit()}
+        onClick={async () => {
+          setSubmitting(true);
+          await handleSubmit();
+          setSubmitting(false);
+        }}
         loading={isSubmitting}
         disabled={!isValid}
         {...restProps}
