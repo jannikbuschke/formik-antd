@@ -84,6 +84,25 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax for th
 | SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form valid |
 | ResetButton  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
 
-## Playground / Contributions
+## Playground & Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
+
+## TypeScript
+
+Types for the components are included.
+
+Form values currently cannot be typechecked (at least to my knowledge). For example the following ideally would give a compile error:
+
+```
+<Formik<{name:string}> initialValues={{name:""}}>
+  <Input name="naem"/>
+</Formik>
+```
+
+Typescript cannot (yet) enforce types of children. In the future this hopefully will  be possible.
+
+
+
+## License
+MIT
