@@ -69,6 +69,8 @@ Showing validation messages can be accomplished with the `FormItem` component. I
 </FormItem>
 ```
 
+How the validation logic is done is not part of this library.
+
 ## Lists / Nested objects
 
 Nested objects and arrays can be accessed with lodash-like bracket syntax for the **name** property as described in the [formik documentation](https://jaredpalmer.com/formik/docs/guides/arrays).
