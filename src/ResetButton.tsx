@@ -6,7 +6,7 @@ import { ButtonProps } from "antd/lib/button";
 export const ResetButton = ({ children, ...restProps }: ButtonProps) => (
   <Field>
     {({ form: { resetForm, dirty } }: FieldProps) => (
-      <Button onClick={() => resetForm()} disabled={!dirty} {...restProps}>
+      <Button onClick={resetForm} disabled={!dirty} {...restProps}>
         {children}
       </Button>
     )}
