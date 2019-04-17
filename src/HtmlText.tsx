@@ -1,9 +1,7 @@
-import { InputNumber } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { InputNumberProps } from "antd/lib/input-number";
 
-export const HtmlTextField = (props: { name: string } & InputNumberProps) => (
+export const HtmlText = (props: { name: string }) => (
   <Field {...props}>
     {({ field, form }: FieldProps) => {
       return field.value;

@@ -9,6 +9,6 @@ export * from "./Action";
 export * from "./Select";
 export * from "./SubmitButton";
 export * from "./ResetButton";
-export * from "./HtmlTextField";
+export * from "./HtmlText";
 export * from "./Checkbox";
 export * from "./Radio";
