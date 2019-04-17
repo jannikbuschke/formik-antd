@@ -40,8 +40,6 @@ Input.Password = ({
   </Field>
 );
 
-// Input.TextArea = () => <div>hello world</div>;
-
 Input.TextArea = ({
   name,
   validate,
