@@ -11,7 +11,7 @@ export const FormikDebug = (
   >
 ) =>
   isDevelopmentMode() ? (
-    <pre style={{ padding: 15, position: "absolute", ...props }}>
+    <pre style={{ padding: 15, ...props }}>
       <Field>{({ form }: any) => JSON.stringify(form, null, 2)}</Field>
     </pre>
   ) : null;
