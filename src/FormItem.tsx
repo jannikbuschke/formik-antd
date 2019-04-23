@@ -11,10 +11,9 @@ export const FormItem = ({
   ...restProps
 }: { name: string; children: React.ReactNode } & FormItemProps) => (
   <Field name={name}>
-    {({ form: { errors = {}, touched = {} } }: FieldProps) => {
+    {({ form: { errors = {} } }: FieldProps) => {
       const error = get(errors, name, undefined);
-      const isTouched = get(touched, name, false);
-      const hasError = error !== undefined && isTouched;
+      const hasError = error !== undefined;
       return (
         <Form.Item
           label={label}
