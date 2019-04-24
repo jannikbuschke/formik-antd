@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./lib",
-    "target": "es6",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
