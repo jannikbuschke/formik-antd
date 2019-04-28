@@ -40,8 +40,8 @@ interface FormikFieldProps {
 
 The `name: string` property is always required and creates a binding between the component and a field of the form. I.e. `<Input name="firstName"/>` declares a textbox that is bound to the `firstName` field of the data that formik controls. To learn about Antd components just visit the official docs. Then import the corresponding _formik-antd_ component from `@jbuschke/formik-antd` and provide the `name` property.
 
-|              | Name           | Props                                                                                                       |
-| --------------------- | -------------- | ----------------------------------------------------------------------------------------------------------- |
+|                       | Name           | Props                                                                                                            |
+| --------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------- |
 | :white_check_mark:    | Checkbox       | { name, validate } & [CheckboxProps](https://ant.design/components/checkbox/)                                    |
 | :white_check_mark:    | Checkbox.Group | { name, validate } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)                |
 | :white_check_mark:    | DatePicker     | { name, validate } & [DatePickerProps](https://ant.design/components/date-picker/)                               |
@@ -51,12 +51,12 @@ The `name: string` property is always required and creates a binding between the
 | :white_check_mark:    | Radio.Group    | { name, validate } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                          |
 | :white_check_mark:    | Switch         | { name, validate } & [SwitchProps](https://ant.design/components/switch/)                                        |
 | :white_check_mark:    | Input.TextArea | { name, validate } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea)  |
-| :white_check_mark:    | TimePicker     | { name, validate } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea) |
-| :black_square_button: | AutoComplete   | { name, validate } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                      |
-| :black_square_button: | Cascader       | { name, validate } & [CascaderProps](https://ant.design/components/cascader/)                               |
-| :black_square_button: | Mention        | { name, validate } & [MentionProps](https://ant.design/components/mention/)                                 |
-| :black_square_button: | Rate           | { name, validate } & [RateProps](https://ant.design/components/rate/)                                       |
-| :black_square_button: | Slider         | { name, validate } & [SliderProps](https://ant.design/components/slider/)                                   |
+| :white_check_mark:    | TimePicker     | { name, validate } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
+| :white_check_mark:    | AutoComplete   | { name, validate } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
+| :black_square_button: | Cascader       | { name, validate } & [CascaderProps](https://ant.design/components/cascader/)                                    |
+| :black_square_button: | Mention        | { name, validate } & [MentionProps](https://ant.design/components/mention/)                                      |
+| :white_check_mark:    | Rate           | { name, validate } & [RateProps](https://ant.design/components/rate/)                                            |
+| :white_check_mark:    | Slider         | { name, validate } & [SliderProps](https://ant.design/components/slider/)                                        |
 | :black_square_button: | TreeSelect     | { name, validate } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
 | :black_square_button: | Transfer       | { name, validate } & [TransferProps](https://ant.design/components/transfer/)                                    |
 
