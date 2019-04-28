@@ -14,3 +14,4 @@ export * from "./Checkbox";
 export * from "./Radio";
 export * from "./AutoComplete";
 export * from "./Rate";
+export * from "./Slider";
