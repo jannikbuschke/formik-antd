@@ -7,7 +7,7 @@ export const SubmitButton = ({
   children,
   onSuccess,
   ...restProps
-}: ButtonProps & { onSuccess: () => void }) => (
+}: ButtonProps & { onSuccess?: () => void }) => (
   <Field>
     {({
       form: { handleSubmit, isSubmitting, isValid, setSubmitting }
