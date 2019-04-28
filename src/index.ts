@@ -12,3 +12,4 @@ export * from "./ResetButton";
 export * from "./HtmlText";
 export * from "./Checkbox";
 export * from "./Radio";
+export * from "./AutoComplete";
