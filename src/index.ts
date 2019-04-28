@@ -13,3 +13,4 @@ export * from "./HtmlText";
 export * from "./Checkbox";
 export * from "./Radio";
 export * from "./AutoComplete";
+export * from "./Rate";
