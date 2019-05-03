@@ -17,3 +17,4 @@ export * from "./Rate";
 export * from "./Slider";
 export * from "./Cascader";
 export * from "./AutoComplete";
+export * from "./Form";
