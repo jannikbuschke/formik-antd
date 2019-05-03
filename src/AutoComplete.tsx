@@ -9,14 +9,14 @@ export const AutoComplete = ({
   validate,
   ...restProps
 }: FormikFieldProps & AutoCompleteProps) => (
-  <Field name={name} validate={validate}>
-    {({ field: { value }, form }: FieldProps) => (
-      <$AutoComplete
-        value={value}
-        onChange={e => form.setFieldValue(name, e.valueOf())}
-        onBlur={e => form.setFieldTouched(name)}
-        {...restProps}
-      />
-    )}
-  </Field>
-);
+    <Field name={name} validate={validate}>
+      {({ field: { value }, form }: FieldProps) => (
+        <$AutoComplete
+          value={value}
+          onChange={e => form.setFieldValue(name, e.valueOf())}
+          onBlur={e => form.setFieldTouched(name)}
+          {...restProps}
+        />
+      )}
+    </Field>
+  );
