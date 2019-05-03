@@ -3,26 +3,12 @@ import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { ButtonProps } from "antd/lib/button";
 
-export const SubmitButton = ({
-  children,
-  onSuccess,
-  ...restProps
-}: ButtonProps & { onSuccess?: () => void }) => (
+export const SubmitButton = ({ children, onSuccess, ...restProps }: ButtonProps & { onSuccess?: () => void }) => (
   <Field>
-    {({
-      form: { handleSubmit, isSubmitting, isValid, setSubmitting }
-    }: FieldProps) => (
+    {({ form: { isSubmitting, isValid } }: FieldProps) => (
       <Button
-        onClick={async () => {
-          setSubmitting(true);
-          await handleSubmit();
-          setSubmitting(false);
-          if (onSuccess) {
-            onSuccess();
-          }
-        }}
         loading={isSubmitting}
-        disabled={!isValid}
+        disabled={!isValid || isSubmitting}
         type="primary"
         htmlType="submit"
         {...restProps}
