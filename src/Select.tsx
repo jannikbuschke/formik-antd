@@ -12,9 +12,10 @@ export const Select = ({
 }: FormikFieldProps & SelectProps<any> & { children: React.ReactNode }) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+      {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
         <$Select
           onChange={v => setFieldValue(name, v)}
+          onBlur={() => setFieldTouched(name)}
           value={value}
           {...restProps}
         >
