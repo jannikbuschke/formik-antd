@@ -3,6 +3,13 @@
 
 [CodeSandbox](https://codesandbox.io/s/oko82yzn6)
 
+## Version 1.0.0
+
+Upcoming is version 1.0.0.
+
+Breaking changes:
+ - the validate function will be removed
+
 # formik-antd
 
 Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/formik).
