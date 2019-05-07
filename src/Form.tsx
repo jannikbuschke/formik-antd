@@ -3,6 +3,7 @@ import * as React from "react";
 import { Field, FieldProps } from "formik";
 import { Form as AntdForm } from "antd";
 import { FormProps } from "antd/lib/form";
+import { FormItem } from './FormItem';
 
 export function Form(props: FormProps) {
   return <Field>
@@ -11,3 +12,5 @@ export function Form(props: FormProps) {
     )}
   </Field>
 }
+
+Form.Item = FormItem;
