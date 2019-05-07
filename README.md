@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
+[![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 [CodeSandbox](https://codesandbox.io/s/oko82yzn6)
@@ -9,24 +9,24 @@ The 1.0.0 release is coming soon to provide a solid and stable api. A preview re
 
  For this to happen some changes are _likely_ going to happening / already happened:
 
-- The `validate` prop will be removed (https://github.com/jannikbuschke/formik-antd/issues/34).
+- The `validate` prop will be removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
 - The `SubmitButton` component only works inside a `Form` component. 
-- The `FormItem` component will be statically exported from the `Form` component: `Form.Item` (https://github.com/jannikbuschke/formik-antd/issues/35).
+- The `FormItem` component will be statically exported from the `Form` component: `Form.Item` (https://github.com/jannikbuschke/Formik-antd/issues/35).
 
 I am currently looking for overall feedback and also specifically on above topics.
 
 # formik-antd
 
-Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/formik).
+Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/Formik).
 
 ## Example
 
 ```jsx
-import * as React from "react";
+import React from "react";
 import { Form, Input, InputNumber, Checkbox } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
 
-<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} onValidate={/* not part of this lib */} onSubmit={/* not part of this lib */}>
+<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} /* onValidate/onSubmit are not part of this lib */ >
   <Form>
     <Input name="firstName" placeholder="First Name" />
     <InputNumber name="age" min={0} />
@@ -40,30 +40,29 @@ import { Formik } from "formik";
 ```
 npx create-react-app my-app
 cd my-app
-npm install formik antd @jbuschke/formik-antd
+npm install Formik antd @jbuschke/formik-antd
 npm run start
 ```
 
-Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant.design/docs/react/getting-started for optimized options).
+Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant.design/docs/react/getting-started for other options).
 
 ## Concept
 
 This library enriches all Ant Design components that operate on some state with a `name: string` property that connects them to a Formik form field. It is pretty simple:
 
 1. Import an Ant Design component that is able to change some state from _formik-antd_ (i.e. `import { Input } from "@jbuschke/formik-antd"`.
-2. Declare an instance of the component inside a `<Formik>` component (imported from `formik`).
+2. Declare an instance of the component inside a `<Formik>` component (this one comes from Formik).
 3. Provide the `name` property (i.e. `"firstName"`).
 
 Your components input/value state is now connected/synced with the corresponding `Formik` field!
 
 The Ant Design components APIs stay the same, i.e. many have a `placeholder: string` prop, or the `<Input.TextArea>` has a `rows` prop to control how many rows should be shown. Visit their documentation to learn about the components.
 
-Validating inputs and submitting is not part of this library (_showing_ results is, see below). It's all about wiring Antd components with formik behaviour and state in a declarative style.
+Validating inputs and submitting is not part of this library (_showing_ validation results is, see below). It's all about wiring Antd components with Formik behaviour and state in a declarative style.
 
 ## Core Components
 
 To learn about Antd components just visit the official docs. Most supported components are found in the [Data Entry](https://ant.design/components/auto-complete/) section.
-
 
 |                       | Name           | Props                                                                                                            |
 | --------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -78,11 +77,11 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | Input.TextArea | { name } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea)  |
 | :white_check_mark:    | TimePicker     | { name } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
 | :white_check_mark:    | AutoComplete   | { name } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
-| :black_square_button: | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
+| :white_check_mark: | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
 | :black_square_button: | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
 | :white_check_mark:    | Rate           | { name } & [RateProps](https://ant.design/components/rate/)                                            |
 | :white_check_mark:    | Slider         | { name } & [SliderProps](https://ant.design/components/slider/)                                        |
-| :black_square_button: | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
+| :white_check_mark: | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
 | :black_square_button: | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
 
 ## Submitting / Form
@@ -96,7 +95,7 @@ Directly under each `<Formik>` container a `<Form>` component _should_ be placed
     {/* ... */}
     <SubmitButton />
   </Form>
-</FormiK>
+</Formik>
 ```
 
 ## Submitting & Resetting
@@ -110,19 +109,22 @@ The SubmitButton must be placed inside a `Form` component.
 
 ## Validation
 
-Showing validation messages can be accomplished with the `FormItem` component. It renders error messages if the field has been touched and the corresponding field has a validation error.
+Showing validation messages can be accomplished with the  `Form.Item` component (or `FormItem` which is the same). It 
+- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red)
+- renders a green *success* icon messages if the field has been touched and the corresponding field does not have a validation error
+- exposes some layout features and a label (visit https://ant.design/components/form/ for the details)
 
 ```jsx
-<FormItem name="firstName" >
+<Form.Item name="firstName" >
   <InputField name="firstName" />
-</FormItem>
+</Form.Item>
 ```
 
 How the validation logic is done is not part of this library.
 
 ## Lists / Nested objects
 
-Nested objects and arrays can be accessed with lodash-like bracket syntax das described in the [formik documentation](https://jaredpalmer.com/formik/docs/guides/arrays).
+Nested objects and arrays can be accessed with lodash-like bracket syntax das described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
 
 ```jsx
 <InputField name="friends[0].firstName" />
@@ -130,7 +132,7 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax das de
 
 ## Playground & Contributions
 
-If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
+If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/Formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
 
 ## TypeScript
 
