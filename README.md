@@ -1,7 +1,7 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox](https://codesandbox.io/s/oko82yzn6)
+[CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
 
 ## Current status / Breaking changes
 
@@ -11,7 +11,6 @@ The 1.0.0 release is coming soon to provide a solid and stable api. A preview re
 
 - The `validate` prop will be removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
 - The `SubmitButton` component only works inside a `Form` component. 
-- The `FormItem` component will be statically exported from the `Form` component: `Form.Item` (https://github.com/jannikbuschke/Formik-antd/issues/35).
 
 I am currently looking for overall feedback and also specifically on above topics.
 
@@ -77,11 +76,11 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | Input.TextArea | { name } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea)  |
 | :white_check_mark:    | TimePicker     | { name } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
 | :white_check_mark:    | AutoComplete   | { name } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
-| :white_check_mark: | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
+| :white_check_mark:    | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
 | :black_square_button: | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
 | :white_check_mark:    | Rate           | { name } & [RateProps](https://ant.design/components/rate/)                                            |
 | :white_check_mark:    | Slider         | { name } & [SliderProps](https://ant.design/components/slider/)                                        |
-| :white_check_mark: | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
+| :white_check_mark:    | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
 | :black_square_button: | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
 
 ## Submitting / Form
