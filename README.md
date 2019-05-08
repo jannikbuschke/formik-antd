@@ -7,12 +7,12 @@
 
 The 1.0.0 release is coming soon to provide a solid and stable api. A preview release is available.
 
- For this to happen some changes are _likely_ going to happening / already happened:
+The preview release has some breaking changes:
 
-- The `validate` prop will be removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
+- The `validate` prop has been removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
 - The `SubmitButton` component only works inside a `Form` component. 
 
-I am currently looking for overall feedback and also specifically on above topics.
+I am currently looking for overall feedback.
 
 # formik-antd
 
@@ -25,7 +25,7 @@ import React from "react";
 import { Form, Input, InputNumber, Checkbox } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
 
-<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} /* onValidate/onSubmit are not part of this lib */ >
+<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} >
   <Form>
     <Input name="firstName" placeholder="First Name" />
     <InputNumber name="age" min={0} />
@@ -47,10 +47,10 @@ Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant
 
 ## Concept
 
-This library enriches all Ant Design components that operate on some state with a `name: string` property that connects them to a Formik form field. It is pretty simple:
+This library enriches several Ant Design components with a `name: string` property that connects them to a Formik form field. It is pretty simple:
 
-1. Import an Ant Design component that is able to change some state from _formik-antd_ (i.e. `import { Input } from "@jbuschke/formik-antd"`.
-2. Declare an instance of the component inside a `<Formik>` component (this one comes from Formik).
+1. Import a supported Ant Design component from `formik-antd` (i.e. `import { Input } from "@jbuschke/formik-antd"`.
+2. Declare an instance of the component inside a `<Formik>` component.
 3. Provide the `name` property (i.e. `"firstName"`).
 
 Your components input/value state is now connected/synced with the corresponding `Formik` field!
@@ -85,10 +85,14 @@ To learn about Antd components just visit the official docs. Most supported comp
 
 ## Submitting / Form
 
-Directly under each `<Formik>` container a `<Form>` component _should_ be placed (unless you do not need it). This component wraps Ant Designs `<Form />` component https://ant.design/components/form/ and adds the same behaviour that Formiks `<Form />` behaviour. In this sense it composes Ant Design and Formik functionality as the other components:
+Directly under each `<Formik>` container a `<Form>` component _should_ be placed (unless you do not need it). This component composes the functionality provided by Ant Designs `<Form>` https://ant.design/components/form/ as well as Formiks (https://jaredpalmer.com/formik/docs/api/form):
 
 
 ```jsx
+import React from "react";
+import { Form, SubmitButton, /* ... */ } from "@jbuschke/formik-antd";
+import { Formik } from "formik";
+
 <Formik>
   <Form>
     {/* ... */}
