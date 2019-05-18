@@ -1,5 +1,5 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 [CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
@@ -164,8 +164,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-
-<table><tr><td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt="Jannik Buschke"/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td><td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt="James W Mann"/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td><td align="center"><a href="https://github.com/NileDaley"><img src="https://avatars3.githubusercontent.com/u/15862011?v=4" width="100px;" alt="Nile Daley"/><br /><sub><b>Nile Daley</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=NileDaley" title="Code">💻</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/NileDaley"><img src="https://avatars3.githubusercontent.com/u/15862011?v=4" width="100px;" alt="Nile Daley"/><br /><sub><b>Nile Daley</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=NileDaley" title="Code">💻</a></td><td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt="James W Mann"/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td><td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt="Jannik Buschke"/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td><td align="center"><a href="https://github.com/LarsJK"><img src="https://avatars2.githubusercontent.com/u/1528255?v=4" width="100px;" alt="Lars-Jørgen Kristiansen"/><br /><sub><b>Lars-Jørgen Kristiansen</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=LarsJK" title="Code">💻</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
