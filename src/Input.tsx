@@ -1,15 +1,13 @@
 import { Input as $Input } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { InputProps, PasswordProps, TextAreaProps } from "antd/lib/input";
+import { InputProps as $InputProps, PasswordProps as $PasswordProps, TextAreaProps as $TextAreaProps } from "antd/lib/input";
 import { FormikFieldProps } from "./FieldProps";
 
-export const Input = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & InputProps) => (
-  <Field name={name} validate={validate}>
+export type InputProps = FormikFieldProps & $InputProps;
+
+export const Input = ({ name, ...restProps }: InputProps) => (
+  <Field name={name}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input
         name={name}
@@ -22,12 +20,10 @@ export const Input = ({
   </Field>
 );
 
-Input.Password = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & PasswordProps) => (
-  <Field name={name} validate={validate}>
+export type PasswordProps = FormikFieldProps & $PasswordProps;
+
+Input.Password = ({ name, ...restProps }: PasswordProps) => (
+  <Field name={name}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.Password
         name={name}
@@ -40,12 +36,10 @@ Input.Password = ({
   </Field>
 );
 
-Input.TextArea = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & TextAreaProps) => (
-  <Field name={name} validate={validate}>
+export type TextAreaProps = FormikFieldProps & $TextAreaProps;
+
+Input.TextArea = ({ name, ...restProps }: TextAreaProps) => (
+  <Field name={name}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.TextArea
         name={name}

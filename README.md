@@ -7,12 +7,13 @@
 
 The 1.0.0 release is coming soon to provide a solid and stable api. A preview release is available.
 
- For this to happen some changes are _likely_ going to happening / already happened:
+For the v1 release some breaking changes happened/are happening:
 
-- The `validate` prop will be removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
-- The `SubmitButton` component only works inside a `Form` component. 
+- The `validate` prop has been removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
+- The `SubmitButton` component only works inside a `Form` component.
+- Some undocumented/unofficial components have been removed (`Action` and `IDataSourceObject`)
 
-I am currently looking for overall feedback and also specifically on above topics.
+I am currently looking for overall feedback.
 
 # formik-antd
 
@@ -25,7 +26,7 @@ import React from "react";
 import { Form, Input, InputNumber, Checkbox } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
 
-<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} /* onValidate/onSubmit are not part of this lib */ >
+<Formik initialValues={{ firstName: "", age: 20, newsletter: false }} >
   <Form>
     <Input name="firstName" placeholder="First Name" />
     <InputNumber name="age" min={0} />
@@ -47,10 +48,10 @@ Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant
 
 ## Concept
 
-This library enriches all Ant Design components that operate on some state with a `name: string` property that connects them to a Formik form field. It is pretty simple:
+This library enriches several Ant Design components with a `name: string` property that connects them to a Formik form field. It is pretty simple:
 
-1. Import an Ant Design component that is able to change some state from _formik-antd_ (i.e. `import { Input } from "@jbuschke/formik-antd"`.
-2. Declare an instance of the component inside a `<Formik>` component (this one comes from Formik).
+1. Import a supported Ant Design component from `formik-antd` (i.e. `import { Input } from "@jbuschke/formik-antd"`.
+2. Declare an instance of the component inside a `<Formik>` component.
 3. Provide the `name` property (i.e. `"firstName"`).
 
 Your components input/value state is now connected/synced with the corresponding `Formik` field!
@@ -77,18 +78,22 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | TimePicker     | { name } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
 | :white_check_mark:    | AutoComplete   | { name } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
 | :white_check_mark:    | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
-| :black_square_button: | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
+| :white_check_mark:    | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
 | :white_check_mark:    | Rate           | { name } & [RateProps](https://ant.design/components/rate/)                                            |
 | :white_check_mark:    | Slider         | { name } & [SliderProps](https://ant.design/components/slider/)                                        |
 | :white_check_mark:    | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
-| :black_square_button: | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
+| :white_check_mark:    | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
 
 ## Submitting / Form
 
-Directly under each `<Formik>` container a `<Form>` component _should_ be placed (unless you do not need it). This component wraps Ant Designs `<Form />` component https://ant.design/components/form/ and adds the same behaviour that Formiks `<Form />` behaviour. In this sense it composes Ant Design and Formik functionality as the other components:
+Directly under each `<Formik>` container a `<Form>` component _should_ be placed (unless you do not need it). This component composes the functionality provided by Ant Designs `<Form>` https://ant.design/components/form/ as well as Formiks (https://jaredpalmer.com/formik/docs/api/form):
 
 
 ```jsx
+import React from "react";
+import { Form, SubmitButton, /* ... */ } from "@jbuschke/formik-antd";
+import { Formik } from "formik";
+
 <Formik>
   <Form>
     {/* ... */}
@@ -109,9 +114,9 @@ The SubmitButton must be placed inside a `Form` component.
 ## Validation
 
 Showing validation messages can be accomplished with the  `Form.Item` component (or `FormItem` which is the same). It 
-- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red)
-- renders a green *success* icon messages if the field has been touched and the corresponding field does not have a validation error
-- exposes some layout features and a label (visit https://ant.design/components/form/ for the details)
+- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red).
+- renders a green *success* icon messages if it's `showValidateSuccess: boolean` prop is set to true, the field has been touched and the corresponding field does not have a validation error.
+- exposes some layout features and a label (visit https://ant.design/components/form/ for the details).
 
 ```jsx
 <Form.Item name="firstName" >
@@ -119,11 +124,11 @@ Showing validation messages can be accomplished with the  `Form.Item` component 
 </Form.Item>
 ```
 
-How the validation logic is done is not part of this library.
+How the validation _logic_ is implemented is not part of this library.
 
 ## Lists / Nested objects
 
-Nested objects and arrays can be accessed with lodash-like bracket syntax das described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
+Nested objects and arrays can be accessed with lodash-like bracket syntax as described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
 
 ```jsx
 <InputField name="friends[0].firstName" />
