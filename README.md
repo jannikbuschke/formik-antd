@@ -78,11 +78,11 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | TimePicker     | { name } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
 | :white_check_mark:    | AutoComplete   | { name } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
 | :white_check_mark:    | Cascader       | { name } & [CascaderProps](https://ant.design/components/cascader/)                                    |
-| :black_square_button: | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
+| :white_check_mark:    | Mention        | { name } & [MentionProps](https://ant.design/components/mention/)                                      |
 | :white_check_mark:    | Rate           | { name } & [RateProps](https://ant.design/components/rate/)                                            |
 | :white_check_mark:    | Slider         | { name } & [SliderProps](https://ant.design/components/slider/)                                        |
 | :white_check_mark:    | TreeSelect     | { name } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
-| :black_square_button: | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
+| :white_check_mark:    | Transfer       | { name } & [TransferProps](https://ant.design/components/transfer/)                                    |
 
 ## Submitting / Form
 
@@ -114,9 +114,9 @@ The SubmitButton must be placed inside a `Form` component.
 ## Validation
 
 Showing validation messages can be accomplished with the  `Form.Item` component (or `FormItem` which is the same). It 
-- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red)
-- renders a green *success* icon messages if the field has been touched and the corresponding field does not have a validation error
-- exposes some layout features and a label (visit https://ant.design/components/form/ for the details)
+- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red).
+- renders a green *success* icon messages if it's `showValidateSuccess: boolean` prop is set to true, the field has been touched and the corresponding field does not have a validation error.
+- exposes some layout features and a label (visit https://ant.design/components/form/ for the details).
 
 ```jsx
 <Form.Item name="firstName" >
@@ -124,11 +124,11 @@ Showing validation messages can be accomplished with the  `Form.Item` component 
 </Form.Item>
 ```
 
-How the validation logic is done is not part of this library.
+How the validation logic is implemented is not part of this library.
 
 ## Lists / Nested objects
 
-Nested objects and arrays can be accessed with lodash-like bracket syntax das described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
+Nested objects and arrays can be accessed with lodash-like bracket syntax as described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
 
 ```jsx
 <InputField name="friends[0].firstName" />
