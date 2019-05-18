@@ -4,8 +4,8 @@ import * as React from "react";
 import { FormikFieldProps } from "./FieldProps";
 import { SliderProps } from "antd/lib/slider";
 
-export const Slider = ({ name, validate, ...restProps }: FormikFieldProps & SliderProps) => (
-  <Field name={name} validate={validate}>
+export const Slider = ({ name, ...restProps }: FormikFieldProps & SliderProps) => (
+  <Field name={name}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Slider
         value={value}

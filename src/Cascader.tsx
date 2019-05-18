@@ -4,8 +4,8 @@ import { Field, FieldProps } from "formik";
 import { FormikFieldProps } from "./FieldProps";
 import { CascaderProps } from 'antd/lib/cascader';
 
-export const Cascader = ({ name, validate, ...restProps }: FormikFieldProps & CascaderProps) => (
-    <Field name={name} validate={validate}>
+export const Cascader = ({ name, ...restProps }: FormikFieldProps & CascaderProps) => (
+    <Field name={name}>
         {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
             <$Cascader
                 value={value}

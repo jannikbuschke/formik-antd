@@ -4,8 +4,8 @@ import * as React from "react";
 import { FormikFieldProps } from "./FieldProps";
 import { RateProps } from "antd/lib/rate";
 
-export const Rate = ({  name,  validate,  ...restProps}: FormikFieldProps & RateProps) => (
-  <Field name={name} validate={validate}>
+export const Rate = ({ name, ...restProps }: FormikFieldProps & RateProps) => (
+  <Field name={name}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Rate
         value={value}

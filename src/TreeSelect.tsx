@@ -4,8 +4,8 @@ import * as React from "react";
 import { FormikFieldProps } from "./FieldProps";
 import { TreeSelectProps } from "antd/lib/tree-select";
 
-export const TreeSelect = ({ name, validate, ...restProps }: FormikFieldProps & TreeSelectProps & { children: React.ReactNode }) => (
-  <Field name={name} validate={validate}>
+export const TreeSelect = ({ name, ...restProps }: FormikFieldProps & TreeSelectProps & { children: React.ReactNode }) => (
+  <Field name={name}>
     {({ field: { value }, form }: FieldProps) => (
       <$TreeSelect
         value={value}
