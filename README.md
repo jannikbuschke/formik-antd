@@ -160,7 +160,7 @@ MIT
 
 ## Contributors
 
-Thanks goes to all contributors:
+Special thanks to all contributors:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
