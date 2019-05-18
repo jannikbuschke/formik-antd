@@ -20,3 +20,4 @@ export * from "./AutoComplete";
 export * from "./Form";
 export * from "./TreeSelect";
 export * from "./Mention";
+export * from "./Transfer";
