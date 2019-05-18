@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "jannikbuschke",
+      "name": "Jannik Buschke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5894881?v=4",
+      "profile": "https://www.jannikbuschke.de/blog",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "formik-antd",
+  "projectOwner": "jannikbuschke",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
