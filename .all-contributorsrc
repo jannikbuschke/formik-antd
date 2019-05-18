@@ -6,6 +6,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "jwmann",
+      "name": "James W Mann",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/436270?v=4",
+      "profile": "http://www.jameswmann.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "jannikbuschke",
       "name": "Jannik Buschke",
       "avatar_url": "https://avatars2.githubusercontent.com/u/5894881?v=4",
