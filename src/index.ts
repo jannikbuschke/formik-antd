@@ -5,7 +5,6 @@ export * from "./Input";
 export * from "./InputNumber";
 export * from "./Switch";
 export * from "./FormItem";
-export * from "./Action";
 export * from "./Select";
 export * from "./SubmitButton";
 export * from "./ResetButton";
