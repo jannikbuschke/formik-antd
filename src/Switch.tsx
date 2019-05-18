@@ -4,11 +4,7 @@ import * as React from "react";
 import { SwitchProps } from "antd/lib/switch";
 import { FormikFieldProps } from "./FieldProps";
 
-export const Switch = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & SwitchProps) => (
+export const Switch = ({ name, validate, ...restProps }: FormikFieldProps & SwitchProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Switch

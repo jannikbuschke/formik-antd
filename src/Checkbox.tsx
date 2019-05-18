@@ -5,11 +5,7 @@ import { CheckboxProps } from "antd/lib/checkbox/Checkbox";
 import { FormikFieldProps } from "./FieldProps";
 import { CheckboxGroupProps } from "antd/lib/checkbox/Group";
 
-export const Checkbox = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & CheckboxProps) => (
+export const Checkbox = ({ name, validate, ...restProps }: FormikFieldProps & CheckboxProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onChange } }: FieldProps) => (
       <$Checkbox
@@ -27,13 +23,13 @@ Checkbox.Group = ({
   validate,
   ...restProps
 }: FormikFieldProps & CheckboxGroupProps) => (
-  <Field name={name} validate={validate}>
-    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
-      <$Checkbox.Group
-        value={value}
-        onChange={v => setFieldValue(name, v)}
-        {...restProps}
-      />
-    )}
-  </Field>
-);
+    <Field name={name} validate={validate}>
+      {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+        <$Checkbox.Group
+          value={value}
+          onChange={v => setFieldValue(name, v)}
+          {...restProps}
+        />
+      )}
+    </Field>
+  );

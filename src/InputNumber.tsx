@@ -4,11 +4,7 @@ import * as React from "react";
 import { InputNumberProps } from "antd/lib/input-number";
 import { FormikFieldProps } from "./FieldProps";
 
-export const InputNumber = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & InputNumberProps) => (
+export const InputNumber = ({ name, validate, ...restProps }: FormikFieldProps & InputNumberProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
       <$InputNumber

@@ -5,11 +5,7 @@ import moment from "moment";
 import { FormikFieldProps } from "./FieldProps";
 import { TimePickerProps } from "antd/lib/time-picker";
 
-export const TimePicker = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & TimePickerProps) => (
+export const TimePicker = ({ name, validate, ...restProps }: FormikFieldProps & TimePickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$TimePicker

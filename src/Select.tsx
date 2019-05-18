@@ -4,12 +4,7 @@ import * as React from "react";
 import { SelectProps, OptionProps } from "antd/lib/select";
 import { FormikFieldProps } from "./FieldProps";
 
-export const Select = ({
-  name,
-  validate,
-  children,
-  ...restProps
-}: FormikFieldProps & SelectProps<any> & { children: React.ReactNode }) => {
+export const Select = ({ name, validate, children, ...restProps }: FormikFieldProps & SelectProps<any> & { children: React.ReactNode }) => {
   return (
     <Field name={name} validate={validate}>
       {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (

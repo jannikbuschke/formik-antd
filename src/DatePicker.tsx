@@ -5,11 +5,7 @@ import { DatePickerProps } from "antd/lib/date-picker/interface";
 import moment from "moment";
 import { FormikFieldProps } from "./FieldProps";
 
-export const DatePicker = ({
-  name,
-  validate,
-  ...restProps
-}: FormikFieldProps & DatePickerProps) => (
+export const DatePicker = ({ name, validate, ...restProps }: FormikFieldProps & DatePickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$DatePicker
