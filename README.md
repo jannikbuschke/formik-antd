@@ -164,7 +164,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt="James W Mann"/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td></tr></table>
+
+<table><tr><td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt="Jannik Buschke"/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td></tr><tr><td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt="James W Mann"/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

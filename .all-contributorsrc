@@ -13,6 +13,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jannikbuschke",
+      "name": "Jannik Buschke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5894881?v=4",
+      "profile": "https://www.jannikbuschke.de/blog",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
