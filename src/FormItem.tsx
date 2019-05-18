@@ -2,9 +2,11 @@ import * as React from "react";
 import get from "lodash.get";
 import { Field, FieldProps } from "formik";
 import { Form } from "antd";
-import { FormItemProps } from "antd/lib/form/FormItem";
+import { FormItemProps as $FormItemProps } from "antd/lib/form/FormItem";
 
-export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: { name: string; showValidateSuccess?: boolean; children: React.ReactNode } & FormItemProps) => (
+export type FormItemProps = { name: string; showValidateSuccess?: boolean; children: React.ReactNode } & $FormItemProps;
+
+export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: FormItemProps) => (
   <Field name={name}>
     {({ form: { errors = {}, touched = {} } }: FieldProps) => {
       const error = get(errors, name, undefined);

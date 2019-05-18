@@ -1,10 +1,12 @@
 import { Radio as $Radio } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { RadioGroupProps } from "antd/lib/radio/interface";
+import { RadioGroupProps as $RadioGroupProps } from "antd/lib/radio/interface";
 import { FormikFieldProps } from "./FieldProps";
 
-export const Radio = ({ name, ...restProps }: FormikFieldProps & RadioGroupProps) => (
+export type RadioGroupProps = FormikFieldProps & $RadioGroupProps;
+
+export const Radio = ({ name, ...restProps }: RadioGroupProps) => (
   <Field name={name}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Radio
@@ -16,7 +18,7 @@ export const Radio = ({ name, ...restProps }: FormikFieldProps & RadioGroupProps
   </Field>
 );
 
-Radio.Group = ({ name, ...restProps }: FormikFieldProps & RadioGroupProps) => (
+Radio.Group = ({ name, ...restProps }: RadioGroupProps) => (
   <Field name={name}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Radio.Group

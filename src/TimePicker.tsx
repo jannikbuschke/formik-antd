@@ -3,9 +3,11 @@ import { Field, FieldProps } from "formik";
 import * as React from "react";
 import moment from "moment";
 import { FormikFieldProps } from "./FieldProps";
-import { TimePickerProps } from "antd/lib/time-picker";
+import { TimePickerProps as $TimePickerProps } from "antd/lib/time-picker";
 
-export const TimePicker = ({ name, ...restProps }: FormikFieldProps & TimePickerProps) => (
+export type TimePickerProps = FormikFieldProps & $TimePickerProps;
+
+export const TimePicker = ({ name, ...restProps }: TimePickerProps) => (
   <Field name={name}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$TimePicker

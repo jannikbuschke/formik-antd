@@ -6,11 +6,11 @@ import { FormProps } from "antd/lib/form";
 import { FormItem } from './FormItem';
 
 export function Form(props: FormProps) {
-  return <Field>
+  return (<Field>
     {({ form: { handleReset, handleSubmit } }: FieldProps) => (
       <AntdForm onReset={handleReset} onSubmit={handleSubmit} {...props} />
     )}
-  </Field>
-}
+  </Field>)
+};
 
 Form.Item = FormItem;
