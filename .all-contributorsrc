@@ -6,6 +6,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "NileDaley",
+      "name": "Nile Daley",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15862011?v=4",
+      "profile": "https://github.com/NileDaley",
+"contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "jwmann",
       "name": "James W Mann",
       "avatar_url": "https://avatars2.githubusercontent.com/u/436270?v=4",
