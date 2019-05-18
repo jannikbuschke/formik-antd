@@ -1,4 +1,5 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 [CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
@@ -156,3 +157,15 @@ Typescript cannot (yet) enforce types of children. In the future this hopefully 
 ## License
 
 MIT
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt="Jannik Buschke"/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
