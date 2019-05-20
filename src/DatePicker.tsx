@@ -7,8 +7,8 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type DatePickerProps = FormikFieldProps & $DatePickerProps;
 
-export const DatePicker = ({ name, ...restProps }: DatePickerProps) => (
-  <Field name={name}>
+export const DatePicker = ({ name, validate, ...restProps }: DatePickerProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$DatePicker
         value={value ? moment(value) : undefined}

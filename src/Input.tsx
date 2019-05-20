@@ -6,8 +6,8 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type InputProps = FormikFieldProps & $InputProps;
 
-export const Input = ({ name, ...restProps }: InputProps) => (
-  <Field name={name}>
+export const Input = ({ name, validate, ...restProps }: InputProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input
         name={name}
@@ -22,8 +22,8 @@ export const Input = ({ name, ...restProps }: InputProps) => (
 
 export type PasswordProps = FormikFieldProps & $PasswordProps;
 
-Input.Password = ({ name, ...restProps }: PasswordProps) => (
-  <Field name={name}>
+Input.Password = ({ name, validate, ...restProps }: PasswordProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.Password
         name={name}
@@ -38,8 +38,8 @@ Input.Password = ({ name, ...restProps }: PasswordProps) => (
 
 export type TextAreaProps = FormikFieldProps & $TextAreaProps;
 
-Input.TextArea = ({ name, ...restProps }: TextAreaProps) => (
-  <Field name={name}>
+Input.TextArea = ({ name, validate, ...restProps }: TextAreaProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.TextArea
         name={name}
