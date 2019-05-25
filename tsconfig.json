@@ -2,7 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./lib",
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
     "jsx": "react",
     "skipLibCheck": true,
@@ -23,12 +26,7 @@
   },
   "exclude": [
     "lib",
+    "es",
     "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
   ]
 }

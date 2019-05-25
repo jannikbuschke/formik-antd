@@ -1,0 +1,59 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "NileDaley",
+      "name": "Nile Daley",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15862011?v=4",
+      "profile": "https://github.com/NileDaley",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jwmann",
+      "name": "James W Mann",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/436270?v=4",
+      "profile": "http://www.jameswmann.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jannikbuschke",
+      "name": "Jannik Buschke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5894881?v=4",
+      "profile": "https://www.jannikbuschke.de/blog",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "LarsJK",
+      "name": "Lars-Jørgen Kristiansen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1528255?v=4",
+      "profile": "https://github.com/LarsJK",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "voxtex",
+      "name": "Adam",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/735455?v=4",
+      "profile": "https://github.com/voxtex",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "formik-antd",
+  "projectOwner": "jannikbuschke",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
