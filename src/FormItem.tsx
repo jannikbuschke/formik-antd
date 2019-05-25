@@ -5,10 +5,10 @@ import { Form } from "antd";
 import { FormItemProps as $FormItemProps } from "antd/lib/form/FormItem";
 import { FormikFieldProps } from "./FieldProps";
 
-export type FormItemProps = { showValidateSuccess?: boolean; children: React.ReactNode } & FormikFieldProps & $FormItemProps;
+export type FormItemProps = { showValidateSuccess?: boolean; children: React.ReactNode } & { name: string } & $FormItemProps;
 
-export const FormItem = ({ name, validate, showValidateSuccess, children, ...restProps }: FormItemProps) => (
-  <Field name={name} validate={validate}>
+export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: FormItemProps) => (
+  <Field name={name}>
     {({ form: { errors = {}, touched = {} } }: FieldProps) => {
       const error = get(errors, name, undefined);
       const isTouched = get(touched, name, false) as boolean;
