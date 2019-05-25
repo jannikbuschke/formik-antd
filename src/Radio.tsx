@@ -6,8 +6,8 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type RadioGroupProps = FormikFieldProps & $RadioGroupProps;
 
-export const Radio = ({ name, ...restProps }: RadioGroupProps) => (
-  <Field name={name}>
+export const Radio = ({ name, validate, ...restProps }: RadioGroupProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Radio
         value={value}
@@ -18,8 +18,8 @@ export const Radio = ({ name, ...restProps }: RadioGroupProps) => (
   </Field>
 );
 
-Radio.Group = ({ name, ...restProps }: RadioGroupProps) => (
-  <Field name={name}>
+Radio.Group = ({ name, validate, ...restProps }: RadioGroupProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$Radio.Group
         value={value}
