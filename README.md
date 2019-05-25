@@ -10,14 +10,10 @@ The 1.0.0 release is coming soon to provide a solid and stable api. A preview re
 
 For the v1 release some breaking changes happened/are happening:
 
-<<<<<<< HEAD
-- The `validate` prop has been removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
+- ~~The `validate` prop has been removed (https://github.com/jannikbuschke/Formik-antd/issues/34).~~
 - The `SubmitButton` component only works inside a `Form` component.
 - Some undocumented/"unofficial" components have been removed (`Action` and `IDataSourceObject`)
-=======
-- The `validate` prop will be removed (https://github.com/jannikbuschke/Formik-antd/issues/34).
-- The `SubmitButton` component only works inside a `Form` component. 
->>>>>>> update readme
+
 
 I am currently looking for overall feedback.
 
