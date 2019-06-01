@@ -23,7 +23,8 @@ import { Formik } from "formik";
       <InputNumber name="age" min={0} />
       <Checkbox name="newsletter">Newsletter</Checkbox>
     </Form>
-  ) } />
+  )}
+/>
 ```
 
 ## Getting started
