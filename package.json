@@ -1,6 +1,6 @@
 {
   "name": "@jbuschke/formik-antd",
-  "version": "1.0.0-preview.4",
+  "version": "1.0.0",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
   "displayName": "formik-antd",
@@ -43,13 +43,13 @@
     "@types/node": "11.13.4",
     "@types/react": "16.8.11",
     "@types/react-dom": "16.8.4",
-    "antd": "3.16.2",
-    "formik": "1.5.2",
+    "antd": "3.18.2",
+    "formik": "1.5.7",
     "moment": "2.24.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "tslib": "1.9.3",
-    "typescript": "3.4.3"
+    "typescript": "3.4.5"
   },
   "repository": {
     "type": "git",

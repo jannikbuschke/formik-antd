@@ -6,8 +6,8 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type InputNumberProps = FormikFieldProps & $InputNumberProps;
 
-export const InputNumber = ({ name, ...restProps }: InputNumberProps) => (
-  <Field name={name}>
+export const InputNumber = ({ name, validate, ...restProps }: InputNumberProps) => (
+  <Field name={name} validate={validate}>
     {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
       <$InputNumber
         name={name}
