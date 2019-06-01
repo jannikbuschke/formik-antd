@@ -89,7 +89,7 @@ Showing validation messages can be accomplished with the `Form.Item` component (
 
 ```jsx
 <Form.Item name="firstName" >
-  <InputField name="firstName" />
+  <Input name="firstName" />
 </Form.Item>
 ```
 
