@@ -22,8 +22,8 @@ import { Formik } from "formik";
       <Input name="firstName" placeholder="First Name" />
       <InputNumber name="age" min={0} />
       <Checkbox name="newsletter">Newsletter</Checkbox>
-    </Form>)
-  } />
+    </Form>
+  ) } />
 ```
 
 ## Getting started
@@ -47,7 +47,7 @@ This library enriches several Ant Design components with a `name: string` proper
 
 Your components input/value state is now connected/synced with the corresponding `Formik` field!
 
-The Ant Design components are feature rich and provide a lot of props to customize their vizual presentation. These features and also their apis stay the same. Visit their [documentation](https://ant.design/components/auto-complete/) to learn more.
+The Ant Design components are feature rich and provide a lot of props to customize their vizual presentation. These features and also their apis stay the same. Visit their documentation to learn more.
 
 ## Core Components
 
@@ -76,11 +76,11 @@ To learn about Antd components just visit the official docs. Most supported comp
 
 ## Form- and Field-level Validation
 
-Formik provides form- and field-level validation callbacks to provide validation logic https://jaredpalmer.com/formik/docs/guides/validation. How to validate is neither part of formik nor of this library.
+Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
 
-Form-level validation is done as usual by setting formiks `validate` prop. Field-level validation is optional available on the components. Additional to the `name` prop formiks optional `validate?: (value: any) => undefined | string | Promise<any>` is added to all core components to allow field-level validation.
+Form-level validation is done by setting formiks `validate` prop. Field-level validation is optional available on the components. Additional to the `name` prop formiks optional `validate?: (value: any) => undefined | string | Promise<any>` is added to all core components to allow field-level validation.
 
-## Renderiong Validation Feedback
+## Rendering Validation Feedback
 
 Showing validation messages can be accomplished with the `Form.Item` component (or `FormItem` which is the same). It 
 - renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red).
