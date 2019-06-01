@@ -31,3 +31,6 @@ Select.renderOptions = (options: Option[]) =>
       {label}
     </$Select.Option>
   ));
+
+Select.Option = $Select.Option;
+Select.OptGroup = $Select.OptGroup;
