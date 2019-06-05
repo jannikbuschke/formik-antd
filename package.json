@@ -1,6 +1,6 @@
 {
-  "name": "@jeessy/formik-antd",
-  "version": "1.0.2",
+  "name": "@jbuschke/formik-antd",
+  "version": "1.0.0",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
   "displayName": "formik-antd",
@@ -53,6 +53,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeessy2/formik-antd/"
+    "url": "https://github.com/jannikbuschke/formik-antd/"
   }
 }
