@@ -18,3 +18,6 @@ export const TreeSelect = ({ name, validate, ...restProps }: TreeSelectProps) =>
     )}
   </Field>
 );
+
+
+TreeSelect.TreeNode = $TreeSelect.TreeNode;
