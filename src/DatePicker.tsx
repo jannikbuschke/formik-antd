@@ -4,13 +4,13 @@ import { Field, FieldProps } from "formik";
 import {
   DatePickerProps as $DatePickerProps,
   MonthPickerProps as $MonthPickerProps,
-  RangePickerProps as $RangePickerProps
+  RangePickerProps as $RangePickerProps,
+  WeekPickerProps as $WeekPickerProps,
 } from "antd/lib/date-picker/interface";
 import moment from "moment";
 import { FormikFieldProps } from "./FieldProps";
 
-const { MonthPicker: $MonthPicker, RangePicker: $RangePicker, WeekPicker: $WeekPicker } = $DatePicker;
-
+const { MonthPicker: $MonthPicker, RangePicker: $RangePicker, WeekPicker: $WeekPicker, } = $DatePicker;
 
 export type DatePickerProps = FormikFieldProps & $DatePickerProps;
 
@@ -46,6 +46,21 @@ DatePicker.RangePicker = ({ name, validate, ...restProps }: RangePickerProps) =>
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
       <$RangePicker
+        name={name}
+        value={value}
+        onChange={value => setFieldValue(name, value)}
+        {...restProps}
+      />
+    )}
+  </Field>
+);
+
+export type WeekPickerProps = FormikFieldProps & $WeekPickerProps;
+
+DatePicker.WeekPicker = ({ name, validate, ...restProps }: WeekPickerProps) => (
+  <Field name={name} validate={validate}>
+    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+      <$WeekPicker
         name={name}
         value={value}
         onChange={value => setFieldValue(name, value)}
