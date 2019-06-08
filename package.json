@@ -43,7 +43,7 @@
     "@types/node": "11.13.4",
     "@types/react": "16.8.11",
     "@types/react-dom": "16.8.4",
-    "antd": "3.18.2",
+    "antd": "3.19.2",
     "formik": "1.5.7",
     "moment": "2.24.0",
     "react": "16.8.6",
