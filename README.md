@@ -54,26 +54,29 @@ The Ant Design components are feature rich and provide a lot of props to customi
 
 To learn about Antd components just visit the official docs. Most supported components are found in the [Data Entry](https://ant.design/components/auto-complete/) section.
 
-|                       | Name           | Props                                                                                                            |
-| --------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------- |
-| :white_check_mark:    | AutoComplete   | { name, validate? } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                           |
-| :white_check_mark:    | Cascader       | { name, validate? } & [CascaderProps](https://ant.design/components/cascader/)                                    |
-| :white_check_mark:    | Checkbox       | { name, validate? } & [CheckboxProps](https://ant.design/components/checkbox/)                                    |
-| :white_check_mark:    | Checkbox.Group | { name, validate? } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)                |
-| :white_check_mark:    | DatePicker     | { name, validate? } & [DatePickerProps](https://ant.design/components/date-picker/)                               |
-| :white_check_mark:    | Input          | { name, validate? } & [InputProps](https://ant.design/components/input/)                                          |
-| :white_check_mark:    | InputNumber    | { name, validate? } & [InputNumberProps](https://ant.design/components/input-number/)                             |
-| :white_check_mark:    | Input.Password | { name, validate? } & [InputPasswordProps](https://ant.design/components/input/)                                  |
-| :white_check_mark:    | Input.TextArea | { name, validate? } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea)  |
-| :white_check_mark:    | Mention        | { name, validate? } & [MentionProps](https://ant.design/components/mention/)                                      |
-| :white_check_mark:    | Radio.Group    | { name, validate? } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                          |
-| :white_check_mark:    | Rate           | { name, validate? } & [RateProps](https://ant.design/components/rate/)                                            |
-| :white_check_mark:    | Select         | { name, validate? } & [SelectProps](https://ant.design/components/select/)                                        |
-| :white_check_mark:    | Slider         | { name, validate? } & [SliderProps](https://ant.design/components/slider/)                                        |
-| :white_check_mark:    | Switch         | { name, validate? } & [SwitchProps](https://ant.design/components/switch/)                                        |
-| :white_check_mark:    | TimePicker     | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)      |
-| :white_check_mark:    | Transfer       | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                    |
-| :white_check_mark:    | TreeSelect     | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                               |
+|                       | Name                       | Props                                                                                                            |
+| --------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| :white_check_mark:    | AutoComplete               | { name, validate? } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                          |
+| :white_check_mark:    | Cascader                   | { name, validate? } & [CascaderProps](https://ant.design/components/cascader/)                                   |
+| :white_check_mark:    | Checkbox                   | { name, validate? } & [CheckboxProps](https://ant.design/components/checkbox/)                                   |
+| :white_check_mark:    | Checkbox.Group             | { name, validate? } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)               |
+| :white_check_mark:    | DatePicker                 | { name, validate? } & [DatePickerProps](https://ant.design/components/date-picker/)                              |
+| :white_check_mark:    | DatePicker.WeekPicker      | { name, validate? } & [WeekPickerProps](https://ant.design/components/date-picker/#WeekPicker)                   |
+| :white_check_mark:    | DatePicker.RangePicker     | { name, validate? } & [RangePickerProps](https://ant.design/components/date-picker/#RangePicker)                 |
+| :white_check_mark:    | DatePicker.MonthPicker     | { name, validate? } & [MonthPickerProps](https://ant.design/components/date-picker/#MonthPicker)                 |
+| :white_check_mark:    | Input                      | { name, validate? } & [InputProps](https://ant.design/components/input/)                                         |
+| :white_check_mark:    | InputNumber                | { name, validate? } & [InputNumberProps](https://ant.design/components/input-number/)                            |
+| :white_check_mark:    | Input.Password             | { name, validate? } & [InputPasswordProps](https://ant.design/components/input/)                                 |
+| :white_check_mark:    | Input.TextArea             | { name, validate? } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea) |
+| :white_check_mark:    | Mention                    | { name, validate? } & [MentionProps](https://ant.design/components/mention/)                                     |
+| :white_check_mark:    | Radio.Group                | { name, validate? } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                         |
+| :white_check_mark:    | Rate                       | { name, validate? } & [RateProps](https://ant.design/components/rate/)                                           |
+| :white_check_mark:    | Select                     | { name, validate? } & [SelectProps](https://ant.design/components/select/)                                       |
+| :white_check_mark:    | Slider                     | { name, validate? } & [SliderProps](https://ant.design/components/slider/)                                       |
+| :white_check_mark:    | Switch                     | { name, validate? } & [SwitchProps](https://ant.design/components/switch/)                                       |
+| :white_check_mark:    | TimePicker                 | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
+| :white_check_mark:    | Transfer                   | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
+| :white_check_mark:    | TreeSelect                 | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
 ## Form- and Field-level Validation
 
