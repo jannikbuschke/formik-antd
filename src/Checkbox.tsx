@@ -9,11 +9,14 @@ export type CheckboxProps = FormikFieldProps & $CheckboxProps;
 
 export const Checkbox = ({ name, validate, ...restProps }: CheckboxProps) => (
   <Field name={name} validate={validate}>
-    {({ field: { value, onChange } }: FieldProps) => (
+    {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$Checkbox
         name={name}
         checked={value}
-        onChange={onChange}
+        onChange={v => {
+          setFieldValue(name, v.target.checked)
+          setFieldTouched(name, true)
+        }}
         {...restProps}
       />
     )}
@@ -24,10 +27,13 @@ export type CheckboxGroupProps = FormikFieldProps & $CheckboxGroupProps;
 
 Checkbox.Group = ({ name, validate, ...restProps }: CheckboxGroupProps) => (
   <Field name={name} validate={validate}>
-    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+    {({ field: { value }, form: { setFieldValue, setFieldTouched, } }: FieldProps) => (
       <$Checkbox.Group
         value={value}
-        onChange={v => setFieldValue(name, v)}
+        onChange={v => {
+          setFieldValue(name, v);
+          setFieldTouched(name, true)
+        }}
         {...restProps}
       />
     )}
