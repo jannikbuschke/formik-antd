@@ -9,10 +9,13 @@ export type TimePickerProps = FormikFieldProps & $TimePickerProps;
 
 export const TimePicker = ({ name, validate, ...restProps }: TimePickerProps) => (
   <Field name={name} validate={validate}>
-    {({ field: { value }, form: { setFieldValue } }: FieldProps) => (
+    {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$TimePicker
         value={value ? moment(value) : undefined}
-        onChange={date => setFieldValue(name, date ? date.toISOString() : null)}
+        onChange={date => {
+          setFieldValue(name, date ? date.toISOString() : null);
+          setFieldTouched(name, true);
+        }}
         {...restProps}
       />
     )}
