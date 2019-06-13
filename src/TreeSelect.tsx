@@ -11,12 +11,9 @@ export const TreeSelect = ({ name, validate, ...restProps }: TreeSelectProps) =>
     {({ field: { value }, form }: FieldProps) => (
       <$TreeSelect
         value={value}
+        onChange={e => form.setFieldValue(name, e.valueOf())}
+        onBlur={e => form.setFieldTouched(name)}
         {...restProps}
-        onBlur={() => form.setFieldTouched(name)}
-        onChange={(value, node, extra) => {
-          form.setFieldValue(name, value);
-          restProps.onChange && restProps.onChange(value, node, extra)
-        }}
       />
     )}
   </Field>
