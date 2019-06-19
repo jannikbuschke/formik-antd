@@ -32,7 +32,7 @@ import { Formik } from "formik";
 ```
 npx create-react-app my-app
 cd my-app
-npm install Formik antd @jbuschke/formik-antd
+npm install formik antd @jbuschke/formik-antd
 npm run start
 ```
 
