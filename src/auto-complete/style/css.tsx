@@ -1,1 +1,1 @@
-import "antd/auto-complete/style/css.js"
+import "antd/lib/auto-complete/style/css.js"
