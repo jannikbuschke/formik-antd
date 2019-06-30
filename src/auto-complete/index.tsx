@@ -18,3 +18,5 @@ export const AutoComplete = ({ name, validate, ...restProps }: AutoCompleteProps
     )}
   </Field>
 );
+
+export default AutoComplete
