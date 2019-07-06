@@ -9,7 +9,7 @@ export * from "./Select";
 export * from "./SubmitButton";
 export * from "./ResetButton";
 export * from "./HtmlText";
-export * from "./Checkbox";
+export * from "./checkbox";
 export * from "./Radio";
 export * from "./auto-complete";
 export * from "./Rate";
