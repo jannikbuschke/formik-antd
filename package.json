@@ -12,6 +12,7 @@
     "design",
     "form"
   ],
+  "sideEffects": false,
   "license": "MIT",
   "private": false,
   "files": [
