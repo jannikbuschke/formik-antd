@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Cascader as $Cascader } from "antd";
 import { Field, FieldProps } from "formik";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 import { CascaderProps as $CascaderProps } from 'antd/lib/cascader';
 
 export type CascaderProps = FormikFieldProps & $CascaderProps;
@@ -20,3 +20,5 @@ export const Cascader = ({ name, validate, ...restProps }: CascaderProps) => (
         )}
     </Field>
 );
+
+export default Cascader

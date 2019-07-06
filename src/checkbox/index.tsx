@@ -2,7 +2,7 @@ import * as React from "react";
 import { Checkbox as $Checkbox } from "antd";
 import { Field, FieldProps } from "formik";
 import { CheckboxProps as $CheckboxProps } from "antd/lib/checkbox/Checkbox";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 import { CheckboxGroupProps as $CheckboxGroupProps } from "antd/lib/checkbox/Group";
 
 export type CheckboxProps = FormikFieldProps & $CheckboxProps;
@@ -22,6 +22,8 @@ export const Checkbox = ({ name, validate, ...restProps }: CheckboxProps) => (
     )}
   </Field>
 );
+
+export default Checkbox
 
 export type CheckboxGroupProps = FormikFieldProps & $CheckboxGroupProps;
 

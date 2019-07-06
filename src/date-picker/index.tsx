@@ -8,7 +8,7 @@ import {
   WeekPickerProps as $WeekPickerProps,
 } from "antd/lib/date-picker/interface";
 import moment from "moment";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 
 const { MonthPicker: $MonthPicker, RangePicker: $RangePicker, WeekPicker: $WeekPicker, } = $DatePicker;
 
@@ -28,6 +28,8 @@ export const DatePicker = ({ name, validate, ...restProps }: DatePickerProps) =>
     )}
   </Field>
 );
+
+export default DatePicker
 
 export type MonthPickerProps = FormikFieldProps & $MonthPickerProps;
 
