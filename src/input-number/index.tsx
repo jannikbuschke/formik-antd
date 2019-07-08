@@ -2,7 +2,7 @@ import { InputNumber as $InputNumber } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { InputNumberProps as $InputNumberProps } from "antd/lib/input-number";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 
 export type InputNumberProps = FormikFieldProps & $InputNumberProps;
 
@@ -19,3 +19,5 @@ export const InputNumber = ({ name, validate, ...restProps }: InputNumberProps) 
     )}
   </Field>
 );
+
+export default InputNumber

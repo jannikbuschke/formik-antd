@@ -2,7 +2,7 @@ import { Mention as $Mention } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { MentionProps as $MentionProps } from "antd/lib/mention";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 
 const { toContentState, toString } = $Mention;
 
@@ -23,6 +23,7 @@ export const Mention = ({ name, validate, ...restProps }: MentionProps) => {
     </Field>
   );
 }
+export default Mention
 
 type InternalProps = { value: any, onChange: (v: string) => void; } & Pick<MentionProps, Exclude<keyof MentionProps, "onChange">>;
 

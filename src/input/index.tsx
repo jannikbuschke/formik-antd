@@ -2,7 +2,7 @@ import { Input as $Input } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { InputProps as $InputProps, PasswordProps as $PasswordProps, TextAreaProps as $TextAreaProps } from "antd/lib/input";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 
 export type InputProps = FormikFieldProps & $InputProps;
 
@@ -19,6 +19,8 @@ export const Input = ({ name, validate, ...restProps }: InputProps) => (
     )}
   </Field>
 );
+
+export default Input
 
 export type PasswordProps = FormikFieldProps & $PasswordProps;
 

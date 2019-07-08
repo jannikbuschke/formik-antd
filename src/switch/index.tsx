@@ -1,16 +1,16 @@
-import { Transfer as $Transfer } from "antd";
+import { Switch as $Switch } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
-import { FormikFieldProps } from "./FieldProps";
-import { TransferProps as $TransferProps } from "antd/lib/transfer";
+import { SwitchProps as $SwitchProps } from "antd/lib/switch";
+import { FormikFieldProps } from "../FieldProps";
 
-export type TransferProps = FormikFieldProps & $TransferProps;
+export type SwitchProps = FormikFieldProps & $SwitchProps;
 
-export const Transfer = ({ name, validate, ...restProps }: TransferProps) => (
+export const Switch = ({ name, validate, ...restProps }: SwitchProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
-      <$Transfer
-        targetKeys={value || []}
+      <$Switch
+        checked={value}
         onChange={v => {
           setFieldValue(name, v);
           setFieldTouched(name, true)
@@ -20,3 +20,5 @@ export const Transfer = ({ name, validate, ...restProps }: TransferProps) => (
     )}
   </Field>
 );
+
+export default Switch

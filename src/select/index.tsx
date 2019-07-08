@@ -2,7 +2,7 @@ import { Select as $Select } from "antd";
 import { Field, FieldProps } from "formik";
 import * as React from "react";
 import { SelectProps as $SelectProps, OptionProps } from "antd/lib/select";
-import { FormikFieldProps } from "./FieldProps";
+import { FormikFieldProps } from "../FieldProps";
 
 export type SelectProps = FormikFieldProps & $SelectProps<any> & { children: React.ReactNode };
 
@@ -25,6 +25,8 @@ export const Select = ({ name, validate, children, onChange, ...restProps }: Sel
     </Field>
   );
 };
+
+export default Select
 
 type Option = OptionProps & { label: React.ReactNode | string | number };
 
