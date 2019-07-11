@@ -17,3 +17,5 @@ export const ResetButton = ({ children, ...restProps }: ButtonProps) => (
     )}
   </Field>
 );
+
+export default ResetButton

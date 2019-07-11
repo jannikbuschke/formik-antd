@@ -20,3 +20,5 @@ export const SubmitButton = ({ children, onSuccess, ...restProps }: SubmitButton
     )}
   </Field>
 );
+
+export default SubmitButton
