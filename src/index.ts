@@ -4,7 +4,7 @@ export * from "./FormikDebug";
 export * from "./input";
 export * from "./input-number";
 export * from "./switch";
-export * from "./FormItem";
+export * from "./form-item";
 export * from "./select";
 export * from "./submit-button";
 export * from "./reset-button";
