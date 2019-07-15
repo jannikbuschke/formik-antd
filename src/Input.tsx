@@ -6,13 +6,16 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type InputProps = FormikFieldProps & $InputProps;
 
-export const Input = ({ name, validate, ...restProps }: InputProps) => (
+export const Input = ({ name, validate, onChange: $onChange, ...restProps }: InputProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input
         name={name}
         value={value}
-        onChange={onChange}
+        onChange={(event) => {
+          onChange
+          $onChange && $onChange(event)
+        }}
         onBlur={onBlur}
         {...restProps}
       />
