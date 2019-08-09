@@ -6,12 +6,15 @@ import { FormikFieldProps } from "./FieldProps";
 
 export type SelectProps = FormikFieldProps & $SelectProps<any> & { children: React.ReactNode };
 
-export const Select = ({ name, validate, children, ...restProps }: SelectProps) => {
+export const Select = ({ name, validate, children, onChange, ...restProps }: SelectProps) => {
   return (
     <Field name={name} validate={validate}>
       {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
         <$Select
-          onChange={v => setFieldValue(name, v)}
+          onChange={(value, option) => {
+            setFieldValue(name, value)
+            onChange && onChange(value, option)
+          }}
           onBlur={() => setFieldTouched(name)}
           value={value}
           {...restProps}
