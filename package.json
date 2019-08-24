@@ -1,6 +1,6 @@
 {
   "name": "@jbuschke/formik-antd",
-  "version": "1.2.2",
+  "version": "1.3.0-beta.10",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
   "displayName": "formik-antd",
@@ -12,6 +12,7 @@
     "design",
     "form"
   ],
+  "sideEffects": false,
   "license": "MIT",
   "private": false,
   "files": [
