@@ -6,19 +6,25 @@ import { FormikFieldProps } from "../FieldProps";
 
 export type SwitchProps = FormikFieldProps & $SwitchProps;
 
-export const Switch = ({ name, validate, ...restProps }: SwitchProps) => (
-  <Field name={name} validate={validate}>
-    {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
-      <$Switch
-        checked={value}
-        onChange={v => {
-          setFieldValue(name, v);
-          setFieldTouched(name, true)
-        }}
-        {...restProps}
-      />
-    )}
-  </Field>
-);
+export const Switch = ({ name, validate, ...restProps }: SwitchProps) =>
+  name ? (
+    <Field name={name} validate={validate}>
+      {({
+        field: { value },
+        form: { setFieldValue, setFieldTouched }
+      }: FieldProps) => (
+        <$Switch
+          checked={value}
+          onChange={v => {
+            setFieldValue(name, v);
+            setFieldTouched(name, true);
+          }}
+          {...restProps}
+        />
+      )}
+    </Field>
+  ) : (
+    <$Switch {...restProps} />
+  );
 
-export default Switch
+export default Switch;

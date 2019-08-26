@@ -8,10 +8,13 @@ const { toContentState, toString } = $Mention;
 
 export type MentionProps = FormikFieldProps & $MentionProps;
 
-export const Mention = ({ name, validate, ...restProps }: MentionProps) => {
-  return (
+export const Mention = ({ name, validate, ...restProps }: MentionProps) =>
+  name ? (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+      {({
+        field: { value },
+        form: { setFieldValue, setFieldTouched }
+      }: FieldProps) => (
         <Internal
           name={name}
           value={value}
@@ -21,22 +24,28 @@ export const Mention = ({ name, validate, ...restProps }: MentionProps) => {
         />
       )}
     </Field>
+  ) : (
+    <Internal {...restProps} />
   );
-}
-export default Mention
+export default Mention;
 
-type InternalProps = { value: any, onChange: (v: string) => void; } & Pick<MentionProps, Exclude<keyof MentionProps, "onChange">>;
+type InternalProps = { value?: any; onChange?: (v: string) => void } & Pick<
+  MentionProps,
+  Exclude<keyof MentionProps, "onChange">
+>;
 
 const Internal = ({ value, onChange, onBlur, ...restProps }: InternalProps) => {
-  const [editorState, setEditorState] = React.useState(toContentState(value || ""));
+  const [editorState, setEditorState] = React.useState(
+    toContentState(value || "")
+  );
   return (
     <$Mention
       value={editorState}
       onChange={v => {
         setEditorState(v);
-        onChange(toString(v));
+        onChange && onChange(toString(v));
       }}
       {...restProps}
     />
   );
-}
+};

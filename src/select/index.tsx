@@ -4,16 +4,26 @@ import * as React from "react";
 import { SelectProps as $SelectProps, OptionProps } from "antd/lib/select";
 import { FormikFieldProps } from "../FieldProps";
 
-export type SelectProps = FormikFieldProps & $SelectProps<any> & { children: React.ReactNode };
+export type SelectProps = FormikFieldProps &
+  $SelectProps<any> & { children: React.ReactNode };
 
-export const Select = ({ name, validate, children, onChange, ...restProps }: SelectProps) => {
-  return (
+export const Select = ({
+  name,
+  validate,
+  children,
+  onChange,
+  ...restProps
+}: SelectProps) =>
+  name ? (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+      {({
+        field: { value },
+        form: { setFieldValue, setFieldTouched }
+      }: FieldProps) => (
         <$Select
           onChange={(value, option) => {
-            setFieldValue(name, value)
-            onChange && onChange(value, option)
+            setFieldValue(name, value);
+            onChange && onChange(value, option);
           }}
           onBlur={() => setFieldTouched(name)}
           value={value}
@@ -23,10 +33,11 @@ export const Select = ({ name, validate, children, onChange, ...restProps }: Sel
         </$Select>
       )}
     </Field>
+  ) : (
+    <$Select {...restProps}>{children}</$Select>
   );
-};
 
-export default Select
+export default Select;
 
 type Option = OptionProps & { label: React.ReactNode | string | number };
 
