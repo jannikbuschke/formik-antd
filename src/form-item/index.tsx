@@ -20,7 +20,7 @@ export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: 
           help={(hasError && <li>{error}</li>) || (isValid && "")}
           {...restProps}
         >
-          {children}
+          {React.isValidElement(children) ? React.cloneElement(children, { name }) : children}
         </Form.Item>
       );
     }}
