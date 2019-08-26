@@ -8,7 +8,7 @@ import reach from "yup/lib/util/reach";
 
 export type FormItemProps = {
   showValidateSuccess?: boolean;
-  children: React.ReactNode;
+  children: React.ReactNode | ((props: FieldProps) => React.ReactNode);
 } & { name: string } & $FormItemProps;
 
 export const FormItem = connect<FormItemProps>(
@@ -51,9 +51,13 @@ export const FormItem = connect<FormItemProps>(
             help={(hasError && <li>{error}</li>) || (isValid && "")}
             {...restProps}
           >
-            {React.isValidElement(children)
-              ? React.cloneElement<any>(children, { name })
-              : children}
+            {React.isValidElement(children) ? (
+              React.cloneElement<any>(children, { name })
+            ) : typeof children === "function" ? (
+              <Field name={name}>{children}</Field>
+            ) : (
+              children
+            )}
           </Form.Item>
         );
       }}
