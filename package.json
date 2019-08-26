@@ -50,7 +50,8 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "tslib": "1.9.3",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "yup": "^0.27.0"
   },
   "repository": {
     "type": "git",
