@@ -6,14 +6,15 @@ import { FormikFieldProps } from "../FieldProps";
 
 export type RadioGroupProps = FormikFieldProps & $RadioGroupProps;
 
-export const Radio = ({ name, validate, ...restProps }: RadioGroupProps) => (
+export const Radio = ({ name, validate, onChange, ...restProps }: RadioGroupProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$Radio
         value={value}
-        onChange={e => {
-          setFieldValue(name, e.target.value);
+        onChange={event => {
+          setFieldValue(name, event.target.value)
           setFieldTouched(name, true)
+          onChange && onChange(event)
         }}
         {...restProps}
       />
@@ -23,14 +24,15 @@ export const Radio = ({ name, validate, ...restProps }: RadioGroupProps) => (
 
 export default Radio
 
-Radio.Group = ({ name, validate, ...restProps }: RadioGroupProps) => (
+Radio.Group = ({ name, validate, onChange, ...restProps }: RadioGroupProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$Radio.Group
         value={value}
-        onChange={e => {
-          setFieldValue(name, e.target.value);
+        onChange={event => {
+          setFieldValue(name, event.target.value)
           setFieldTouched(name, true)
+          onChange && onChange(event)
         }}
         {...restProps}
       />
