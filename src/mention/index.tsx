@@ -8,15 +8,21 @@ const { toContentState, toString } = $Mention;
 
 export type MentionProps = FormikFieldProps & $MentionProps;
 
-export const Mention = ({ name, validate, ...restProps }: MentionProps) => {
+export const Mention = ({ name, validate, onChange, onBlur, ...restProps }: MentionProps) => {
   return (
     <Field name={name} validate={validate}>
       {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
         <Internal
           name={name}
           value={value}
-          onChange={v => setFieldValue(name, v)}
-          onBlur={() => setFieldTouched(name)}
+          onChange={value => {
+            setFieldValue(name, value)
+            onChange && onChange(value)
+          }}
+          onBlur={event => {
+            setFieldTouched(name)
+            onBlur && onBlur(event)
+          }}
           {...restProps}
         />
       )}

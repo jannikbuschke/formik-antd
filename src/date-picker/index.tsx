@@ -14,14 +14,15 @@ const { MonthPicker: $MonthPicker, RangePicker: $RangePicker, WeekPicker: $WeekP
 
 export type DatePickerProps = FormikFieldProps & $DatePickerProps;
 
-export const DatePicker = ({ name, validate, ...restProps }: DatePickerProps) => (
+export const DatePicker = ({ name, validate, onChange, ...restProps }: DatePickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$DatePicker
         value={value ? moment(value) : undefined}
-        onChange={date => {
+        onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null);
           setFieldTouched(name, true)
+          onChange && onChange(date, dateString)
         }}
         {...restProps}
       />
@@ -33,14 +34,15 @@ export default DatePicker
 
 export type MonthPickerProps = FormikFieldProps & $MonthPickerProps;
 
-DatePicker.MonthPicker = ({ name, validate, ...restProps }: MonthPickerProps) => (
+DatePicker.MonthPicker = ({ name, validate, onChange, ...restProps }: MonthPickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$MonthPicker
         value={value ? moment(value) : undefined}
-        onChange={date => {
+        onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null);
           setFieldTouched(name, true)
+          onChange && onChange(date, dateString)
         }}
         {...restProps}
       />
@@ -50,15 +52,16 @@ DatePicker.MonthPicker = ({ name, validate, ...restProps }: MonthPickerProps) =>
 
 export type RangePickerProps = FormikFieldProps & $RangePickerProps;
 
-DatePicker.RangePicker = ({ name, validate, ...restProps }: RangePickerProps) => (
+DatePicker.RangePicker = ({ name, validate, onChange, ...restProps }: RangePickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$RangePicker
         name={name}
         value={value}
-        onChange={value => {
-          setFieldValue(name, value);
+        onChange={(dates, dateStrings) => {
+          setFieldValue(name, dates);
           setFieldTouched(name, true)
+          onChange && onChange(dates, dateStrings)
         }}
         {...restProps}
       />
@@ -68,15 +71,16 @@ DatePicker.RangePicker = ({ name, validate, ...restProps }: RangePickerProps) =>
 
 export type WeekPickerProps = FormikFieldProps & $WeekPickerProps;
 
-DatePicker.WeekPicker = ({ name, validate, ...restProps }: WeekPickerProps) => (
+DatePicker.WeekPicker = ({ name, validate, onChange, ...restProps }: WeekPickerProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$WeekPicker
         name={name}
         value={value}
-        onChange={value => {
-          setFieldValue(name, value);
+        onChange={(date, dateString) => {
+          setFieldValue(name, date);
           setFieldTouched(name, true)
+          onChange && onChange(date, dateString)
         }}
         {...restProps}
       />

@@ -6,14 +6,20 @@ import { FormikFieldProps } from "../FieldProps";
 
 export type InputProps = FormikFieldProps & $InputProps;
 
-export const Input = ({ name, validate, ...restProps }: InputProps) => (
+export const Input = ({ name, validate, onChange: $onChange, onBlur: $onBlur, ...restProps }: InputProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input
         name={name}
         value={value}
-        onChange={onChange}
-        onBlur={onBlur}
+        onChange={event => {
+          onChange(event)
+          $onChange && $onChange(event)
+        }}
+        onBlur={event => {
+          onBlur(event)
+          $onBlur && $onBlur(event)
+        }}
         {...restProps}
       />
     )}
@@ -24,14 +30,20 @@ export default Input
 
 export type PasswordProps = FormikFieldProps & $PasswordProps;
 
-Input.Password = ({ name, validate, ...restProps }: PasswordProps) => (
+Input.Password = ({ name, validate, onChange: $onChange, onBlur: $onBlur, ...restProps }: PasswordProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.Password
         name={name}
         value={value}
-        onChange={onChange}
-        onBlur={onBlur}
+        onChange={event => {
+          onChange(event)
+          $onChange && $onChange(event)
+        }}
+        onBlur={event => {
+          onBlur(event)
+          $onBlur && $onBlur(event)
+        }}
         {...restProps}
       />
     )}
@@ -40,14 +52,20 @@ Input.Password = ({ name, validate, ...restProps }: PasswordProps) => (
 
 export type TextAreaProps = FormikFieldProps & $TextAreaProps;
 
-Input.TextArea = ({ name, validate, ...restProps }: TextAreaProps) => (
+Input.TextArea = ({ name, validate, onChange: $onChange, onBlur: $onBlur, ...restProps }: TextAreaProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.TextArea
         name={name}
         value={value}
-        onChange={onChange}
-        onBlur={onBlur}
+        onChange={event => {
+          onChange(event)
+          $onChange && $onChange(event)
+        }}
+        onBlur={event => {
+          onBlur(event)
+          $onBlur && $onBlur(event)
+        }}
         {...restProps}
       />
     )}

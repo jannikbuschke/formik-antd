@@ -6,13 +6,19 @@ import { AutoCompleteProps as $AutoCompleteProps } from "antd/lib/auto-complete"
 
 export type AutoCompleteProps = FormikFieldProps & $AutoCompleteProps;
 
-export const AutoComplete = ({ name, validate, ...restProps }: AutoCompleteProps) => (
+export const AutoComplete = ({ name, validate, onChange, onBlur, ...restProps }: AutoCompleteProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form }: FieldProps) => (
       <$AutoComplete
         value={value}
-        onChange={e => form.setFieldValue(name, e.valueOf())}
-        onBlur={e => form.setFieldTouched(name)}
+        onChange={value => {
+          form.setFieldValue(name, value.valueOf())
+          onChange && onChange(value)
+        }}
+        onBlur={value => {
+          form.setFieldTouched(name)
+          onBlur && onBlur(value)
+        }}
         {...restProps}
       />
     )}

@@ -6,14 +6,15 @@ import { SliderProps as $SliderProps } from "antd/lib/slider";
 
 export type SliderProps = FormikFieldProps & $SliderProps;
 
-export const Slider = ({ name, validate, ...restProps }: SliderProps) => (
+export const Slider = ({ name, validate, onChange, ...restProps }: SliderProps) => (
   <Field name={name} validate={validate}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <$Slider
         value={value}
-        onChange={e => {
-          setFieldValue(name, e.valueOf());
-          setFieldTouched(name, true);
+        onChange={value => {
+          setFieldValue(name, value.valueOf())
+          setFieldTouched(name, true)
+          onChange && onChange(value)
         }}
         {...restProps}
       />
