@@ -6,3 +6,5 @@ export const HtmlText = (props: { name: string }) => (
     {({ field }: FieldProps) => field.value}
   </Field>
 );
+
+export default HtmlText

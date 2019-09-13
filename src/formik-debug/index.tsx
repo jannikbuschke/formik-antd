@@ -15,3 +15,5 @@ export const FormikDebug = (
       <Field>{({ form }: any) => JSON.stringify(form, null, 2)}</Field>
     </pre>
   ) : null;
+
+export default FormikDebug

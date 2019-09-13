@@ -1,6 +1,6 @@
 export * from "./date-picker";
 export * from "./time-picker";
-export * from "./FormikDebug";
+export * from "./formik-debug";
 export * from "./input";
 export * from "./input-number";
 export * from "./switch";
@@ -8,7 +8,7 @@ export * from "./form-item";
 export * from "./select";
 export * from "./submit-button";
 export * from "./reset-button";
-export * from "./HtmlText";
+export * from "./html-text";
 export * from "./checkbox";
 export * from "./radio";
 export * from "./auto-complete";
