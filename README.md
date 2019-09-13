@@ -132,6 +132,59 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 <InputField name="friends[0].firstName" />
 ```
 
+## Treeshaking / ES imports
+
+```
+npm install babel-plugin-import customize-cra react-app-rewired --save-dev
+```
+`config-overrides.js`
+```js
+const path = require('path')
+const { override, fixBabelImports } = require('customize-cra')
+
+module.exports = override(
+    fixBabelImports('antd', {
+      libraryName: 'antd',
+      libraryDirectory: 'es',
+      style: true,
+    }),
+    fixBabelImports('formik-antd', {
+      libraryName: '@jbuschke/formik-antd',
+      style: true,
+      libraryDirectory: 'es',
+    }),
+    // function (config, env) {
+    //     const alias = (config.resolve.alias || {})
+    //     alias['@ant-design/icons/lib/dist$'] = path.resolve(__dirname, './src/icons.ts')
+    //     config.resolve.alias = alias
+    //     return config
+    //   }
+  );
+```
+`package.json`
+```json
+// ...
+  "scripts": {
+    "start": "react-app-rewired start"
+    // ...
+  }
+```
+
+`.babelrc`
+```json
+{
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": "css"
+        }
+      ] // `style: true` for less
+    ]
+  }
+```
 ## Playground & Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/Formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
