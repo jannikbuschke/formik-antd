@@ -15,7 +15,7 @@ export * from "./auto-complete";
 export * from "./rate";
 export * from "./slider";
 export * from "./cascader";
-export * from "./Form";
+export * from "./form";
 export * from "./tree-select";
 export * from "./mention";
 export * from "./transfer";
