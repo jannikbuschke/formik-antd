@@ -10,7 +10,10 @@ export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: 
   <Field name={name}>
     {({ form: { errors = {}, touched = {} } }: FieldProps) => {
       const error = get(errors, name, undefined);
-      const isTouched = get(touched, name, false) as boolean;
+      let isTouched = get(touched, name, false) as boolean | boolean[];
+      if (Array.isArray(isTouched)) {
+        isTouched = isTouched.reduce((acc, value) => acc || value);
+      }
       const hasError = error !== undefined && isTouched;
       const isValid = !error && isTouched;
       return (
