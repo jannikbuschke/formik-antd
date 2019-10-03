@@ -61,3 +61,44 @@ test("handles changes on multiselect without prop-types error", async () => {
   //@ts-ignore
   console.error.mockRestore();
 });
+
+test("displays validation result on nested input", async () => {
+  const validate = () => "error";
+  const { getByTestId, queryByText } = render(
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      <Form>
+        <FormItem name="test" validate={validate}>
+          <Input name="test" data-testid="input" />
+        </FormItem>
+        <SubmitButton data-testid="submit" />
+      </Form>
+    </Formik>
+  );
+  expect(queryByText("error")).not.toBeInTheDocument();
+  fireEvent.change(getByTestId("input"), {
+    target: { name: "test", value: "test" }
+  });
+  fireEvent.blur(getByTestId("input"));
+  fireEvent.click(getByTestId("submit"));
+  await waitForDomChange();
+  expect(queryByText("error")).toBeInTheDocument();
+});
+
+test("displays validation success ", async () => {
+  const validate = () => undefined;
+  const { getByTestId, queryByLabelText } = render(
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      <Form>
+        <FormItem name="test" validate={validate} showValidateSuccess>
+          <Input name="test" data-testid="input" />
+        </FormItem>
+      </Form>
+    </Formik>
+  );
+  expect(queryByLabelText("icon: check-circle")).not.toBeInTheDocument();
+  fireEvent.change(getByTestId("input"), {
+    target: { name: "test", value: "test" }
+  });
+  fireEvent.blur(getByTestId("input"));
+  expect(queryByLabelText("icon: check-circle")).toBeInTheDocument();
+});

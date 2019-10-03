@@ -83,6 +83,13 @@ To learn about Antd components just visit the official docs. Most supported comp
 Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
 
 Form-level validation is done by setting formiks `validate` prop. Field-level validation is optional available on the components. Additional to the `name` prop formiks optional `validate?: (value: any) => undefined | string | Promise<any>` is added to all core components to allow field-level validation.
+There is one special case to be aware of when using field-level validation: When using the `Form.Item` component with another Antd-field component, the `validate` prop has to be added to the `Form.Item`, not the input component:
+
+```jsx
+<Form.Item name="firstName" validate={validator}>
+  <Input name="firstName" />
+</Form.Item>
+```
 
 ## Rendering Validation Feedback
 
