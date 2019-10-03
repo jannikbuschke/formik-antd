@@ -1,16 +1,22 @@
 import * as React from "react";
-import get from "lodash.get";
-import { Field, FieldProps } from "formik";
+import { Field, FieldProps, getIn } from "formik";
 import { Form } from "antd";
 import { FormItemProps as $FormItemProps } from "antd/lib/form/FormItem";
+export type FormItemProps = {
+  showValidateSuccess?: boolean;
+  children: React.ReactNode;
+} & { name: string } & $FormItemProps;
 
-export type FormItemProps = { showValidateSuccess?: boolean; children: React.ReactNode } & { name: string } & $FormItemProps;
-
-export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: FormItemProps) => (
+export const FormItem = ({
+  name,
+  showValidateSuccess,
+  children,
+  ...restProps
+}: FormItemProps) => (
   <Field name={name}>
     {({ form: { errors = {}, touched = {} } }: FieldProps) => {
-      const error = get(errors, name, undefined);
-      let isTouched = get(touched, name, false) as boolean | boolean[];
+      const error = getIn(errors, name, undefined);
+      let isTouched = getIn(touched, name, false) as boolean | boolean[];
       if (Array.isArray(isTouched)) {
         isTouched = isTouched.reduce((acc, value) => acc || value);
       }
@@ -18,7 +24,13 @@ export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: 
       const isValid = !error && isTouched;
       return (
         <Form.Item
-          validateStatus={hasError ? "error" : (isValid && showValidateSuccess) ? "success" : undefined}
+          validateStatus={
+            hasError
+              ? "error"
+              : isValid && showValidateSuccess
+              ? "success"
+              : undefined
+          }
           hasFeedback={isValid}
           help={(hasError && <li>{error}</li>) || (isValid && "")}
           {...restProps}
@@ -27,6 +39,7 @@ export const FormItem = ({ name, showValidateSuccess, children, ...restProps }: 
         </Form.Item>
       );
     }}
-  </Field >);
+  </Field>
+);
 
-export default FormItem
+export default FormItem;
