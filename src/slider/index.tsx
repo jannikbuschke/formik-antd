@@ -12,7 +12,7 @@ export const Slider = ({ name, validate, onChange, ...restProps }: SliderProps) 
       <$Slider
         value={value}
         onChange={value => {
-          setFieldValue(name, value.valueOf())
+          setFieldValue(name, value != null ? value.valueOf() : value)
           setFieldTouched(name, true)
           onChange && onChange(value)
         }}
