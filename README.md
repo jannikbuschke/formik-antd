@@ -139,7 +139,7 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 <InputField name="friends[0].firstName" />
 ```
 
-## Treeshaking / ES imports
+## ES imports
 
 ```
 npm install babel-plugin-import customize-cra react-app-rewired --save-dev
@@ -151,47 +151,34 @@ const { override, fixBabelImports } = require('customize-cra')
 
 module.exports = override(
     fixBabelImports('antd', {
-      libraryName: 'antd',
-      libraryDirectory: 'es',
-      style: true,
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: 'css',
     }),
-    fixBabelImports('formik-antd', {
-      libraryName: '@jbuschke/formik-antd',
-      style: true,
-      libraryDirectory: 'es',
-    }),
-    // function (config, env) {
-    //     const alias = (config.resolve.alias || {})
-    //     alias['@ant-design/icons/lib/dist$'] = path.resolve(__dirname, './src/icons.ts')
-    //     config.resolve.alias = alias
-    //     return config
-    //   }
+    fixBabelImports('formik-antd',
+        {
+            libraryName: '@jbuschke/formik-antd',
+            libraryDirectory: 'es'
+            style: "css",
+        },
+    )
+);
   );
 ```
+
 `package.json`
+
 ```json
-// ...
   "scripts": {
-    "start": "react-app-rewired start"
-    // ...
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build"
   }
 ```
 
-`.babelrc`
-```json
-{
-    "plugins": [
-      [
-        "import",
-        {
-          "libraryName": "antd",
-          "libraryDirectory": "es",
-          "style": "css"
-        }
-      ] // `style: true` for less
-    ]
-  }
-```
+## Treeshaking
+
+Treeshaking with ant design is currently kind of broken, as generally all icons are imported. This will be fixed as of ant design v4 (might be ready in 2019).
+
 ## Playground & Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/Formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
