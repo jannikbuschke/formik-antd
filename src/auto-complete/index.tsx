@@ -12,7 +12,7 @@ export const AutoComplete = ({ name, validate, onChange, onBlur, ...restProps }:
       <$AutoComplete
         value={value}
         onChange={value => {
-          form.setFieldValue(name, value.valueOf())
+          form.setFieldValue(name, value != null ? value.valueOf() : value)
           onChange && onChange(value)
         }}
         onBlur={value => {
