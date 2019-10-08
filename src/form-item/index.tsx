@@ -20,7 +20,7 @@ export const FormItem = ({
       const error = getIn(errors, name, undefined);
       let isTouched = getIn(touched, name, false) as boolean | boolean[];
       if (Array.isArray(isTouched)) {
-        isTouched = isTouched.reduce((acc, value) => acc || value);
+        isTouched = isTouched.reduce((acc, value) => acc || value, false);
       }
       const hasError = error !== undefined && isTouched;
       const isValid = !error && isTouched;
