@@ -4,7 +4,7 @@ import * as React from "react";
 import { SelectProps as $SelectProps, OptionProps } from "antd/lib/select";
 import { FormikFieldProps } from "../FieldProps";
 
-export type SelectProps = FormikFieldProps & $SelectProps & { children: React.ReactNode };
+export type SelectProps = FormikFieldProps & $SelectProps & { children?: React.ReactNode };
 
 export const Select = ({ name, validate, children, onChange, onBlur, ...restProps }: SelectProps) => {
   return (
