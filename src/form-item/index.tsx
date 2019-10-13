@@ -4,7 +4,7 @@ import { Form } from "antd";
 import { FormItemProps as $FormItemProps } from "antd/lib/form/FormItem";
 export type FormItemProps = {
   showValidateSuccess?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 } & { name: string } & $FormItemProps &
   Pick<FieldConfig, "validate">;
 
