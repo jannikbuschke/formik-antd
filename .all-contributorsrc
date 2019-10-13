@@ -85,6 +85,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jackton1",
+      "name": "Tonye Jack",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17484350?v=4",
+      "profile": "https://ca.linkedin.com/in/jacktonye",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
