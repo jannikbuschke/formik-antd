@@ -12,7 +12,10 @@
     "design",
     "form"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*"
+  ],
   "license": "MIT",
   "private": false,
   "files": [
