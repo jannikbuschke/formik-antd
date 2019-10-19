@@ -94,6 +94,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "edongashi",
+      "name": "Edon Gashi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12145268?v=4",
+      "profile": "http://edongashi.blog",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
