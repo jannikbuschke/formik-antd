@@ -4,6 +4,10 @@
 
 [CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
 
+:warning: new npm package name: **formik-antd**
+
+> from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`
+
 # formik-antd
 
 Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/Formik).
@@ -12,7 +16,7 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ```jsx
 import React from "react";
-import { Form, Input, InputNumber, Checkbox } from "@jbuschke/formik-antd";
+import { Form, Input, InputNumber, Checkbox } from "formik-antd";
 import { Formik } from "formik";
 
 <Formik
@@ -32,7 +36,7 @@ import { Formik } from "formik";
 ```
 npx create-react-app my-app
 cd my-app
-npm install formik antd @jbuschke/formik-antd
+npm install formik antd formik-antd
 npm run start
 ```
 
@@ -42,9 +46,9 @@ Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant
 
 This library enriches several Ant Design components with a `name: string` property that connects them to a Formik form field. It is pretty simple:
 
-1. Import a supported Ant Design component from `formik-antd` (i.e. `import { Input } from "@jbuschke/formik-antd"`.
+1. Import a supported Ant Design component from `formik-antd` (i.e. `import { Input } from "formik-antd"`.
 2. Declare an instance of the component inside a `<Formik>` component.
-3. Provide the `name` property (i.e. `"firstName"`).
+3. Provide the `name` property.
 
 Your components input/value state is now connected/synced with the corresponding `Formik` field!
 
@@ -111,7 +115,7 @@ Directly under each `<Formik>` container a `<Form>` component _should_ be placed
 
 ```jsx
 import React from "react";
-import { Form, SubmitButton, /* ... */ } from "@jbuschke/formik-antd";
+import { Form, SubmitButton, /* ... */ } from "formik-antd";
 import { Formik } from "formik";
 
 <Formik>
@@ -157,7 +161,7 @@ module.exports = override(
     }),
     fixBabelImports('formik-antd',
         {
-            libraryName: '@jbuschke/formik-antd',
+            libraryName: 'formik-antd',
             libraryDirectory: 'es'
             style: "css",
         },

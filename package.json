@@ -1,5 +1,5 @@
 {
-  "name": "@jbuschke/formik-antd",
+  "name": "formik-antd",
   "version": "1.5.4",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
