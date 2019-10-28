@@ -8,9 +8,11 @@
 
 > from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`
 
+
 # formik-antd
 
 Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/Formik).
+
 
 ## Example
 
@@ -30,6 +32,7 @@ import { Formik } from "formik";
   )}
 />
 ```
+
 
 ## Getting started
 
@@ -82,6 +85,7 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | Transfer                   | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark:    | TreeSelect                 | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
+
 ## Form- and Field-level Validation
 
 Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
@@ -95,6 +99,7 @@ There is one special case to be aware of when using field-level validation: When
 </Form.Item>
 ```
 
+
 ## Rendering Validation Feedback
 
 Showing validation messages can be accomplished with the `Form.Item` component (or `FormItem` which is the same). It 
@@ -107,6 +112,7 @@ Showing validation messages can be accomplished with the `Form.Item` component (
   <Input name="firstName" />
 </Form.Item>
 ```
+
 
 ## Submitting and Resetting Forms
 
@@ -126,6 +132,7 @@ import { Formik } from "formik";
 </Formik>
 ```
 
+
 ## Submitting & Resetting
 
 | Name         | Props                                           | Description                                          |
@@ -135,15 +142,28 @@ import { Formik } from "formik";
 
 The SubmitButton must be placed inside a `Form` component.
 
+
 ## Lists and Nested objects
 
 Nested objects and arrays can be accessed with lodash-like bracket syntax as described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
 
 ```jsx
-<InputField name="friends[0].firstName" />
+<Input name="friends[0].firstName" />
 ```
 
+
 ## ES imports
+
+If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
+
+```jsx
+import Input from 'formik-antd/es/input';
+import 'formik-antd/es/input/style';
+```
+
+Some build tools like webpack are now able to "tree shake", meaning unused code from ant design will not be bundled.
+
+As writing imports like this is a little cumbersome there is a babel import helper: https://github.com/ant-design/babel-plugin-import. In `create-react-app` projects babel plugins do not work out of the box. With third party projects like `customize-cra` and `react-app-rewired` we are able to change the webpack config. Be warned though, the team behind `create-react-app` does not support this scenario, so if you run into problems you are on your own.
 
 ```
 npm install babel-plugin-import customize-cra react-app-rewired --save-dev
@@ -167,7 +187,6 @@ module.exports = override(
         },
     )
 );
-  );
 ```
 
 `package.json`
@@ -179,19 +198,24 @@ module.exports = override(
   }
 ```
 
+
 ## Treeshaking
 
 Treeshaking with ant design is currently kind of broken, as generally all icons are imported. This will be fixed as of ant design v4 (might be ready in 2019).
+
 
 ## Playground & Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/Formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
 
+
 ## TypeScript
 
 Types are included.
 
+
 ### Typechecking limitations
+
 Form values currently cannot be typechecked (at least to my knowledge). For example the following ideally would give a compile error:
 
 ```jsx
@@ -202,9 +226,11 @@ Form values currently cannot be typechecked (at least to my knowledge). For exam
 
 Typescript cannot (yet) enforce types of children. In the future this hopefully will  be possible.
 
+
 ## License
 
 MIT
+
 
 ## Contributors
 
