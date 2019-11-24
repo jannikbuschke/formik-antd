@@ -103,6 +103,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "RomanTsegelskyi",
+      "name": "Roman Tsegelskyi",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3235379?v=4",
+      "profile": "http://romantsegelskyi.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

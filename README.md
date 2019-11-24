@@ -1,5 +1,5 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 [CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
@@ -253,6 +253,7 @@ Special thanks to all contributors:
     <td align="center"><a href="https://github.com/yurykozhenov"><img src="https://avatars3.githubusercontent.com/u/18726837?v=4" width="100px;" alt="Yury Kozhenov"/><br /><sub><b>Yury Kozhenov</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=yurykozhenov" title="Code">💻</a></td>
     <td align="center"><a href="https://ca.linkedin.com/in/jacktonye"><img src="https://avatars2.githubusercontent.com/u/17484350?v=4" width="100px;" alt="Tonye Jack"/><br /><sub><b>Tonye Jack</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jackton1" title="Code">💻</a></td>
     <td align="center"><a href="http://edongashi.blog"><img src="https://avatars1.githubusercontent.com/u/12145268?v=4" width="100px;" alt="Edon Gashi"/><br /><sub><b>Edon Gashi</b></sub></a><br /><a href="#infra-edongashi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="http://romantsegelskyi.github.io"><img src="https://avatars2.githubusercontent.com/u/3235379?v=4" width="100px;" alt="Roman Tsegelskyi"/><br /><sub><b>Roman Tsegelskyi</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=RomanTsegelskyi" title="Code">💻</a></td>
   </tr>
 </table>
 
