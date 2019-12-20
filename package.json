@@ -1,6 +1,6 @@
 {
   "name": "formik-antd",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
   "displayName": "formik-antd",
@@ -32,8 +32,7 @@
     "watch": "tsc --watch",
     "cleanbuild": "rm -r node_modules && npm install && tsc",
     "test": "jest",
-    "watch-test":"jest --watch",
-    "preinstall": "echo @jbuschke/formik-antd' was renamed to 'formik-antd'. All future versions will be available on the new name. Pls start using the new package."
+    "watch-test":"jest --watch"
   },
   "dependencies": {},
   "peerDependencies": {
