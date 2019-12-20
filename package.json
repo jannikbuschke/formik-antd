@@ -31,7 +31,9 @@
     "tsc": "tsc && tsc -p tsconfig.es.json",
     "watch": "tsc --watch",
     "cleanbuild": "rm -r node_modules && npm install && tsc",
-    "test": "jest"
+    "test": "jest",
+    "watch-test":"jest --watch",
+    "preinstall": "echo @jbuschke/formik-antd' was renamed to 'formik-antd'. All future versions will be available on the new name. Pls start using the new package."
   },
   "dependencies": {},
   "peerDependencies": {
