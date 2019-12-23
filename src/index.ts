@@ -19,3 +19,7 @@ export * from "./form";
 export * from "./tree-select";
 export * from "./mention";
 export * from "./transfer";
+export * from "./table";
+export * from "./add-row-button";
+export * from "./remove-row-button";
+export * from "./array-button";
