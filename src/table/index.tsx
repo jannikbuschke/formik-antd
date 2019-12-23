@@ -9,7 +9,7 @@ export function Table<T = any>({
 }: { name: string } & Omit<TableProps<T>, keyof WithStore>) {
   return (
     <Field name={name}>
-      {({ field, form }: FieldProps<any>) => {
+      {({ field }: FieldProps<any>) => {
         return (
             <$Table dataSource={field.value || []} {...restProps} />
         );
