@@ -14,7 +14,7 @@ export const TimePicker = ({ name, validate, onChange, ...restProps }: TimePicke
         value={value ? moment(value) : undefined}
         onChange={(time, timeString) => {
           setFieldValue(name, time ? time.toISOString() : null)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(time, timeString)
         }}
         {...restProps}
