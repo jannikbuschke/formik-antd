@@ -21,7 +21,7 @@ export const DatePicker = ({ name, validate, onChange, ...restProps }: DatePicke
         value={value ? moment(value) : undefined}
         onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null);
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
         {...restProps}
@@ -41,7 +41,7 @@ DatePicker.MonthPicker = ({ name, validate, onChange, ...restProps }: MonthPicke
         value={value ? moment(value) : undefined}
         onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null);
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
         {...restProps}
@@ -60,7 +60,7 @@ DatePicker.RangePicker = ({ name, validate, onChange, ...restProps }: RangePicke
         value={value}
         onChange={(dates, dateStrings) => {
           setFieldValue(name, dates);
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(dates, dateStrings)
         }}
         {...restProps}
@@ -79,7 +79,7 @@ DatePicker.WeekPicker = ({ name, validate, onChange, ...restProps }: WeekPickerP
         value={value}
         onChange={(date, dateString) => {
           setFieldValue(name, date);
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
         {...restProps}
