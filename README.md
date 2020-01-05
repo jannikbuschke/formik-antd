@@ -2,7 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
+[CodeSandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
 
 :warning: new npm package name: **formik-antd**
 
@@ -81,6 +81,7 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | Select                     | { name, validate? } & [SelectProps](https://ant.design/components/select/)                                       |
 | :white_check_mark:    | Slider                     | { name, validate? } & [SliderProps](https://ant.design/components/slider/)                                       |
 | :white_check_mark:    | Switch                     | { name, validate? } & [SwitchProps](https://ant.design/components/switch/)                                       |
+| :white_check_mark:    | Table                      | { name } & [TableProps](https://ant.design/components/table/)                              |
 | :white_check_mark:    | TimePicker                 | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
 | :white_check_mark:    | Transfer                   | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark:    | TreeSelect                 | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
@@ -130,6 +131,97 @@ import { Formik } from "formik";
     <SubmitButton />
   </Form>
 </Formik>
+```
+
+## Table
+
+```jsx
+import { Table, AddRowButton, RemoveRowButton, Form, Input } from "formik-antd"
+import { Formik } from "formik"
+import * as React from "react"
+import "./table.css"
+
+export function SampleTable() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flex: 1,
+        justifyContent: "center",
+      }}
+    >
+      <Formik
+        initialValues={{
+          tableData: [
+            {
+              name: "item 1",
+              description: "lorem ipsum",
+            },
+          ],
+        }}
+        onSubmit={() => {}}
+      >
+        <Form>
+          <AddRowButton
+            name="tableData"
+            style={{ marginBottom: 20 }}
+            createNewRow={() => ({
+              name: "new",
+              description: "",
+            })}
+          >
+            Add
+          </AddRowButton>
+          <Table
+            rowKey={(row, index) => "" + index}
+            style={{ width: 600 }}
+            size="small"
+            pagination={false}
+            columns={[
+              {
+                width: 100,
+                title: "Name",
+                key: "name",
+                render: (text, record, i) => (
+                  <Input
+                    style={{ border: "none" }}
+                    name={`tableData.${i}.name`}
+                  />
+                ),
+              },
+              {
+                title: "Description",
+                key: "description",
+                render: (text, record, i) => (
+                  <Input
+                    style={{ border: "none" }}
+                    name={`tableData.${i}.description`}
+                  />
+                ),
+              },
+              {
+                width: 32,
+                key: "actions",
+                align: "right",
+                render: (record, index) => (
+                  <RemoveRowButton
+                    style={{ border: "none" }}
+                    icon="delete"
+                    name="tableData"
+                    index={index}
+                  />
+                ),
+              },
+            ]}
+            name="tableData"
+          />
+        </Form>
+      </Formik>
+    </div>
+  )
+}
+
 ```
 
 
