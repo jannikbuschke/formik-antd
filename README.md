@@ -2,7 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox](https://codesandbox.io/s/x2941k7vpz)
+[CodeSandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
 
 :warning: new npm package name: **formik-antd**
 
