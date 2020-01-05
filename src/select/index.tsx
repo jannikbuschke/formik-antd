@@ -1,13 +1,13 @@
 import { Select as $Select } from 'antd'
 import { FieldProps } from 'formik'
 import * as React from 'react'
-import { SelectProps as $SelectProps, OptionProps } from 'antd/lib/select'
+import { SelectProps as $SelectProps } from 'antd/lib/select'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 
-export type SelectProps = FormikFieldProps &
-  $SelectProps & { children?: React.ReactNode }
-
+export type SelectProps<T = any> = FormikFieldProps &
+  $SelectProps<T> & { children?: React.ReactNode }
+// declare class Select<ValueType extends SelectValue = SelectValue> extends React.Component<SelectProps<ValueType>> {
 export const Select = ({
   name,
   validate,
@@ -44,14 +44,14 @@ export const Select = ({
 
 export default Select
 
-type Option = OptionProps & { label: React.ReactNode | string | number }
+// type Option = OptionProps & { label: React.ReactNode | string | number };
 
-Select.renderOptions = (options: Option[]) =>
-  options.map(({ label, ...restProps }, index) => (
-    <$Select.Option key={`select-option-${index}`} {...restProps}>
-      {label}
-    </$Select.Option>
-  ))
+// Select.renderOptions = (options: Option[]) =>
+//   options.map(({ label, ...restProps }, index) => (
+//     <$Select.Option key={`select-option-${index}`} {...restProps}>
+//       {label}
+//     </$Select.Option>
+//   ));
 
 Select.Option = $Select.Option
 Select.OptGroup = $Select.OptGroup

@@ -19,9 +19,9 @@ export const AutoComplete = ({
     {({ field: { value }, form }: FieldProps) => (
       <$AutoComplete
         defaultValue={value}
-        onChange={(value) => {
+        onChange={(value, option) => {
           form.setFieldValue(name, value != null ? value.valueOf() : value)
-          onChange && onChange(value)
+          onChange && onChange(value, option)
         }}
         onBlur={(value) => {
           form.setFieldTouched(name)

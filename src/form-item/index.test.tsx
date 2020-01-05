@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, ReactElement } from 'react'
 import { Formik } from 'formik'
 import { render, fireEvent, waitForDomChange } from '@testing-library/react'
 import FormItem from '.'
@@ -13,7 +13,7 @@ const Test = ({
   children,
   validate,
 }: {
-  children: ReactNode
+  children: ReactElement
   validate?: () => object
 }) => {
   return (
