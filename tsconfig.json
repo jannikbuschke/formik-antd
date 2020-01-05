@@ -27,6 +27,7 @@
   "exclude": [
     "lib",
     "es",
-    "node_modules"
+    "node_modules",
+    "**/*.test.tsx"
   ]
 }
