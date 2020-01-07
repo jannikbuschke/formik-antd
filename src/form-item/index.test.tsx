@@ -42,6 +42,84 @@ test("displays validation result", async () => {
   expect(queryByText("error")).toBeInTheDocument();
 });
 
+test("displayes initial error", async () => {
+  const { queryByText } = render(
+    <Formik
+      initialErrors={{ test: "initialError" }}
+      initialValues={{}}
+      onSubmit={() => {}}
+    >
+      <Form>
+        <FormItem name="test">
+          <Input name="test" data-testid="input" />
+        </FormItem>
+      </Form>
+    </Formik>
+  );
+  expect(queryByText("initialError")).toBeInTheDocument();
+});
+
+test("displayes error instead of initialError after touched when showInitialErrorAfterTouched is false", async () => {
+  const validate = () => "error";
+  const { getByTestId, queryByText } = render(
+    <Formik
+      initialErrors={{ test: "initialError" }}
+      initialValues={{}}
+      showInitialErrorAfterTouched={false}
+      onSubmit={() => {}}
+    >
+      <Form>
+        <FormItem name="test" validate={validate}>
+          <Input name="test" data-testid="input" />
+        </FormItem>
+        <SubmitButton data-testid="submit" />
+      </Form>
+    </Formik>
+  );
+  expect(queryByText("initialError")).toBeInTheDocument();
+  expect(queryByText("error")).not.toBeInTheDocument();
+  fireEvent.change(getByTestId("input"), {
+    target: { name: "test", value: "test" }
+  });
+  fireEvent.blur(getByTestId("input"));
+  fireEvent.click(getByTestId("submit"));
+  await waitForDomChange();
+  expect(queryByText("error")).toBeInTheDocument();
+  expect(queryByText("initialError")).not.toBeInTheDocument();
+});
+
+test("displayes initialError with error after touched when showInitialErrorAfterTouched is true", async () => {
+  const validate = () => "error";
+  const { getByTestId, queryByText } = render(
+    <Formik
+      initialErrors={{ test: "initialError" }}
+      initialValues={{}}
+      onSubmit={() => {}}
+    >
+      <Form>
+        <FormItem
+          name="test"
+          validate={validate}
+          showInitialErrorAfterTouched={true}
+        >
+          <Input name="test" data-testid="input" />
+        </FormItem>
+        <SubmitButton data-testid="submit" />
+      </Form>
+    </Formik>
+  );
+  expect(queryByText("initialError")).toBeInTheDocument();
+  expect(queryByText("error")).not.toBeInTheDocument();
+  fireEvent.change(getByTestId("input"), {
+    target: { name: "test", value: "test" }
+  });
+  fireEvent.blur(getByTestId("input"));
+  fireEvent.click(getByTestId("submit"));
+  await waitForDomChange();
+  expect(queryByText("error")).toBeInTheDocument();
+  expect(queryByText("initialError")).toBeInTheDocument();
+});
+
 test("handles changes on multiselect without prop-types error", async () => {
   const { getByTestId, queryByText, getByText } = render(
     <Test>
