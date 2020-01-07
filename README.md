@@ -37,10 +37,7 @@ import { Formik } from "formik";
 ## Getting started
 
 ```
-npx create-react-app my-app
-cd my-app
-npm install formik antd formik-antd
-npm run start
+npm install formik-antd
 ```
 
 Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant.design/docs/react/getting-started for other options).
@@ -49,17 +46,11 @@ Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant
 
 This library enriches several Ant Design components with a `name: string` property that connects them to a Formik form field. It is pretty simple:
 
-1. Import a supported Ant Design component from `formik-antd` (i.e. `import { Input } from "formik-antd"`.
-2. Declare an instance of the component inside a `<Formik>` component.
-3. Provide the `name` property.
-
-Your components input/value state is now connected/synced with the corresponding `Formik` field!
+Import one of the supported components and set the `name` prop. Now the component is connected/synced with the corresponding `Formik` field!
 
 The Ant Design components are feature rich and provide a lot of props to customize their vizual presentation. These features and also their apis stay the same. Visit their documentation to learn more.
 
 ## Core Components
-
-To learn about Antd components just visit the official docs. Most supported components are found in the [Data Entry](https://ant.design/components/auto-complete/) section.
 
 |                       | Name                       | Props                                                                                                            |
 | --------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -85,6 +76,11 @@ To learn about Antd components just visit the official docs. Most supported comp
 | :white_check_mark:    | TimePicker                 | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
 | :white_check_mark:    | Transfer                   | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark:    | TreeSelect                 | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
+
+
+## Table
+
+The table components comes with additional helper buttons to add and delete rows. An example can be seen in the [codesandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example).
 
 
 ## Form- and Field-level Validation
@@ -131,97 +127,6 @@ import { Formik } from "formik";
     <SubmitButton />
   </Form>
 </Formik>
-```
-
-## Table
-
-```jsx
-import { Table, AddRowButton, RemoveRowButton, Form, Input } from "formik-antd"
-import { Formik } from "formik"
-import * as React from "react"
-import "./table.css"
-
-export function SampleTable() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flex: 1,
-        justifyContent: "center",
-      }}
-    >
-      <Formik
-        initialValues={{
-          tableData: [
-            {
-              name: "item 1",
-              description: "lorem ipsum",
-            },
-          ],
-        }}
-        onSubmit={() => {}}
-      >
-        <Form>
-          <AddRowButton
-            name="tableData"
-            style={{ marginBottom: 20 }}
-            createNewRow={() => ({
-              name: "new",
-              description: "",
-            })}
-          >
-            Add
-          </AddRowButton>
-          <Table
-            rowKey={(row, index) => "" + index}
-            style={{ width: 600 }}
-            size="small"
-            pagination={false}
-            columns={[
-              {
-                width: 100,
-                title: "Name",
-                key: "name",
-                render: (text, record, i) => (
-                  <Input
-                    style={{ border: "none" }}
-                    name={`tableData.${i}.name`}
-                  />
-                ),
-              },
-              {
-                title: "Description",
-                key: "description",
-                render: (text, record, i) => (
-                  <Input
-                    style={{ border: "none" }}
-                    name={`tableData.${i}.description`}
-                  />
-                ),
-              },
-              {
-                width: 32,
-                key: "actions",
-                align: "right",
-                render: (record, index) => (
-                  <RemoveRowButton
-                    style={{ border: "none" }}
-                    icon="delete"
-                    name="tableData"
-                    index={index}
-                  />
-                ),
-              },
-            ]}
-            name="tableData"
-          />
-        </Form>
-      </Formik>
-    </div>
-  )
-}
-
 ```
 
 
