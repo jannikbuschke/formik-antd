@@ -112,11 +112,21 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "takethefake",
+      "name": "Daniel Schulz",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3123354?v=4",
+      "profile": "http://schulz.codes",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "formik-antd",
   "projectOwner": "jannikbuschke",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
