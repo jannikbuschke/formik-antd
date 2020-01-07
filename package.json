@@ -32,7 +32,7 @@
     "watch": "tsc --watch",
     "cleanbuild": "rm -r node_modules && npm install && tsc",
     "test": "jest",
-    "watch-test":"jest --watch"
+    "watch-test": "jest --watch"
   },
   "dependencies": {},
   "peerDependencies": {
