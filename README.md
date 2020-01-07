@@ -237,26 +237,30 @@ MIT
 Special thanks to all contributors:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/NileDaley"><img src="https://avatars3.githubusercontent.com/u/15862011?v=4" width="100px;" alt="Nile Daley"/><br /><sub><b>Nile Daley</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=NileDaley" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt="James W Mann"/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt="Jannik Buschke"/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/LarsJK"><img src="https://avatars2.githubusercontent.com/u/1528255?v=4" width="100px;" alt="Lars-Jørgen Kristiansen"/><br /><sub><b>Lars-Jørgen Kristiansen</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=LarsJK" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/voxtex"><img src="https://avatars3.githubusercontent.com/u/735455?v=4" width="100px;" alt="Adam"/><br /><sub><b>Adam</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=voxtex" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/jeessy2"><img src="https://avatars2.githubusercontent.com/u/6205259?v=4" width="100px;" alt="jeessy2"/><br /><sub><b>jeessy2</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jeessy2" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/pavan_agrawal_1"><img src="https://avatars3.githubusercontent.com/u/17802917?v=4" width="100px;" alt="Pavan Agrawal"/><br /><sub><b>Pavan Agrawal</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=pavanagrawal123" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/NileDaley"><img src="https://avatars3.githubusercontent.com/u/15862011?v=4" width="100px;" alt=""/><br /><sub><b>Nile Daley</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=NileDaley" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.jameswmann.com"><img src="https://avatars2.githubusercontent.com/u/436270?v=4" width="100px;" alt=""/><br /><sub><b>James W Mann</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jwmann" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.jannikbuschke.de/blog"><img src="https://avatars2.githubusercontent.com/u/5894881?v=4" width="100px;" alt=""/><br /><sub><b>Jannik Buschke</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jannikbuschke" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/LarsJK"><img src="https://avatars2.githubusercontent.com/u/1528255?v=4" width="100px;" alt=""/><br /><sub><b>Lars-Jørgen Kristiansen</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=LarsJK" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/voxtex"><img src="https://avatars3.githubusercontent.com/u/735455?v=4" width="100px;" alt=""/><br /><sub><b>Adam</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=voxtex" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jeessy2"><img src="https://avatars2.githubusercontent.com/u/6205259?v=4" width="100px;" alt=""/><br /><sub><b>jeessy2</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jeessy2" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/pavan_agrawal_1"><img src="https://avatars3.githubusercontent.com/u/17802917?v=4" width="100px;" alt=""/><br /><sub><b>Pavan Agrawal</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=pavanagrawal123" title="Documentation">📖</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/Khartir"><img src="https://avatars3.githubusercontent.com/u/5592420?v=4" width="100px;" alt="Khartir"/><br /><sub><b>Khartir</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=Khartir" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/yurykozhenov"><img src="https://avatars3.githubusercontent.com/u/18726837?v=4" width="100px;" alt="Yury Kozhenov"/><br /><sub><b>Yury Kozhenov</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=yurykozhenov" title="Code">💻</a></td>
-    <td align="center"><a href="https://ca.linkedin.com/in/jacktonye"><img src="https://avatars2.githubusercontent.com/u/17484350?v=4" width="100px;" alt="Tonye Jack"/><br /><sub><b>Tonye Jack</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jackton1" title="Code">💻</a></td>
-    <td align="center"><a href="http://edongashi.blog"><img src="https://avatars1.githubusercontent.com/u/12145268?v=4" width="100px;" alt="Edon Gashi"/><br /><sub><b>Edon Gashi</b></sub></a><br /><a href="#infra-edongashi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    <td align="center"><a href="http://romantsegelskyi.github.io"><img src="https://avatars2.githubusercontent.com/u/3235379?v=4" width="100px;" alt="Roman Tsegelskyi"/><br /><sub><b>Roman Tsegelskyi</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=RomanTsegelskyi" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Khartir"><img src="https://avatars3.githubusercontent.com/u/5592420?v=4" width="100px;" alt=""/><br /><sub><b>Khartir</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=Khartir" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/yurykozhenov"><img src="https://avatars3.githubusercontent.com/u/18726837?v=4" width="100px;" alt=""/><br /><sub><b>Yury Kozhenov</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=yurykozhenov" title="Code">💻</a></td>
+    <td align="center"><a href="https://ca.linkedin.com/in/jacktonye"><img src="https://avatars2.githubusercontent.com/u/17484350?v=4" width="100px;" alt=""/><br /><sub><b>Tonye Jack</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=jackton1" title="Code">💻</a></td>
+    <td align="center"><a href="http://edongashi.blog"><img src="https://avatars1.githubusercontent.com/u/12145268?v=4" width="100px;" alt=""/><br /><sub><b>Edon Gashi</b></sub></a><br /><a href="#infra-edongashi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="http://romantsegelskyi.github.io"><img src="https://avatars2.githubusercontent.com/u/3235379?v=4" width="100px;" alt=""/><br /><sub><b>Roman Tsegelskyi</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=RomanTsegelskyi" title="Code">💻</a></td>
+    <td align="center"><a href="http://schulz.codes"><img src="https://avatars3.githubusercontent.com/u/3123354?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Schulz</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=takethefake" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
