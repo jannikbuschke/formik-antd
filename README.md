@@ -8,31 +8,27 @@
 
 > from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`
 
-
 # formik-antd
 
 Simple declarative bindings for [Ant Design](https://ant.design/docs/react/introduce) and [Formik](https://github.com/jaredpalmer/Formik).
 
-
 ## Example
 
 ```jsx
-import React from "react";
-import { Form, Input, InputNumber, Checkbox } from "formik-antd";
-import { Formik } from "formik";
-
-<Formik
-  initialValues={{ firstName: "", age: 20, newsletter: false }}
-  render={()=> (
+import React from 'react'
+import { Form, Input, InputNumber, Checkbox } from 'formik-antd'
+import { Formik } from 'formik'
+;<Formik
+  initialValues={{ firstName: '', age: 20, newsletter: false }}
+  render={() => (
     <Form>
-      <Input name="firstName" placeholder="First Name" />
-      <InputNumber name="age" min={0} />
-      <Checkbox name="newsletter">Newsletter</Checkbox>
+      <Input name='firstName' placeholder='First Name' />
+      <InputNumber name='age' min={0} />
+      <Checkbox name='newsletter'>Newsletter</Checkbox>
     </Form>
   )}
 />
 ```
-
 
 ## Getting started
 
@@ -52,36 +48,34 @@ The Ant Design components are feature rich and provide a lot of props to customi
 
 ## Core Components
 
-|                       | Name                       | Props                                                                                                            |
-| --------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| :white_check_mark:    | AutoComplete               | { name, validate? } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                          |
-| :white_check_mark:    | Cascader                   | { name, validate? } & [CascaderProps](https://ant.design/components/cascader/)                                   |
-| :white_check_mark:    | Checkbox                   | { name, validate? } & [CheckboxProps](https://ant.design/components/checkbox/)                                   |
-| :white_check_mark:    | Checkbox.Group             | { name, validate? } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)               |
-| :white_check_mark:    | DatePicker                 | { name, validate? } & [DatePickerProps](https://ant.design/components/date-picker/)                              |
-| :white_check_mark:    | DatePicker.WeekPicker      | { name, validate? } & [WeekPickerProps](https://ant.design/components/date-picker/#WeekPicker)                   |
-| :white_check_mark:    | DatePicker.RangePicker     | { name, validate? } & [RangePickerProps](https://ant.design/components/date-picker/#RangePicker)                 |
-| :white_check_mark:    | DatePicker.MonthPicker     | { name, validate? } & [MonthPickerProps](https://ant.design/components/date-picker/#MonthPicker)                 |
-| :white_check_mark:    | Input                      | { name, validate? } & [InputProps](https://ant.design/components/input/)                                         |
-| :white_check_mark:    | InputNumber                | { name, validate? } & [InputNumberProps](https://ant.design/components/input-number/)                            |
-| :white_check_mark:    | Input.Password             | { name, validate? } & [InputPasswordProps](https://ant.design/components/input/)                                 |
-| :white_check_mark:    | Input.TextArea             | { name, validate? } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea) |
-| :white_check_mark:    | Mention                    | { name, validate? } & [MentionProps](https://ant.design/components/mention/)                                     |
-| :white_check_mark:    | Radio.Group                | { name, validate? } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                         |
-| :white_check_mark:    | Rate                       | { name, validate? } & [RateProps](https://ant.design/components/rate/)                                           |
-| :white_check_mark:    | Select                     | { name, validate? } & [SelectProps](https://ant.design/components/select/)                                       |
-| :white_check_mark:    | Slider                     | { name, validate? } & [SliderProps](https://ant.design/components/slider/)                                       |
-| :white_check_mark:    | Switch                     | { name, validate? } & [SwitchProps](https://ant.design/components/switch/)                                       |
-| :white_check_mark:    | Table                      | { name } & [TableProps](https://ant.design/components/table/)                              |
-| :white_check_mark:    | TimePicker                 | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
-| :white_check_mark:    | Transfer                   | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
-| :white_check_mark:    | TreeSelect                 | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
-
+|                    | Name                   | Props                                                                                                            |
+| ------------------ | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| :white_check_mark: | AutoComplete           | { name, validate? } & [AutoCompleteProps](https://ant.design/components/auto-complete/)                          |
+| :white_check_mark: | Cascader               | { name, validate? } & [CascaderProps](https://ant.design/components/cascader/)                                   |
+| :white_check_mark: | Checkbox               | { name, validate? } & [CheckboxProps](https://ant.design/components/checkbox/)                                   |
+| :white_check_mark: | Checkbox.Group         | { name, validate? } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)               |
+| :white_check_mark: | DatePicker             | { name, validate? } & [DatePickerProps](https://ant.design/components/date-picker/)                              |
+| :white_check_mark: | DatePicker.WeekPicker  | { name, validate? } & [WeekPickerProps](https://ant.design/components/date-picker/#WeekPicker)                   |
+| :white_check_mark: | DatePicker.RangePicker | { name, validate? } & [RangePickerProps](https://ant.design/components/date-picker/#RangePicker)                 |
+| :white_check_mark: | DatePicker.MonthPicker | { name, validate? } & [MonthPickerProps](https://ant.design/components/date-picker/#MonthPicker)                 |
+| :white_check_mark: | Input                  | { name, validate? } & [InputProps](https://ant.design/components/input/)                                         |
+| :white_check_mark: | InputNumber            | { name, validate? } & [InputNumberProps](https://ant.design/components/input-number/)                            |
+| :white_check_mark: | Input.Password         | { name, validate? } & [InputPasswordProps](https://ant.design/components/input/)                                 |
+| :white_check_mark: | Input.TextArea         | { name, validate? } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea) |
+| :white_check_mark: | Mention                | { name, validate? } & [MentionProps](https://ant.design/components/mention/)                                     |
+| :white_check_mark: | Radio.Group            | { name, validate? } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                         |
+| :white_check_mark: | Rate                   | { name, validate? } & [RateProps](https://ant.design/components/rate/)                                           |
+| :white_check_mark: | Select                 | { name, validate? } & [SelectProps](https://ant.design/components/select/)                                       |
+| :white_check_mark: | Slider                 | { name, validate? } & [SliderProps](https://ant.design/components/slider/)                                       |
+| :white_check_mark: | Switch                 | { name, validate? } & [SwitchProps](https://ant.design/components/switch/)                                       |
+| :white_check_mark: | Table                  | { name } & [TableProps](https://ant.design/components/table/)                                                    |
+| :white_check_mark: | TimePicker             | { name, validate? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
+| :white_check_mark: | Transfer               | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
+| :white_check_mark: | TreeSelect             | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
 ## Table
 
 The table components comes with additional helper buttons to add and delete rows. An example can be seen in the [codesandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example).
-
 
 ## Form- and Field-level Validation
 
@@ -91,25 +85,24 @@ Form-level validation is done by setting formiks `validate` prop. Field-level va
 There is one special case to be aware of when using field-level validation: When using the `Form.Item` component with another Antd-field component, the `validate` prop has to be added to the `Form.Item`, not the input component:
 
 ```jsx
-<Form.Item name="firstName" validate={validator}>
-  <Input name="firstName" />
+<Form.Item name='firstName' validate={validator}>
+  <Input name='firstName' />
 </Form.Item>
 ```
-
 
 ## Rendering Validation Feedback
 
-Showing validation messages can be accomplished with the `Form.Item` component (or `FormItem` which is the same). It 
-- renders *error* messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red).
-- renders a green *success* icon messages if it's `showValidateSuccess: boolean` prop is set to true, the field has been touched and the corresponding field does not have a validation error.
+Showing validation messages can be accomplished with the `Form.Item` component (or `FormItem` which is the same). It
+
+- renders _error_ messages if the field has been touched and the corresponding field has a validation error (and changes the border color of enclosed input component to red).
+- renders a green _success_ icon messages if it's `showValidateSuccess: boolean` prop is set to true, the field has been touched and the corresponding field does not have a validation error.
 - exposes some layout features and a label (visit https://ant.design/components/form/ for the details).
 
 ```jsx
-<Form.Item name="firstName" >
-  <Input name="firstName" />
+<Form.Item name='firstName'>
+  <Input name='firstName' />
 </Form.Item>
 ```
-
 
 ## Submitting and Resetting Forms
 
@@ -138,17 +131,16 @@ Two additional helper components to submit and reset forms are provided: `Submit
 Nested objects and arrays can be accessed with lodash-like bracket syntax as described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
 
 ```jsx
-<Input name="friends[0].firstName" />
+<Input name='friends[0].firstName' />
 ```
-
 
 ## ES imports
 
 If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
 
 ```jsx
-import Input from 'formik-antd/es/input';
-import 'formik-antd/es/input/style';
+import Input from 'formik-antd/es/input'
+import 'formik-antd/es/input/style'
 ```
 
 Some build tools like webpack are now able to "tree shake", meaning unused code from ant design will not be bundled.
@@ -158,7 +150,9 @@ As writing imports like this is a little cumbersome there is a babel import help
 ```
 npm install babel-plugin-import customize-cra react-app-rewired --save-dev
 ```
+
 `config-overrides.js`
+
 ```js
 const path = require('path')
 const { override, fixBabelImports } = require('customize-cra')
@@ -188,21 +182,17 @@ module.exports = override(
   }
 ```
 
-
 ## Treeshaking
 
 Treeshaking with ant design is currently kind of broken, as generally all icons are imported. This will be fixed as of ant design v4 (might be ready in 2019).
-
 
 ## Playground & Contributions
 
 If you want to dig into the source code and test locally you can use https://github.com/jannikbuschke/Formik-antd-playground (clone with the --recursive flag and follow the README, its pretty simple).
 
-
 ## TypeScript
 
 Types are included.
-
 
 ### Typechecking limitations
 
@@ -214,13 +204,11 @@ Form values currently cannot be typechecked (at least to my knowledge). For exam
 </Formik>
 ```
 
-Typescript cannot (yet) enforce types of children. In the future this hopefully will  be possible.
-
+Typescript cannot (yet) enforce types of children. In the future this hopefully will be possible.
 
 ## License
 
 MIT
-
 
 ## Contributors
 
@@ -251,6 +239,7 @@ Special thanks to all contributors:
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
