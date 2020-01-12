@@ -18,16 +18,21 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 import React from 'react'
 import { Form, Input, InputNumber, Checkbox } from 'formik-antd'
 import { Formik } from 'formik'
-;<Formik
-  initialValues={{ firstName: '', age: 20, newsletter: false }}
-  render={() => (
-    <Form>
-      <Input name='firstName' placeholder='First Name' />
-      <InputNumber name='age' min={0} />
-      <Checkbox name='newsletter'>Newsletter</Checkbox>
-    </Form>
-  )}
-/>
+
+function App() {
+  return (
+    <Formik
+      initialValues={{ firstName: '', age: 20, newsletter: false }}
+      render={() => (
+        <Form>
+          <Input name='firstName' placeholder='First Name' />
+          <InputNumber name='age' min={0} />
+          <Checkbox name='newsletter'>Newsletter</Checkbox>
+        </Form>
+      )}
+    />
+  )
+}
 ```
 
 ## Getting started
@@ -73,9 +78,25 @@ The Ant Design components are feature rich and provide a lot of props to customi
 | :white_check_mark: | Transfer               | { name, validate? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark: | TreeSelect             | { name, validate? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
-## Table
+## Submitting and Resetting Forms
 
-The table components comes with additional helper buttons to add and delete rows. An example can be seen in the [codesandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example).
+Directly under each `<Formik>` container a `<Form>` component _should_ be placed. This component composes the functionality provided by Ant Designs (https://ant.design/components/form/) as well as Formiks (https://jaredpalmer.com/formik/docs/api/form) `<Form>` components:
+
+```jsx
+import React from 'react'
+import { Form, SubmitButton, ResetButton /* ... */ } from 'formik-antd'
+import { Formik } from 'formik'
+
+function App() {
+  return <Formik initialValues={/* ... */} onSubmit={/* ... */}>
+    <Form>
+      {/* ... */}
+      <SubmitButton />
+      <ResetButton />
+    </Form>
+  </Formik>
+}
+```
 
 ## Form- and Field-level Validation
 
@@ -104,25 +125,9 @@ Showing validation messages can be accomplished with the `Form.Item` component (
 </Form.Item>
 ```
 
-## Submitting and Resetting Forms
+## Table
 
-Directly under each `<Formik>` container a `<Form>` component _should_ be placed. This component composes the functionality provided by Ant Designs (https://ant.design/components/form/) as well as Formiks (https://jaredpalmer.com/formik/docs/api/form) `<Form>` components:
-
-```jsx
-import React from 'react'
-import { Form, SubmitButton, ResetButton /* ... */ } from 'formik-antd'
-import { Formik } from 'formik'
-
-function App() {
-  return <Formik initialValues={/* ... */} onSubmit={/* ... */}>
-    <Form>
-      {/* ... */}
-      <SubmitButton />
-      <ResetButton />
-    </Form>
-  </Formik>
-}
-```
+The table components comes with additional helper buttons to add and delete rows. An example can be seen in the [codesandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example).
 
 Two additional helper components to submit and reset forms are provided: `SubmitButton` and `ResetButton`. Both render an Ant Design button and can be customized accordingly ([docs](https://ant.design/components/button/)). The `ResetButton` is disabled if the form is not dirty. To override the default behavior provide the `disable: boolean` prop.
 
