@@ -244,12 +244,12 @@ Special thanks to all contributors:
     <td align="center"><a href="http://edongashi.blog"><img src="https://avatars1.githubusercontent.com/u/12145268?v=4" width="100px;" alt=""/><br /><sub><b>Edon Gashi</b></sub></a><br /><a href="#infra-edongashi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="http://romantsegelskyi.github.io"><img src="https://avatars2.githubusercontent.com/u/3235379?v=4" width="100px;" alt=""/><br /><sub><b>Roman Tsegelskyi</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=RomanTsegelskyi" title="Code">💻</a></td>
     <td align="center"><a href="http://schulz.codes"><img src="https://avatars3.githubusercontent.com/u/3123354?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Schulz</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=takethefake" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/harrygreen"><img src="https://avatars1.githubusercontent.com/u/1975098?v=4" width="100px;" alt=""/><br /><sub><b>Harry Green</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=harrygreen" title="Documentation">📖</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
