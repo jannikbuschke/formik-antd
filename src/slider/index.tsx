@@ -21,7 +21,7 @@ export const Slider = ({
         value={value}
         onChange={(value) => {
           setFieldValue(name, value != null ? value.valueOf() : value)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(value)
         }}
         {...restProps}

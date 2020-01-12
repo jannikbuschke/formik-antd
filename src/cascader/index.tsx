@@ -21,7 +21,7 @@ export const Cascader = ({
         value={value}
         onChange={(value) => {
           setFieldValue(name, value)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(value)
         }}
         {...restProps}

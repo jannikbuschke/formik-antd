@@ -21,7 +21,7 @@ export const Transfer = ({
         targetKeys={value || []}
         onChange={(targetKeys, direction, moveKeys) => {
           setFieldValue(name, targetKeys)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(targetKeys, direction, moveKeys)
         }}
         {...restProps}

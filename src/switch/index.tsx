@@ -21,7 +21,7 @@ export const Switch = ({
         checked={value}
         onChange={(checked, event) => {
           setFieldValue(name, checked)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(checked, event)
         }}
         {...restProps}
