@@ -1,20 +1,13 @@
 import { Button } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { Field, FieldProps, FormikProps } from 'formik'
 import * as React from 'react'
 import { ButtonProps } from 'antd/lib/button'
 
-export type SubmitButtonProps = ButtonProps & { onSuccess?: () => void }
-
-export const SubmitButton = ({
-  children,
-  onSuccess,
-  ...restProps
-}: SubmitButtonProps) => (
+export const SubmitButton = ({ children, ...restProps }: ButtonProps) => (
   <Field>
-    {({ form: { isSubmitting, isValid } }: FieldProps) => (
+    {({ form }: FieldProps) => (
       <Button
-        loading={isSubmitting}
-        disabled={!isValid || isSubmitting}
+        loading={form.isSubmitting}
         type='primary'
         htmlType='submit'
         {...restProps}

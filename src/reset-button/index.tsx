@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { Field, FieldProps, FormikProps } from 'formik'
 import * as React from 'react'
 import { ButtonProps } from 'antd/lib/button'
 
