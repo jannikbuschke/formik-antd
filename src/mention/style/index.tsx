@@ -1,1 +1,1 @@
-import "antd/lib/mention/style"
+import 'antd/lib/mention/style'

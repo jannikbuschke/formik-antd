@@ -1,1 +1,1 @@
-import "antd/lib/form/style"
+import 'antd/lib/form/style'

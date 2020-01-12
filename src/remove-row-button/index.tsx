@@ -1,6 +1,6 @@
-import * as React from 'react';
-import  { ButtonProps } from 'antd/lib/button';
-import { ArrayButton } from '../array-button';
+import * as React from 'react'
+import { ButtonProps } from 'antd/lib/button'
+import { ArrayButton } from '../array-button'
 
 export function RemoveRowButton({
   name,
@@ -11,9 +11,9 @@ export function RemoveRowButton({
     <ArrayButton
       name={name}
       {...restProps}
-      onClick={array => array.remove(index)}
+      onClick={(array) => array.remove(index)}
     />
-  );
+  )
 }
 
 export default RemoveRowButton

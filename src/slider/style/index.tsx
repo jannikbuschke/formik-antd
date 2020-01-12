@@ -1,1 +1,1 @@
-import "antd/lib/slider/style"
+import 'antd/lib/slider/style'

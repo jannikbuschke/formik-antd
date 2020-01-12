@@ -1,6 +1,6 @@
-import * as React from 'react';
-import  { ButtonProps } from 'antd/lib/button';
-import { ArrayButton } from '../array-button';
+import * as React from 'react'
+import { ButtonProps } from 'antd/lib/button'
+import { ArrayButton } from '../array-button'
 
 export function AddRowButton<T = any>({
   name,
@@ -11,9 +11,9 @@ export function AddRowButton<T = any>({
     <ArrayButton
       name={name}
       {...restProps}
-      onClick={array => array.push(createNewRow())}
+      onClick={(array) => array.push(createNewRow())}
     />
-  );
+  )
 }
 
 export default AddRowButton

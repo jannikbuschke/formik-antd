@@ -1,1 +1,1 @@
-import "antd/lib/switch/style/css.js"
+import 'antd/lib/switch/style/css.js'

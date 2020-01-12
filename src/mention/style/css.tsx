@@ -1,1 +1,1 @@
-import "antd/lib/mention/style/css.js"
+import 'antd/lib/mention/style/css.js'

@@ -1,1 +1,1 @@
-import "antd/lib/button/style"
+import 'antd/lib/button/style'

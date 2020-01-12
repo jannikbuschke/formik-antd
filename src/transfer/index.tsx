@@ -1,14 +1,22 @@
-import { Transfer as $Transfer } from "antd";
-import { Field, FieldProps } from "formik";
-import * as React from "react";
-import { FormikFieldProps } from "../FieldProps";
-import { TransferProps as $TransferProps } from "antd/lib/transfer";
+import { Transfer as $Transfer } from 'antd'
+import { Field, FieldProps } from 'formik'
+import * as React from 'react'
+import { FormikFieldProps } from '../FieldProps'
+import { TransferProps as $TransferProps } from 'antd/lib/transfer'
 
-export type TransferProps = FormikFieldProps & $TransferProps;
+export type TransferProps = FormikFieldProps & $TransferProps
 
-export const Transfer = ({ name, validate, onChange, ...restProps }: TransferProps) => (
+export const Transfer = ({
+  name,
+  validate,
+  onChange,
+  ...restProps
+}: TransferProps) => (
   <Field name={name} validate={validate}>
-    {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+    {({
+      field: { value },
+      form: { setFieldValue, setFieldTouched },
+    }: FieldProps) => (
       <$Transfer
         targetKeys={value || []}
         onChange={(targetKeys, direction, moveKeys) => {
@@ -20,6 +28,6 @@ export const Transfer = ({ name, validate, onChange, ...restProps }: TransferPro
       />
     )}
   </Field>
-);
+)
 
 export default Transfer

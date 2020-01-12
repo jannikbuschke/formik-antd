@@ -1,7 +1,7 @@
-import {  Field, FieldProps } from 'formik';
-import * as React from 'react';
-import { Table as $Table } from 'antd';
-import { TableProps, WithStore } from 'antd/lib/table';
+import { Field, FieldProps } from 'formik'
+import * as React from 'react'
+import { Table as $Table } from 'antd'
+import { TableProps, WithStore } from 'antd/lib/table'
 
 export function Table<T = any>({
   name,
@@ -10,12 +10,10 @@ export function Table<T = any>({
   return (
     <Field name={name}>
       {({ field }: FieldProps<any>) => {
-        return (
-            <$Table dataSource={field.value || []} {...restProps} />
-        );
+        return <$Table dataSource={field.value || []} {...restProps} />
       }}
     </Field>
-  );
+  )
 }
 
 export default Table

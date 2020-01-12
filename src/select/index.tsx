@@ -1,21 +1,32 @@
-import { Select as $Select } from "antd";
-import { Field, FieldProps } from "formik";
-import * as React from "react";
-import { SelectProps as $SelectProps, OptionProps } from "antd/lib/select";
-import { FormikFieldProps } from "../FieldProps";
+import { Select as $Select } from 'antd'
+import { Field, FieldProps } from 'formik'
+import * as React from 'react'
+import { SelectProps as $SelectProps, OptionProps } from 'antd/lib/select'
+import { FormikFieldProps } from '../FieldProps'
 
-export type SelectProps = FormikFieldProps & $SelectProps & { children?: React.ReactNode };
+export type SelectProps = FormikFieldProps &
+  $SelectProps & { children?: React.ReactNode }
 
-export const Select = ({ name, validate, children, onChange, onBlur, ...restProps }: SelectProps) => {
+export const Select = ({
+  name,
+  validate,
+  children,
+  onChange,
+  onBlur,
+  ...restProps
+}: SelectProps) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+      {({
+        field: { value },
+        form: { setFieldValue, setFieldTouched },
+      }: FieldProps) => (
         <$Select<any>
           onChange={(value, option) => {
             setFieldValue(name, value)
             onChange && onChange(value, option)
           }}
-          onBlur={value => {
+          onBlur={(value) => {
             setFieldTouched(name)
             onBlur && onBlur(value)
           }}
@@ -26,19 +37,19 @@ export const Select = ({ name, validate, children, onChange, onBlur, ...restProp
         </$Select>
       )}
     </Field>
-  );
-};
+  )
+}
 
 export default Select
 
-type Option = OptionProps & { label: React.ReactNode | string | number };
+type Option = OptionProps & { label: React.ReactNode | string | number }
 
 Select.renderOptions = (options: Option[]) =>
   options.map(({ label, ...restProps }, index) => (
     <$Select.Option key={`select-option-${index}`} {...restProps}>
       {label}
     </$Select.Option>
-  ));
+  ))
 
-Select.Option = $Select.Option;
-Select.OptGroup = $Select.OptGroup;
+Select.Option = $Select.Option
+Select.OptGroup = $Select.OptGroup

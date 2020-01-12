@@ -1,25 +1,34 @@
-import { Mention as $Mention } from "antd";
-import { Field, FieldProps } from "formik";
-import * as React from "react";
-import { MentionProps as $MentionProps } from "antd/lib/mention";
-import { FormikFieldProps } from "../FieldProps";
+import { Mention as $Mention } from 'antd'
+import { Field, FieldProps } from 'formik'
+import * as React from 'react'
+import { MentionProps as $MentionProps } from 'antd/lib/mention'
+import { FormikFieldProps } from '../FieldProps'
 
-const { toContentState, toString } = $Mention;
+const { toContentState, toString } = $Mention
 
-export type MentionProps = FormikFieldProps & $MentionProps;
+export type MentionProps = FormikFieldProps & $MentionProps
 
-export const Mention = ({ name, validate, onChange, onBlur, ...restProps }: MentionProps) => {
+export const Mention = ({
+  name,
+  validate,
+  onChange,
+  onBlur,
+  ...restProps
+}: MentionProps) => {
   return (
     <Field name={name} validate={validate}>
-      {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+      {({
+        field: { value },
+        form: { setFieldValue, setFieldTouched },
+      }: FieldProps) => (
         <Internal
           name={name}
           value={value}
-          onChange={value => {
+          onChange={(value) => {
             setFieldValue(name, value)
             onChange && onChange(value)
           }}
-          onBlur={event => {
+          onBlur={(event) => {
             setFieldTouched(name)
             onBlur && onBlur(event)
           }}
@@ -27,22 +36,27 @@ export const Mention = ({ name, validate, onChange, onBlur, ...restProps }: Ment
         />
       )}
     </Field>
-  );
+  )
 }
 export default Mention
 
-type InternalProps = { value: any, onChange: (v: string) => void; } & Pick<MentionProps, Exclude<keyof MentionProps, "onChange">>;
+type InternalProps = { value: any; onChange: (v: string) => void } & Pick<
+  MentionProps,
+  Exclude<keyof MentionProps, 'onChange'>
+>
 
 const Internal = ({ value, onChange, onBlur, ...restProps }: InternalProps) => {
-  const [editorState, setEditorState] = React.useState(toContentState(value || ""));
+  const [editorState, setEditorState] = React.useState(
+    toContentState(value || ''),
+  )
   return (
     <$Mention
       value={editorState}
-      onChange={v => {
-        setEditorState(v);
-        onChange(toString(v));
+      onChange={(v) => {
+        setEditorState(v)
+        onChange(toString(v))
       }}
       {...restProps}
     />
-  );
+  )
 }

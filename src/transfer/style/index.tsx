@@ -1,1 +1,1 @@
-import "antd/lib/transfer/style"
+import 'antd/lib/transfer/style'

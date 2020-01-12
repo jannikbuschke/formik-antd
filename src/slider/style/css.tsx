@@ -1,1 +1,1 @@
-import "antd/lib/slider/style/css.js"
+import 'antd/lib/slider/style/css.js'

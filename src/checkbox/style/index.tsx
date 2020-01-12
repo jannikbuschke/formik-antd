@@ -1,1 +1,1 @@
-import "antd/lib/checkbox/style"
+import 'antd/lib/checkbox/style'

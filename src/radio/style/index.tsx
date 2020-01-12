@@ -1,1 +1,1 @@
-import "antd/lib/radio/style"
+import 'antd/lib/radio/style'

@@ -1,1 +1,1 @@
-import "antd/lib/input/style"
+import 'antd/lib/input/style'

@@ -1,13 +1,13 @@
-import * as React from "react";
-import { Field, FieldProps, getIn, FieldConfig } from "formik";
-import { Form } from "antd";
-import { FormItemProps as $FormItemProps } from "antd/lib/form/FormItem";
+import * as React from 'react'
+import { Field, FieldProps, getIn, FieldConfig } from 'formik'
+import { Form } from 'antd'
+import { FormItemProps as $FormItemProps } from 'antd/lib/form/FormItem'
 export type FormItemProps = {
-  showValidateSuccess?: boolean;
-  showInitialErrorAfterTouched?: boolean;
-  children: React.ReactNode;
+  showValidateSuccess?: boolean
+  showInitialErrorAfterTouched?: boolean
+  children: React.ReactNode
 } & { name: string } & $FormItemProps &
-  Pick<FieldConfig, "validate">;
+  Pick<FieldConfig, 'validate'>
 
 export const FormItem = ({
   name,
@@ -19,24 +19,24 @@ export const FormItem = ({
 }: FormItemProps) => (
   <Field name={name} validate={validate}>
     {({
-      form: { errors = {}, touched = {}, initialErrors = {} }
+      form: { errors = {}, touched = {}, initialErrors = {} },
     }: FieldProps) => {
-      const error = getIn(errors, name, undefined);
-      const initialError = getIn(initialErrors, name, undefined);
-      let isTouched = getIn(touched, name, false) as boolean | boolean[];
+      const error = getIn(errors, name, undefined)
+      const initialError = getIn(initialErrors, name, undefined)
+      let isTouched = getIn(touched, name, false) as boolean | boolean[]
       if (Array.isArray(isTouched)) {
-        isTouched = isTouched.reduce((acc, value) => acc || value, false);
+        isTouched = isTouched.reduce((acc, value) => acc || value, false)
       }
-      const hasError = error !== undefined && isTouched;
-      const hasInitialError = initialError !== undefined;
-      const isValid = !error && isTouched;
+      const hasError = error !== undefined && isTouched
+      const hasInitialError = initialError !== undefined
+      const isValid = !error && isTouched
       return (
         <Form.Item
           validateStatus={
             hasError || (hasInitialError && !isTouched)
-              ? "error"
+              ? 'error'
               : isValid && showValidateSuccess
-              ? "success"
+              ? 'success'
               : undefined
           }
           hasFeedback={isValid}
@@ -50,15 +50,15 @@ export const FormItem = ({
                   )}
               </>
             ) ||
-            (isValid && "")
+            (isValid && '')
           }
           {...restProps}
         >
           {children}
         </Form.Item>
-      );
+      )
     }}
   </Field>
-);
+)
 
-export default FormItem;
+export default FormItem
