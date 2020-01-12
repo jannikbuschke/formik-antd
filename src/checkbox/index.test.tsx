@@ -6,7 +6,7 @@ import Form from '../form/form'
 import Checkbox from './index'
 import { act } from 'react-dom/test-utils'
 
-const TestAutoComplete = ({
+const Container = ({
   validate,
   initiallyChecked,
 }: {
@@ -25,9 +25,7 @@ const TestAutoComplete = ({
 }
 
 test('should check', async () => {
-  const { getByRole, debug } = render(
-    <TestAutoComplete initiallyChecked={false} />,
-  )
+  const { getByRole } = render(<Container initiallyChecked={false} />)
   const uat = getByRole('checkbox')
   await act(async () => {
     fireEvent.click(uat, { target: 'field', checked: true })
@@ -37,9 +35,7 @@ test('should check', async () => {
 })
 
 test('should uncheck', async () => {
-  const { getByRole, debug } = render(
-    <TestAutoComplete initiallyChecked={true} />,
-  )
+  const { getByRole } = render(<Container initiallyChecked={true} />)
   const uat = getByRole('checkbox')
   await act(async () => {
     fireEvent.click(uat, { target: 'field', checked: false })
@@ -48,11 +44,11 @@ test('should uncheck', async () => {
   expect(uat).not.toBeChecked()
 })
 
-test('validation should run once per click', async () => {
+test('should validate once per click', async () => {
   const validate = jest.fn()
 
   const { getByRole } = render(
-    <TestAutoComplete validate={validate} initiallyChecked={false} />,
+    <Container validate={validate} initiallyChecked={false} />,
   )
   const uat = getByRole('checkbox')
   await act(async () => {
