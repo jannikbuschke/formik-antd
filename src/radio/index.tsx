@@ -21,7 +21,7 @@ export const Radio = ({
         value={value}
         onChange={(event) => {
           setFieldValue(name, event.target.value)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(event)
         }}
         {...restProps}
@@ -42,7 +42,7 @@ Radio.Group = ({ name, validate, onChange, ...restProps }: RadioGroupProps) => (
         value={value}
         onChange={(event) => {
           setFieldValue(name, event.target.value)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(event)
         }}
         {...restProps}
