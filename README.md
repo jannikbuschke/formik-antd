@@ -46,7 +46,7 @@ function App() {
 npm install formik-antd
 ```
 
-Add `import "antd/dist/antd.css` to your `index.js` file (or look at https://ant.design/docs/react/getting-started for other options).
+Add `import "antd/dist/antd.css"` to your `index.js` file (or look at https://ant.design/docs/react/getting-started for other options).
 
 ## Core Concept
 
