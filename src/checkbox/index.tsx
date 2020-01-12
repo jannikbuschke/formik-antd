@@ -23,7 +23,7 @@ export const Checkbox = ({
         checked={value}
         onChange={(event) => {
           setFieldValue(name, event.target.checked)
-          setFieldTouched(name, true)
+          setFieldTouched(name, true, false)
           onChange && onChange(event)
         }}
         {...restProps}
