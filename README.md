@@ -9,9 +9,9 @@
 Ant Design 4 is landing soon. A beta that works with Ant Designs release candidate is available (v2.\*-beta).
 Version 1 of this library supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library work with formik v1 and v2.
 
-:warning: new npm package name: **formik-antd**
+:warning: new npm package name: **formik-antd** :warning:
 
-> from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`
+> from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`. In order to upgrade: change the referenced package name in your package.json as well as all imports. I.e. replace `import { Input } from "@jbuschke/formik-antd` with `import { Input } from "formik-antd`.
 
 # formik-antd
 
