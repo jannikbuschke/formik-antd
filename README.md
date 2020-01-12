@@ -4,6 +4,9 @@
 
 [CodeSandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
 
+Version 1 of this library supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library should work with formik v1 and v2.
+Version 2 is not yet final. A beta release is available.
+
 :warning: new npm package name: **formik-antd**
 
 > from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`
