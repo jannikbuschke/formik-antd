@@ -113,32 +113,25 @@ Showing validation messages can be accomplished with the `Form.Item` component (
 
 ## Submitting and Resetting Forms
 
-Directly under each `<Formik>` container a `<Form>` component _should_ be placed (unless you do not need it). This component composes the functionality provided by Ant Designs `<Form>` https://ant.design/components/form/ as well as Formiks (https://jaredpalmer.com/formik/docs/api/form):
-
+Directly under each `<Formik>` container a `<Form>` component _should_ be placed. This component composes the functionality provided by Ant Designs (https://ant.design/components/form/) as well as Formiks (https://jaredpalmer.com/formik/docs/api/form) `<Form>` components:
 
 ```jsx
-import React from "react";
-import { Form, SubmitButton, /* ... */ } from "formik-antd";
-import { Formik } from "formik";
+import React from 'react'
+import { Form, SubmitButton, ResetButton /* ... */ } from 'formik-antd'
+import { Formik } from 'formik'
 
-<Formik>
-  <Form>
-    {/* ... */}
-    <SubmitButton />
-  </Form>
-</Formik>
+function App() {
+  return <Formik initialValues={/* ... */} onSubmit={/* ... */}>
+    <Form>
+      {/* ... */}
+      <SubmitButton />
+      <ResetButton />
+    </Form>
+  </Formik>
+}
 ```
 
-
-## Submitting & Resetting
-
-| Name         | Props                                           | Description                                          |
-| ------------ | ----------------------------------------------- | ---------------------------------------------------- |
-| SubmitButton | [Button](https://ant.design/components/button/) | triggers form submission, is enabled when form valid |
-| ResetButton  | [Button](https://ant.design/components/button/) | resets the form, is enabled when form dirty          |
-
-The SubmitButton must be placed inside a `Form` component.
-
+Two additional helper components to submit and reset forms are provided: `SubmitButton` and `ResetButton`. Both render an Ant Design button and can be customized accordingly ([docs](https://ant.design/components/button/)). The `ResetButton` is disabled if the form is not dirty. To override the default behavior provide the `disable: boolean` prop.
 
 ## Lists and Nested objects
 
