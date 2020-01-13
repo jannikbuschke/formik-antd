@@ -41,16 +41,14 @@ export const FormItem = ({
           }
           hasFeedback={isValid}
           help={
-            (
-              <>
-                {hasError && <li>{error}</li>}
-                {hasInitialError &&
-                  (!isTouched || showInitialErrorAfterTouched) && (
-                    <li>{initialError}</li>
-                  )}
-              </>
-            ) ||
-            (isValid && '')
+            <>
+              {hasError && <li>{error}</li>}
+              {hasInitialError &&
+                (!isTouched || showInitialErrorAfterTouched) && (
+                  <li>{initialError}</li>
+                )}
+              {isValid && ''}
+            </>
           }
           {...restProps}
         >
