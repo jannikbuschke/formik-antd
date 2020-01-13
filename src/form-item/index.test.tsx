@@ -120,6 +120,24 @@ test('displayes initialError with error after touched when showInitialErrorAfter
   expect(queryByText('initialError')).toBeInTheDocument()
 })
 
+test('should not display help if no display is required', async () => {
+  const validate = () => 'error'
+  const { getByTestId } = render(
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      <Form>
+        <FormItem name='test' validate={validate}>
+          <Input name='test' data-testid='input' />
+        </FormItem>
+        <SubmitButton data-testid='submit' />
+      </Form>
+    </Formik>,
+  )
+
+  const explainElement = getByTestId('input').parentElement!.nextSibling
+
+  expect(explainElement).toBeNull()
+})
+
 test('handles changes on multiselect without prop-types error', async () => {
   const { getByTestId, queryByText, getByText } = render(
     <Test>

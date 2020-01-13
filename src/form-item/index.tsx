@@ -30,6 +30,10 @@ export const FormItem = ({
       const hasError = error !== undefined && isTouched
       const hasInitialError = initialError !== undefined
       const isValid = !error && isTouched
+      const showHelp =
+        hasError ||
+        (hasInitialError && (!isTouched || showInitialErrorAfterTouched))
+
       return (
         <Form.Item
           validateStatus={
@@ -41,14 +45,16 @@ export const FormItem = ({
           }
           hasFeedback={isValid}
           help={
-            <>
-              {hasError && <li>{error}</li>}
-              {hasInitialError &&
-                (!isTouched || showInitialErrorAfterTouched) && (
-                  <li>{initialError}</li>
-                )}
-              {isValid && ''}
-            </>
+            (showHelp && (
+              <>
+                {hasError && <li>{error}</li>}
+                {hasInitialError &&
+                  (!isTouched || showInitialErrorAfterTouched) && (
+                    <li>{initialError}</li>
+                  )}
+              </>
+            )) ||
+            (isValid && '')
           }
           {...restProps}
         >
