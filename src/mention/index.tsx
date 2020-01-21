@@ -1,8 +1,9 @@
 import { Mention as $Mention } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { MentionProps as $MentionProps } from 'antd/lib/mention'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 
 const { toContentState, toString } = $Mention
 
@@ -11,12 +12,13 @@ export type MentionProps = FormikFieldProps & $MentionProps
 export const Mention = ({
   name,
   validate,
+  fastMode,
   onChange,
   onBlur,
   ...restProps
 }: MentionProps) => {
   return (
-    <Field name={name} validate={validate}>
+    <Field name={name} validate={validate} fastMode={fastMode}>
       {({
         field: { value },
         form: { setFieldValue, setFieldTouched },

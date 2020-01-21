@@ -1,8 +1,9 @@
 import { TimePicker as $TimePicker } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import moment from 'moment'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import { TimePickerProps as $TimePickerProps } from 'antd/lib/time-picker'
 
 export type TimePickerProps = FormikFieldProps & $TimePickerProps
@@ -10,10 +11,11 @@ export type TimePickerProps = FormikFieldProps & $TimePickerProps
 export const TimePicker = ({
   name,
   validate,
+  fastMode,
   onChange,
   ...restProps
 }: TimePickerProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fastMode={fastMode}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

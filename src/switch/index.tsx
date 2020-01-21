@@ -1,18 +1,20 @@
 import { Switch as $Switch } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { SwitchProps as $SwitchProps } from 'antd/lib/switch'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 
 export type SwitchProps = FormikFieldProps & $SwitchProps
 
 export const Switch = ({
   name,
   validate,
+  fastMode,
   onChange,
   ...restProps
 }: SwitchProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fastMode={fastMode}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

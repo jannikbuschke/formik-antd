@@ -1,8 +1,9 @@
 import { Select as $Select } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { SelectProps as $SelectProps, OptionProps } from 'antd/lib/select'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 
 export type SelectProps = FormikFieldProps &
   $SelectProps & { children?: React.ReactNode }
@@ -10,13 +11,14 @@ export type SelectProps = FormikFieldProps &
 export const Select = ({
   name,
   validate,
+  fastMode,
   children,
   onChange,
   onBlur,
   ...restProps
 }: SelectProps) => {
   return (
-    <Field name={name} validate={validate}>
+    <Field name={name} validate={validate} fastMode={fastMode}>
       {({
         field: { value },
         form: { setFieldValue, setFieldTouched },

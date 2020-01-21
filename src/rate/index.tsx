@@ -1,13 +1,14 @@
 import { Rate as $Rate } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import { RateProps as $RateProps } from 'antd/lib/rate'
 
 export type RateProps = FormikFieldProps & $RateProps
 
-export const Rate = ({ name, validate, onChange, ...restProps }: RateProps) => (
-  <Field name={name} validate={validate}>
+export const Rate = ({ name, validate, fastMode, onChange, ...restProps }: RateProps) => (
+  <Field name={name} validate={validate} fastMode={fastMode}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },
