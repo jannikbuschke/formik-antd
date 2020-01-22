@@ -248,6 +248,7 @@ Special thanks to all contributors:
   </tr>
   <tr>
     <td align="center"><a href="http://agreon.de"><img src="https://avatars3.githubusercontent.com/u/4455258?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Huth</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=Agreon" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/gabrielberlanda"><img src="https://avatars0.githubusercontent.com/u/11332820?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Berlanda</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=gabrielberlanda" title="Code">💻</a></td>
   </tr>
 </table>
 
