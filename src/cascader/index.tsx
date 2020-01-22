@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Cascader as $Cascader } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import { CascaderProps as $CascaderProps } from 'antd/lib/cascader'
 
 export type CascaderProps = FormikFieldProps & $CascaderProps
@@ -9,10 +10,11 @@ export type CascaderProps = FormikFieldProps & $CascaderProps
 export const Cascader = ({
   name,
   validate,
+  fast,
   onChange,
   ...restProps
 }: CascaderProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

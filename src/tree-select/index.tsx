@@ -1,7 +1,8 @@
 import { TreeSelect as $TreeSelect } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import { TreeSelectProps as $TreeSelectProps } from 'antd/lib/tree-select'
 
 export type TreeSelectProps = FormikFieldProps &
@@ -10,11 +11,12 @@ export type TreeSelectProps = FormikFieldProps &
 export const TreeSelect = ({
   name,
   validate,
+  fast,
   onChange,
   onBlur,
   ...restProps
 }: TreeSelectProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form }: FieldProps) => (
       <$TreeSelect
         value={value}

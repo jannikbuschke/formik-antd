@@ -1,7 +1,8 @@
 import { AutoComplete as $AutoComplete } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import { AutoCompleteProps as $AutoCompleteProps } from 'antd/lib/auto-complete'
 
 export type AutoCompleteProps = FormikFieldProps & $AutoCompleteProps
@@ -9,11 +10,12 @@ export type AutoCompleteProps = FormikFieldProps & $AutoCompleteProps
 export const AutoComplete = ({
   name,
   validate,
+  fast,
   onChange,
   onBlur,
   ...restProps
 }: AutoCompleteProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form }: FieldProps) => (
       <$AutoComplete
         defaultValue={value}

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Checkbox as $Checkbox } from 'antd'
-import { Field, FieldProps } from 'formik'
+import { FieldProps } from 'formik'
+import Field from '../field'
 import { CheckboxProps as $CheckboxProps } from 'antd/lib/checkbox/Checkbox'
 import { FormikFieldProps } from '../FieldProps'
 import { CheckboxGroupProps as $CheckboxGroupProps } from 'antd/lib/checkbox/Group'
@@ -10,10 +11,11 @@ export type CheckboxProps = FormikFieldProps & $CheckboxProps
 export const Checkbox = ({
   name,
   validate,
+  fast,
   onChange,
   ...restProps
 }: CheckboxProps) => (
-  <Field name={name} validate={validate}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },
