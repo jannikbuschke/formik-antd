@@ -11,14 +11,14 @@ export type SelectProps = FormikFieldProps &
 export const Select = ({
   name,
   validate,
-  fastMode,
+  fast,
   children,
   onChange,
   onBlur,
   ...restProps
 }: SelectProps) => {
   return (
-    <Field name={name} validate={validate} fastMode={fastMode}>
+    <Field name={name} validate={validate} fast={fast}>
       {({
         field: { value },
         form: { setFieldValue, setFieldTouched },

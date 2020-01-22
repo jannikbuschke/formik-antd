@@ -11,11 +11,11 @@ export type CheckboxProps = FormikFieldProps & $CheckboxProps
 export const Checkbox = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: CheckboxProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

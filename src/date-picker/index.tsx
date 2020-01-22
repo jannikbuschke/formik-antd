@@ -23,10 +23,10 @@ export const DatePicker = ({
   name,
   validate,
   onChange,
-  fastMode,
+  fast,
   ...restProps
 }: DatePickerProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

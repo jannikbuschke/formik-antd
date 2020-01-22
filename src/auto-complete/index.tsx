@@ -10,12 +10,12 @@ export type AutoCompleteProps = FormikFieldProps & $AutoCompleteProps
 export const AutoComplete = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   onBlur,
   ...restProps
 }: AutoCompleteProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form }: FieldProps) => (
       <$AutoComplete
         defaultValue={value}

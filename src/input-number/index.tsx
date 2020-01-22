@@ -10,12 +10,12 @@ export type InputNumberProps = FormikFieldProps & $InputNumberProps
 export const InputNumber = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange: $onChange,
   onBlur: $onBlur,
   ...restProps
 }: InputNumberProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
       <$InputNumber
         name={name}

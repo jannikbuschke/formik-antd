@@ -10,11 +10,11 @@ export type TransferProps = FormikFieldProps & $TransferProps
 export const Transfer = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: TransferProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

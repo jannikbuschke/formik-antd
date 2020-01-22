@@ -10,11 +10,11 @@ export type SliderProps = FormikFieldProps & $SliderProps
 export const Slider = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: SliderProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

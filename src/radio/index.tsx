@@ -10,11 +10,11 @@ export type RadioGroupProps = FormikFieldProps & $RadioGroupProps
 export const Radio = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: RadioGroupProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },
@@ -34,8 +34,8 @@ export const Radio = ({
 
 export default Radio
 
-Radio.Group = ({ name, validate, fastMode, onChange, ...restProps }: RadioGroupProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+Radio.Group = ({ name, validate, fast, onChange, ...restProps }: RadioGroupProps) => (
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

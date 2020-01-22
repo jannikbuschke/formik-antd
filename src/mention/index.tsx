@@ -12,13 +12,13 @@ export type MentionProps = FormikFieldProps & $MentionProps
 export const Mention = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   onBlur,
   ...restProps
 }: MentionProps) => {
   return (
-    <Field name={name} validate={validate} fastMode={fastMode}>
+    <Field name={name} validate={validate} fast={fast}>
       {({
         field: { value },
         form: { setFieldValue, setFieldTouched },

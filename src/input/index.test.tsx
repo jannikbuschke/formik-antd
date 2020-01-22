@@ -10,11 +10,11 @@ import Form from '../form/form'
 import Input from './index'
 import { act } from 'react-dom/test-utils'
 
-const Container = ({ fastMode }: { fastMode: boolean }) => {
+const Container = ({ fast }: { fast: boolean }) => {
   return (
     <Formik initialValues={{ field: 'initial value' }} onSubmit={() => {}}>
       <Form>
-        <Input data-testid='uat' name='field' fastMode={fastMode} />
+        <Input data-testid='uat' name='field' fast={fast} />
       </Form>
     </Formik>
   )
@@ -22,13 +22,13 @@ const Container = ({ fastMode }: { fastMode: boolean }) => {
 
 describe('test initial value', () => {
   it.each`
-    fastMode
+    fast
     ${true}
     ${false}
   `(
-    'should display initial value (fastMode=$fastMode)',
-    async (fastMode: boolean) => {
-      const { findByTestId } = render(<Container fastMode={fastMode} />)
+    'should display initial value (fast=$fast)',
+    async (fast: boolean) => {
+      const { findByTestId } = render(<Container fast={fast} />)
       expect(await findByTestId('uat')).toHaveValue('initial value')
     },
   )
@@ -36,11 +36,11 @@ describe('test initial value', () => {
 
 describe('should change', () => {
   it.each`
-    fastMode
+    fast
     ${true}
     ${false}
-  `('should change (fastMode=$fastMode)', async (fastMode: boolean) => {
-    const { findByTestId } = render(<Container fastMode={fastMode} />)
+  `('should change (fast=$fast)', async (fast: boolean) => {
+    const { findByTestId } = render(<Container fast={fast} />)
     const uat = await findByTestId('uat')
     await act(async () => {
       fireEvent.change(uat, { target: { value: 'new value' } })

@@ -11,12 +11,12 @@ export type TreeSelectProps = FormikFieldProps &
 export const TreeSelect = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   onBlur,
   ...restProps
 }: TreeSelectProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form }: FieldProps) => (
       <$TreeSelect
         value={value}

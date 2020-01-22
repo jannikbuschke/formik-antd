@@ -11,11 +11,11 @@ export type TimePickerProps = FormikFieldProps & $TimePickerProps
 export const TimePicker = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: TimePickerProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

@@ -14,12 +14,12 @@ export type InputProps = FormikFieldProps & $InputProps
 export const Input = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange: $onChange,
   onBlur: $onBlur,
   ...restProps
 }: InputProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input
         name={name}
@@ -45,12 +45,12 @@ export type PasswordProps = FormikFieldProps & $PasswordProps
 Input.Password = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange: $onChange,
   onBlur: $onBlur,
   ...restProps
 }: PasswordProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.Password
         name={name}
@@ -74,12 +74,12 @@ export type TextAreaProps = FormikFieldProps & $TextAreaProps
 Input.TextArea = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange: $onChange,
   onBlur: $onBlur,
   ...restProps
 }: TextAreaProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value, onChange, onBlur } }: FieldProps) => (
       <$Input.TextArea
         name={name}

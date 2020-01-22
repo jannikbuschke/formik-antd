@@ -10,11 +10,11 @@ export type CascaderProps = FormikFieldProps & $CascaderProps
 export const Cascader = ({
   name,
   validate,
-  fastMode,
+  fast,
   onChange,
   ...restProps
 }: CascaderProps) => (
-  <Field name={name} validate={validate} fastMode={fastMode}>
+  <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
       form: { setFieldValue, setFieldTouched },

@@ -3,11 +3,11 @@ import { FormikFieldProps } from '../FieldProps'
 import * as React from 'react'
 
 export const Field: React.FC<FormikFieldProps> = ({
-  fastMode,
+  fast,
   children,
   ...restProps
 }) => {
-  if (fastMode) {
+  if (fast) {
     return <FastField {...restProps}>{children}</FastField>
   }
 
