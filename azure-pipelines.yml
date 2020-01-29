@@ -1,5 +1,7 @@
 trigger:
 - master
+- release/*
+- beta/*
 
 pool:
   vmImage: 'ubuntu-latest'
