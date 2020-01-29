@@ -1,4 +1,6 @@
 [![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikbuschke.formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=40&branchName=master)
+![GitHub stars](https://img.shields.io/github/stars/jannikbuschke/formik-antd)
+![npm](https://img.shields.io/npm/dw/formik-antd)
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
