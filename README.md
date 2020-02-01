@@ -1,4 +1,6 @@
-[![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikb%20Formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=4?branchName=master)
+[![Build Status](https://dev.azure.com/jannikb/glue/_apis/build/status/jannikbuschke.formik-antd?branchName=master)](https://dev.azure.com/jannikb/glue/_build/latest?definitionId=40&branchName=master)
+![GitHub stars](https://img.shields.io/github/stars/jannikbuschke/formik-antd)
+![npm](https://img.shields.io/npm/dw/formik-antd)
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
@@ -133,7 +135,7 @@ Showing validation messages can be accomplished with the `Form.Item` component (
 ## FastField support
 
 Formik allows performance optimizations through the [`<FastField/>`](https://jaredpalmer.com/formik/docs/api/fastfield) component. Please read the formik docs on when to use such an optimization (usually you don't and maybe should not optimize, unless you encounter performance issues in production).
-To opt-in to FastField support, all `formik-antd` components provide an optional `fast?: boolean` prop. Setting this to `true` enables the optimzation:
+To opt-in to FastField support, all `formik-antd` components provide an optional `fast?: boolean` prop. Setting this to `true` enables the optimization:
 
 ```jsx
 <Input name='firstName' fast={true} />
