@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect'
-import React, { ReactNode, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { Formik } from 'formik'
 import { render, fireEvent, waitForDomChange } from '@testing-library/react'
 import FormItem from '.'
@@ -7,22 +7,9 @@ import Input from '../input'
 import Form from '../form/form'
 import Select from '../select'
 import SubmitButton from '../submit-button'
-const { Option } = Select
+import { act } from 'react-dom/test-utils'
 
-// https://jestjs.io/docs/en/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation(query => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+const { Option } = Select
 
 const Test = ({
   children,
@@ -208,10 +195,12 @@ test('displays validation success ', async () => {
       </Form>
     </Formik>,
   )
-  expect(queryByLabelText('icon: check-circle')).not.toBeInTheDocument()
-  fireEvent.change(getByTestId('input'), {
-    target: { name: 'test', value: 'test' },
+  expect(queryByLabelText('check-circle')).not.toBeInTheDocument()
+  await act(async () => {
+    fireEvent.change(getByTestId('input'), {
+      target: { name: 'test', value: 'test' },
+    })
+    fireEvent.blur(getByTestId('input'))
   })
-  fireEvent.blur(getByTestId('input'))
-  expect(queryByLabelText('icon: check-circle')).toBeInTheDocument()
+  expect(queryByLabelText('check-circle')).toBeInTheDocument()
 })
