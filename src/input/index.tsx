@@ -13,18 +13,6 @@ import Password from 'antd/lib/input/Password'
 
 export type InputProps = FormikFieldProps & $InputProps
 
-interface InputType
-  extends React.ForwardRefExoticComponent<
-    FormikFieldProps & $InputProps & React.RefAttributes<$Input>
-  > {
-  Password: React.ForwardRefExoticComponent<
-    FormikFieldProps & $PasswordProps & React.RefAttributes<Password>
-  >
-  TextArea: React.ForwardRefExoticComponent<
-    FormikFieldProps & $TextAreaProps & React.RefAttributes<TextArea>
-  >
-}
-
 const Input = React.forwardRef(
   (
     {
@@ -58,6 +46,23 @@ const Input = React.forwardRef(
   ),
 )
 
+export type PasswordType = React.ForwardRefExoticComponent<
+  FormikFieldProps & $PasswordProps & React.RefAttributes<Password>
+>
+export type TextAreaType = React.ForwardRefExoticComponent<
+  FormikFieldProps & $TextAreaProps & React.RefAttributes<TextArea>
+>
+export interface InputType
+  extends React.ForwardRefExoticComponent<
+    FormikFieldProps & $InputProps & React.RefAttributes<$Input>
+  > {
+  Password: PasswordType
+  TextArea: TextAreaType
+}
+
+// It is unclear how to properly type the static fields Input.Password and
+// Input.TextArea, as it is unclear how to declare and assign all in one go
+// Thats why we cast Input to InputType, then we can assign Password and TextArea
 const TypedInput = (Input as unknown) as InputType
 
 TypedInput.Password = React.forwardRef(

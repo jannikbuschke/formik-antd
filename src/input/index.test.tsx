@@ -3,91 +3,84 @@ import React from 'react'
 import { Formik } from 'formik'
 import { render, fireEvent, waitForDomChange } from '@testing-library/react'
 import Form from '../form/form'
-import Input from './index'
+import Input, { InputType, TextAreaType, PasswordType } from './index'
 import { act } from 'react-dom/test-utils'
 
-const InputContainer = ({ fast }: { fast: boolean }) => {
-  const ref = React.useRef() as any
-  React.useEffect(() => {
-    ref.current.focus()
-  }, [ref.current])
+type Component = InputType | PasswordType | TextAreaType
+
+const InputContainer = (props: React.PropsWithChildren<{}>) => {
   return (
     <Formik initialValues={{ field: 'initial value' }} onSubmit={() => {}}>
-      <Form>
-        <Input ref={ref} data-testid='uat' name='field' fast={fast} />
-      </Form>
+      <Form>{props.children}</Form>
     </Formik>
   )
 }
 
-const TextAreaContainer = () => {
-  return (
-    <Formik initialValues={{ field: 'initial value' }} onSubmit={() => {}}>
-      <Form>
-        <Input.TextArea data-testid='uat' name='field' />
-      </Form>
-    </Formik>
-  )
-}
-
-const PasswordContainer = () => {
-  return (
-    <Formik initialValues={{ field: 'initial value' }} onSubmit={() => {}}>
-      <Form>
-        <Input.Password data-testid='uat' name='field' />
-      </Form>
-    </Formik>
-  )
-}
-
-describe('test initial value', () => {
+describe('should display initial value', () => {
   it.each`
-    fast
-    ${true}
-    ${false}
-  `('should display initial value (fast=$fast)', async (fast: boolean) => {
-    const { findByTestId } = render(<InputContainer fast={fast} />)
-    expect(await findByTestId('uat')).toHaveValue('initial value')
-  })
+    Component         | name
+    ${Input}          | ${'Input'}
+    ${Input.Password} | ${'Password'}
+    ${Input.TextArea} | ${'TextArea'}
+  `(
+    'should display initial value ($name)',
+    async ({ Component }: { Component: Component }) => {
+      const { findByTestId } = render(
+        <InputContainer>
+          <Component data-testid='uat' name='field' />
+        </InputContainer>,
+      )
+      expect(await findByTestId('uat')).toHaveValue('initial value')
+    },
+  )
 })
 
 describe('should change', () => {
   it.each`
-    fast
-    ${true}
-    ${false}
-  `('should change (fast=$fast)', async (fast: boolean) => {
-    const { findByTestId } = render(<InputContainer fast={fast} />)
-    const uat = await findByTestId('uat')
-    await act(async () => {
-      fireEvent.change(uat, { target: { value: 'new value' } })
-      await waitForDomChange()
-    })
-    expect(await findByTestId('uat')).toHaveValue('new value')
-  })
+    Component         | name
+    ${Input}          | ${'Input'}
+    ${Input.Password} | ${'Password'}
+    ${Input.TextArea} | ${'TextArea'}
+  `(
+    'should change ($name)',
+    async ({ Component }: { Component: Component }) => {
+      const { findByTestId } = render(
+        <InputContainer>
+          <Component data-testid='uat' name='field' />
+        </InputContainer>,
+      )
+      const uat = await findByTestId('uat')
+      await act(async () => {
+        fireEvent.change(uat, { target: { value: 'new value' } })
+        await waitForDomChange()
+      })
+      expect(await findByTestId('uat')).toHaveValue('new value')
+    },
+  )
 })
-
-test('should have focus', async () => {
-  const { findByTestId } = render(<InputContainer fast={false} />)
-  expect(await findByTestId('uat')).toHaveFocus()
-})
-
-test('TextArea should display default value', async () => {
-  const { findByTestId } = render(<TextAreaContainer />)
-  const uat = await findByTestId('uat')
-  await act(async () => {
-    fireEvent.change(uat, { target: { value: 'defaultvalue' } })
-    await waitForDomChange()
-  })
-  expect(await findByTestId('uat')).toHaveValue('defaultvalue')
-})
-
-test('Password should display default value', async () => {
-  const { findByTestId } = render(<PasswordContainer />)
-  const uat = await findByTestId('uat')
-  await act(async () => {
-    fireEvent.change(uat, { target: { value: 'defaultvalue' } })
-    await waitForDomChange()
-  })
-  expect(await findByTestId('uat')).toHaveValue('defaultvalue')
+describe('should be focusable', () => {
+  it.each`
+    Component         | name
+    ${Input}          | ${'Input'}
+    ${Input.Password} | ${'Password'}
+    ${Input.TextArea} | ${'TextArea'}
+  `(
+    'should be focusable ($name)',
+    async ({ Component }: { Component: Component }) => {
+      const { findByTestId } = render(
+        React.createElement(function() {
+          const ref = React.useRef<any>(null)
+          React.useLayoutEffect(() => {
+            ref.current!.focus()
+          }, [])
+          return (
+            <InputContainer>
+              <Component ref={ref} data-testid='uat' name='field' />
+            </InputContainer>
+          )
+        }),
+      )
+      expect(await findByTestId('uat')).toHaveFocus()
+    },
+  )
 })
