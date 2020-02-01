@@ -8,92 +8,127 @@ import {
 } from 'antd/lib/input'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
+import TextArea from 'antd/lib/input/TextArea'
+import Password from 'antd/lib/input/Password'
 
 export type InputProps = FormikFieldProps & $InputProps
 
-export const Input = ({
-  name,
-  validate,
-  fast,
-  onChange: $onChange,
-  onBlur: $onBlur,
-  ...restProps
-}: InputProps) => (
-  <Field name={name} validate={validate} fast={fast}>
-    {({ field: { value, onChange, onBlur } }: FieldProps) => (
-      <$Input
-        name={name}
-        value={value}
-        onChange={(event) => {
-          onChange(event)
-          $onChange && $onChange(event)
-        }}
-        onBlur={(event) => {
-          onBlur(event)
-          $onBlur && $onBlur(event)
-        }}
-        {...restProps}
-      />
-    )}
-  </Field>
+interface InputType
+  extends React.ForwardRefExoticComponent<
+    FormikFieldProps & $InputProps & React.RefAttributes<$Input>
+  > {
+  Password: React.ForwardRefExoticComponent<
+    FormikFieldProps & $PasswordProps & React.RefAttributes<Password>
+  >
+  TextArea: React.ForwardRefExoticComponent<
+    FormikFieldProps & $TextAreaProps & React.RefAttributes<TextArea>
+  >
+}
+
+const Input = React.forwardRef(
+  (
+    {
+      name,
+      validate,
+      fast,
+      onChange: $onChange,
+      onBlur: $onBlur,
+      ...restProps
+    }: InputProps,
+    ref: React.Ref<$Input>,
+  ) => (
+    <Field name={name} validate={validate} fast={fast}>
+      {({ field: { value, onChange, onBlur } }: FieldProps) => (
+        <$Input
+          ref={ref}
+          name={name}
+          value={value}
+          onChange={(event) => {
+            onChange(event)
+            $onChange && $onChange(event)
+          }}
+          onBlur={(event) => {
+            onBlur(event)
+            $onBlur && $onBlur(event)
+          }}
+          {...restProps}
+        />
+      )}
+    </Field>
+  ),
 )
 
-export default Input
+const TypedInput = (Input as unknown) as InputType
+
+TypedInput.Password = React.forwardRef(
+  (
+    {
+      name,
+      validate,
+      fast,
+      onChange: $onChange,
+      onBlur: $onBlur,
+      ...restProps
+    }: PasswordProps,
+    ref: React.Ref<Password>,
+  ) => (
+    <Field name={name} validate={validate} fast={fast}>
+      {({ field: { value, onChange, onBlur } }: FieldProps) => (
+        <$Input.Password
+          ref={ref}
+          name={name}
+          value={value}
+          onChange={(event) => {
+            onChange(event)
+            $onChange && $onChange(event)
+          }}
+          onBlur={(event) => {
+            onBlur(event)
+            $onBlur && $onBlur(event)
+          }}
+          {...restProps}
+        />
+      )}
+    </Field>
+  ),
+)
+
+TypedInput.TextArea = React.forwardRef(
+  (
+    {
+      name,
+      validate,
+      fast,
+      onChange: $onChange,
+      onBlur: $onBlur,
+      ...restProps
+    }: TextAreaProps,
+    ref: React.Ref<TextArea>,
+  ) => (
+    <Field name={name} validate={validate} fast={fast}>
+      {({ field: { value, onChange, onBlur } }: FieldProps) => (
+        <$Input.TextArea
+          ref={ref}
+          name={name}
+          value={value}
+          onChange={(event) => {
+            onChange(event)
+            $onChange && $onChange(event)
+          }}
+          onBlur={(event) => {
+            onBlur(event)
+            $onBlur && $onBlur(event)
+          }}
+          {...restProps}
+        />
+      )}
+    </Field>
+  ),
+)
 
 export type PasswordProps = FormikFieldProps & $PasswordProps
 
-Input.Password = ({
-  name,
-  validate,
-  fast,
-  onChange: $onChange,
-  onBlur: $onBlur,
-  ...restProps
-}: PasswordProps) => (
-  <Field name={name} validate={validate} fast={fast}>
-    {({ field: { value, onChange, onBlur } }: FieldProps) => (
-      <$Input.Password
-        name={name}
-        value={value}
-        onChange={(event) => {
-          onChange(event)
-          $onChange && $onChange(event)
-        }}
-        onBlur={(event) => {
-          onBlur(event)
-          $onBlur && $onBlur(event)
-        }}
-        {...restProps}
-      />
-    )}
-  </Field>
-)
-
 export type TextAreaProps = FormikFieldProps & $TextAreaProps
 
-Input.TextArea = ({
-  name,
-  validate,
-  fast,
-  onChange: $onChange,
-  onBlur: $onBlur,
-  ...restProps
-}: TextAreaProps) => (
-  <Field name={name} validate={validate} fast={fast}>
-    {({ field: { value, onChange, onBlur } }: FieldProps) => (
-      <$Input.TextArea
-        name={name}
-        value={value}
-        onChange={(event) => {
-          onChange(event)
-          $onChange && $onChange(event)
-        }}
-        onBlur={(event) => {
-          onBlur(event)
-          $onBlur && $onBlur(event)
-        }}
-        {...restProps}
-      />
-    )}
-  </Field>
-)
+export { TypedInput as Input }
+export default TypedInput
