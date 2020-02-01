@@ -32,7 +32,8 @@ steps:
     command: custom
     verbose: false
     customCommand: 'publish --tag beta'
-    publishEndpoint: 'npm'
+    customEndpoint: npm
+    publishEndpoint: npm
   continueOnError: true
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/beta'))
 
@@ -41,5 +42,6 @@ steps:
   inputs:
     command: publish
     verbose: false
-    publishEndpoint: 'npm'
+    customEndpoint: npm
+    publishEndpoint: npm
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'))
