@@ -29,7 +29,7 @@
   "scripts": {
     "build": "tsc && tsc -p tsconfig.es.json",
     "tsc": "tsc && tsc -p tsconfig.es.json",
-    "watch": "tsc --watch",
+    "watch": "tsc --watch -p tsconfig.es.json",
     "cleanbuild": "rm -r node_modules && npm install && tsc",
     "test": "jest",
     "test:watch": "jest --watch",
