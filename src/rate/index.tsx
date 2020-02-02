@@ -7,7 +7,13 @@ import { RateProps as $RateProps } from 'antd/lib/rate'
 
 export type RateProps = FormikFieldProps & $RateProps
 
-export const Rate = ({ name, validate, fast, onChange, ...restProps }: RateProps) => (
+export const Rate = ({
+  name,
+  validate,
+  fast,
+  onChange,
+  ...restProps
+}: RateProps) => (
   <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
