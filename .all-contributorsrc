@@ -148,6 +148,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "heuristicAL",
+      "name": "Alexandre Giard",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6423582?v=4",
+      "profile": "http://alexandregiard.me",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
