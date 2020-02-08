@@ -5,12 +5,12 @@ import { ButtonProps } from 'antd/lib/button'
 
 export const SubmitButton = ({ children, ...restProps }: ButtonProps) => (
   <Field>
-    {({ form: { isSubmitting, isValid, dirty } }: FieldProps) => (
+    {({ form: { isSubmitting, isValid, dirty, submitCount } }: FieldProps) => (
       <Button
         loading={isSubmitting}
         type='primary'
         htmlType='submit'
-        disabled={!isValid && dirty}
+        disabled={!isValid && (dirty || submitCount > 0)}
         {...restProps}
       >
         {children}
