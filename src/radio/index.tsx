@@ -34,7 +34,13 @@ export const Radio = ({
 
 export default Radio
 
-Radio.Group = ({ name, validate, fast, onChange, ...restProps }: RadioGroupProps) => (
+Radio.Group = ({
+  name,
+  validate,
+  fast,
+  onChange,
+  ...restProps
+}: RadioGroupProps) => (
   <Field name={name} validate={validate} fast={fast}>
     {({
       field: { value },
