@@ -105,6 +105,8 @@ function App() {
 }
 ```
 
+The `SubmitButton` and `ResetButton` will disable automatically depending on form state. The `ResetButton` is enabled if the form is dirty. The `SubmitButton` is enabled if the form is valid or if it is not dirty.
+
 ## Form- and Field-level Validation
 
 Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
