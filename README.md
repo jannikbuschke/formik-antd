@@ -260,12 +260,12 @@ Special thanks to all contributors:
   <tr>
     <td align="center"><a href="http://agreon.de"><img src="https://avatars3.githubusercontent.com/u/4455258?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Huth</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=Agreon" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/gabrielberlanda"><img src="https://avatars0.githubusercontent.com/u/11332820?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Berlanda</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=gabrielberlanda" title="Code">💻</a></td>
+    <td align="center"><a href="http://alexandregiard.me"><img src="https://avatars1.githubusercontent.com/u/6423582?v=4" width="100px;" alt=""/><br /><sub><b>Alexandre Giard</b></sub></a><br /><a href="#ideas-heuristicAL" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
