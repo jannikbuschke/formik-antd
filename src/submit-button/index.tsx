@@ -10,7 +10,7 @@ export const SubmitButton = ({ children, ...restProps }: ButtonProps) => (
         loading={isSubmitting}
         type='primary'
         htmlType='submit'
-        disabled={!(isValid || dirty)}
+        disabled={!isValid && dirty}
         {...restProps}
       >
         {children}
