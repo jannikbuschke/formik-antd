@@ -30,7 +30,8 @@ export const Select = ({
             setFieldTouched(name)
             onBlur && onBlur(value)
           }}
-          value={value}
+          // setting undefined will show the placeholder
+          value={value === '' || value === null ? undefined : value}
           {...restProps}
         >
           {children}
