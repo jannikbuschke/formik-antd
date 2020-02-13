@@ -261,6 +261,7 @@ Special thanks to all contributors:
     <td align="center"><a href="http://agreon.de"><img src="https://avatars3.githubusercontent.com/u/4455258?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Huth</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=Agreon" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/gabrielberlanda"><img src="https://avatars0.githubusercontent.com/u/11332820?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Berlanda</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=gabrielberlanda" title="Code">💻</a></td>
     <td align="center"><a href="http://alexandregiard.me"><img src="https://avatars1.githubusercontent.com/u/6423582?v=4" width="100px;" alt=""/><br /><sub><b>Alexandre Giard</b></sub></a><br /><a href="#ideas-heuristicAL" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/kissthom"><img src="https://avatars3.githubusercontent.com/u/6662590?v=4" width="100px;" alt=""/><br /><sub><b>kissthom</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/issues?q=author%3Akissthom" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
