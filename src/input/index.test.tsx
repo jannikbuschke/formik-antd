@@ -1,11 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Formik } from 'formik'
-import {
-  render,
-  fireEvent,
-  waitForDomChange,
-} from '@testing-library/react'
+import { render, fireEvent, waitForDomChange } from '@testing-library/react'
 import Form from '../form/form'
 import Input from './index'
 import { act } from 'react-dom/test-utils'
@@ -25,13 +21,10 @@ describe('test initial value', () => {
     fast
     ${true}
     ${false}
-  `(
-    'should display initial value (fast=$fast)',
-    async (fast: boolean) => {
-      const { findByTestId } = render(<Container fast={fast} />)
-      expect(await findByTestId('uat')).toHaveValue('initial value')
-    },
-  )
+  `('should display initial value (fast=$fast)', async (fast: boolean) => {
+    const { findByTestId } = render(<Container fast={fast} />)
+    expect(await findByTestId('uat')).toHaveValue('initial value')
+  })
 })
 
 describe('should change', () => {

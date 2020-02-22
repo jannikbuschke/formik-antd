@@ -149,6 +149,24 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "heuristicAL",
+      "name": "Alexandre Giard",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6423582?v=4",
+      "profile": "http://alexandregiard.me",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "kissthom",
+      "name": "kissthom",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6662590?v=4",
+      "profile": "https://github.com/kissthom",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
