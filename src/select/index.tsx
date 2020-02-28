@@ -44,14 +44,5 @@ export const Select = ({
 
 export default Select
 
-// type Option = OptionProps & { label: React.ReactNode | string | number };
-
-// Select.renderOptions = (options: Option[]) =>
-//   options.map(({ label, ...restProps }, index) => (
-//     <$Select.Option key={`select-option-${index}`} {...restProps}>
-//       {label}
-//     </$Select.Option>
-//   ));
-
 Select.Option = $Select.Option
 Select.OptGroup = $Select.OptGroup
