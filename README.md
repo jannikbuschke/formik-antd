@@ -6,14 +6,10 @@
 
 [CodeSandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
 
-:sparkles: **Ant Design 4 and compatability**
+:sparkles: **V2 with support for Ant Design 4 is pretty much ready**
 
-Ant Design 4 is landing soon. A beta that works with Ant Designs release candidate is available (v2.\*-beta).
-Version 1 of this library supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library work with formik v1 and v2.
-
-:warning: new npm package name: **formik-antd** :warning:
-
-> from version 1.6 and onwards this library is published under `formik-antd`, all previous versions are available under `@jbuschke/formik-antd`. In order to upgrade: change the referenced package name in your package.json as well as all imports. I.e. replace `import { Input } from "@jbuschke/formik-antd` with `import { Input } from "formik-antd`.
+Ant Design 4 has landed and is already supported by `formik-antd` v2 (currently tagged as beta).
+Version 1 of this library, which is going into maintenance mode, supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library work with formik v1 and v2.
 
 # formik-antd
 
@@ -21,7 +17,7 @@ Simple declarative bindings for [Ant Design](https://ant.design/docs/react/intro
 
 ## Core Concept
 
-This library enriches several Ant Design components with a required `name: string` property that connects them to a Formik form field. It is quite simple. Instead of importing your form components from antd, you need to import them from 'formik-antd' and the `name` prop. Now the component is connected/synced with the corresponding `Formik` field!
+This library enriches several Ant Design components with a required `name: string` prop that connects them to a Formik form field. It is quite simple. Instead of importing your form components from antd, you need to import them from 'formik-antd' and set their `name` prop. Now the component is connected/synced with the corresponding `Formik` field!
 
 The Ant Design components are feature rich and provide a lot of props to customize their visual presentation. These features and also their apis stay exactly the same. Visit their documentation to learn more.
 
@@ -35,6 +31,7 @@ import { Formik } from 'formik'
 function App() {
   return (
     <Formik
+      {/* default/initial values are set on the Formik container: */ }
       initialValues={{ firstName: '', age: 20, newsletter: false }}
       render={() => (
         <Form>
@@ -74,7 +71,7 @@ Add `import "antd/dist/antd.css"` to your `index.js` file (or look at https://an
 | :white_check_mark: | InputNumber            | { name, validate?, fast? } & [InputNumberProps](https://ant.design/components/input-number/)                            |
 | :white_check_mark: | Input.Password         | { name, validate?, fast? } & [InputPasswordProps](https://ant.design/components/input/)                                 |
 | :white_check_mark: | Input.TextArea         | { name, validate?, fast? } & [Input.TextAreaProps](https://ant.design/components/input/#components-input-demo-textarea) |
-| :white_check_mark: | Mention                | { name, validate?, fast? } & [MentionProps](https://ant.design/components/mention/)                                     |
+| :white_check_mark: | Mentions               | { name, validate?, fast? } & [MentionsProps](https://ant.design/components/mentions/)                                   |
 | :white_check_mark: | Radio.Group            | { name, validate?, fast? } & [RadioGroupProps](https://ant.design/components/radio/#RadioGroup)                         |
 | :white_check_mark: | Rate                   | { name, validate?, fast? } & [RateProps](https://ant.design/components/rate/)                                           |
 | :white_check_mark: | Select                 | { name, validate?, fast? } & [SelectProps](https://ant.design/components/select/)                                       |
@@ -112,7 +109,7 @@ The `SubmitButton` and `ResetButton` will disable automatically depending on for
 Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
 
 Form-level validation is done by setting formiks `validate` prop. Field-level validation is optional available on the components. Additional to the `name` prop formiks optional `validate?: (value: any) => undefined | string | Promise<any>` is added to all core components to allow field-level validation.
-There is one special case to be aware of when using field-level validation: When using the `Form.Item` component with another Antd-field component, the `validate` prop has to be added to the `Form.Item`, not the input component:
+There is one special case to be aware of when using field-level validation: When using the `Form.Item` component with another Antd field component, the `validate` prop has to be added to the `Form.Item`, not the input component:
 
 ```jsx
 <Form.Item name='firstName' validate={validator}>
@@ -147,8 +144,6 @@ To opt-in to FastField support, all `formik-antd` components provide an optional
 
 The table components comes with additional helper buttons to add and delete rows. An example can be seen in the [codesandbox](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example).
 
-Two additional helper components to submit and reset forms are provided: `SubmitButton` and `ResetButton`. Both render an Ant Design button and can be customized accordingly ([docs](https://ant.design/components/button/)). The `ResetButton` is disabled if the form is not dirty. To override the default behavior provide the `disable: boolean` prop.
-
 ## Lists and Nested objects
 
 Nested objects and arrays can be accessed with lodash-like bracket syntax as described in the [Formik documentation](https://jaredpalmer.com/Formik/docs/guides/arrays).
@@ -181,19 +176,17 @@ const path = require('path')
 const { override, fixBabelImports } = require('customize-cra')
 
 module.exports = override(
-    fixBabelImports('antd', {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: 'css',
-    }),
-    fixBabelImports('formik-antd',
-        {
-            libraryName: 'formik-antd',
-            libraryDirectory: 'es',
-            style: "css",
-        },
-    )
-);
+  fixBabelImports('antd', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: 'css',
+  }),
+  fixBabelImports('formik-antd', {
+    libraryName: 'formik-antd',
+    libraryDirectory: 'es',
+    style: 'css',
+  }),
+)
 ```
 
 `package.json`
@@ -201,13 +194,10 @@ module.exports = override(
 ```json
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-app-rewired build"
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
   }
 ```
-
-## Treeshaking
-
-Treeshaking with ant design is currently kind of broken, as generally all icons are imported. This will be fixed as of ant design v4 (might be ready in 2019).
 
 ## Playground & Contributions
 
@@ -269,6 +259,7 @@ Special thanks to all contributors:
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
