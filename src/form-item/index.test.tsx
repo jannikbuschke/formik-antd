@@ -1,7 +1,13 @@
 import '@testing-library/jest-dom/extend-expect'
 import React, { ReactElement } from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitForDomChange,
+  wait,
+  getAllByRole,
+} from '@testing-library/react'
 import FormItem from '.'
 import Input from '../input'
 import Form from '../form/form'
@@ -140,10 +146,10 @@ test('should not display help if no display is required', async () => {
   expect(explainElement).toBeNull()
 })
 
-test.skip('handles changes on multiselect without prop-types error', async () => {
-  const { getByTestId, queryByText, getByText } = render(
+test('handles changes on multiselect without prop-types error', async () => {
+  const { getByTestId, queryByText, baseElement } = render(
     <Test>
-      <Select name='test' data-testid='input' mode='multiple'>
+      <Select name='test' data-testid='input' mode='multiple' open={true}>
         <Option value={1}>1</Option>
         <Option value={2}>2</Option>
       </Select>
@@ -152,11 +158,14 @@ test.skip('handles changes on multiselect without prop-types error', async () =>
   expect(queryByText('error')).not.toBeInTheDocument()
   console.error = jest.fn()
   const uat = getByTestId('input')
+
   await act(async () => {
     fireEvent.click(uat)
-    fireEvent.click(getByText('1'))
-    fireEvent.click(getByTestId('submit'))
   })
+  await wait(() => getAllByRole(baseElement, 'option'))
+  const one = getAllByRole(baseElement, 'option')
+  fireEvent.click(one[0])
+
   expect(console.error).not.toHaveBeenCalled()
   //@ts-ignore
   console.error.mockRestore()
