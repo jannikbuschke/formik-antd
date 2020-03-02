@@ -105,6 +105,10 @@ function App() {
 }
 ```
 
+The `SubmitButton` and `ResetButton` will disable automatically depending on form state. The `ResetButton` is enabled if the form is dirty. The `SubmitButton` is enabled if the form is valid or if it is not dirty.
+If you do want to control the disable behavior yourself you can provide the (usual ant design) `disable: boolean` prop.
+I.e. `<SubmitButton disabled={false} />` will make the button always be enabled.
+
 ## Form- and Field-level Validation
 
 Formik provides form- and field-level [validation callbacks](https://jaredpalmer.com/formik/docs/guides/validation) to provide validation logic. How to validate is neither part of formik nor of this library.
