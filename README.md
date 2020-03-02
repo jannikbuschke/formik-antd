@@ -4,8 +4,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox (Ant Design 4)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example) / 
-[CodeSandbox (Ant Design 3)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example/tree/v1)
+- [formik-antd v2 CodeSandbox (Ant Design 4)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
+- [formik-antd v1 CodeSandbox (Ant Design 3)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example/tree/v1)
+- [cra-antd-x (cra based template with an advanced setup)](https://github.com/jannikbuschke/cra-antd-x)
 
 :sparkles: **Ant Design 4 ready**
 
@@ -54,8 +55,7 @@ function App() {
 npm install formik-antd
 ```
 
-Add `import "antd/dist/antd.css"` to your `index.js` file.
-
+Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced setup](https://github.com/jannikbuschke/formik-antd#advanced-setup) section
 
 
 ## Core Components
@@ -158,9 +158,9 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 ```
 
 ## Advanced setup
-```
-You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) template project get the following setup (and more).
-```
+
+ > You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
+
 ----
 If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
 
