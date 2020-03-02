@@ -9,7 +9,7 @@
 
 :sparkles: **Ant Design 4 ready**
 
-Ant Design 4 has landed and so has `formik-antd` v2.
+`Ant Design v4` has landed and so has `formik-antd v2`.
 Version 1 of this library, which is now in maintenance mode, supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library work with Formik v1 and v2.
 
 # formik-antd
