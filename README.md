@@ -161,7 +161,6 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 
  > You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
 
-----
 If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
 
 ```jsx
