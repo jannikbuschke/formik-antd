@@ -1,19 +1,27 @@
 import '@testing-library/jest-dom/extend-expect'
-import React, { ReactNode } from 'react'
+import React, { ReactElement } from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitForDomChange,
+  wait,
+  getAllByRole,
+} from '@testing-library/react'
 import FormItem from '.'
 import Input from '../input'
 import Form from '../form/form'
 import Select from '../select'
 import SubmitButton from '../submit-button'
+import { act } from 'react-dom/test-utils'
+
 const { Option } = Select
 
 const Test = ({
   children,
   validate,
 }: {
-  children: ReactNode
+  children: ReactElement
   validate?: () => object
 }) => {
   return (
@@ -139,20 +147,25 @@ test('should not display help if no display is required', async () => {
 })
 
 test('handles changes on multiselect without prop-types error', async () => {
-  const { getByTestId, queryByText, getByText } = render(
+  const { getByTestId, queryByText, baseElement } = render(
     <Test>
-      <Select name='test' data-testid='input' mode='multiple'>
-        <Option value='1'>1</Option>
-        <Option value='2'>2</Option>
+      <Select name='test' data-testid='input' mode='multiple' open={true}>
+        <Option value={1}>1</Option>
+        <Option value={2}>2</Option>
       </Select>
     </Test>,
   )
   expect(queryByText('error')).not.toBeInTheDocument()
-  fireEvent.click(getByTestId('input'))
-  fireEvent.click(getByText('1'))
   console.error = jest.fn()
-  fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
+  const uat = getByTestId('input')
+
+  await act(async () => {
+    fireEvent.click(uat)
+  })
+  await wait(() => getAllByRole(baseElement, 'option'))
+  const one = getAllByRole(baseElement, 'option')
+  fireEvent.click(one[0])
+
   expect(console.error).not.toHaveBeenCalled()
   //@ts-ignore
   console.error.mockRestore()
@@ -191,10 +204,12 @@ test('displays validation success ', async () => {
       </Form>
     </Formik>,
   )
-  expect(queryByLabelText('icon: check-circle')).not.toBeInTheDocument()
-  fireEvent.change(getByTestId('input'), {
-    target: { name: 'test', value: 'test' },
+  expect(queryByLabelText('check-circle')).not.toBeInTheDocument()
+  await act(async () => {
+    fireEvent.change(getByTestId('input'), {
+      target: { name: 'test', value: 'test' },
+    })
+    fireEvent.blur(getByTestId('input'))
   })
-  fireEvent.blur(getByTestId('input'))
-  expect(queryByLabelText('icon: check-circle')).toBeInTheDocument()
+  expect(queryByLabelText('check-circle')).toBeInTheDocument()
 })

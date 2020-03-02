@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { DatePicker as $DatePicker } from 'antd'
 import { FieldProps } from 'formik'
+import moment from 'moment'
+import { FormikFieldProps } from '../FieldProps'
+import Field from '../field'
 import {
   DatePickerProps as $DatePickerProps,
   MonthPickerProps as $MonthPickerProps,
   RangePickerProps as $RangePickerProps,
   WeekPickerProps as $WeekPickerProps,
-} from 'antd/lib/date-picker/interface'
-import moment from 'moment'
-import { FormikFieldProps } from '../FieldProps'
-import Field from '../field'
+} from 'antd/lib/date-picker'
 
 const {
   MonthPicker: $MonthPicker,
@@ -17,7 +17,7 @@ const {
   WeekPicker: $WeekPicker,
 } = $DatePicker
 
-export type DatePickerProps = FormikFieldProps & $DatePickerProps
+export type DatePickerProps = $DatePickerProps & FormikFieldProps
 
 export const DatePicker = ({
   name,
@@ -46,8 +46,6 @@ export const DatePicker = ({
 
 export default DatePicker
 
-export type MonthPickerProps = FormikFieldProps & $MonthPickerProps
-
 DatePicker.MonthPicker = ({
   name,
   validate,
@@ -71,8 +69,6 @@ DatePicker.MonthPicker = ({
     )}
   </Field>
 )
-
-export type RangePickerProps = FormikFieldProps & $RangePickerProps
 
 DatePicker.RangePicker = ({
   name,
@@ -99,8 +95,6 @@ DatePicker.RangePicker = ({
   </Field>
 )
 
-export type WeekPickerProps = FormikFieldProps & $WeekPickerProps
-
 DatePicker.WeekPicker = ({
   name,
   validate,
@@ -125,3 +119,7 @@ DatePicker.WeekPicker = ({
     )}
   </Field>
 )
+
+export type WeekPickerProps = FormikFieldProps & $WeekPickerProps
+export type RangePickerProps = FormikFieldProps & $RangePickerProps
+export type MonthPickerProps = FormikFieldProps & $MonthPickerProps

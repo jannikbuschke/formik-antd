@@ -12,7 +12,7 @@ const TestAutoComplete = () => {
       <Form>
         <AutoComplete
           name='field'
-          dataSource={[
+          options={[
             { value: '0', text: 'First Item' },
             { value: '1', text: 'Second Item' },
             { value: '2', text: 'Third Item' },
@@ -25,7 +25,7 @@ const TestAutoComplete = () => {
 
 test('sets input value', async () => {
   const { getByRole } = render(<TestAutoComplete />)
-  const uat = getByRole('textbox')
+  const uat = getByRole('combobox')
   expect(uat).toHaveValue('hello')
   await act(async () => {
     uat.focus()
@@ -37,7 +37,7 @@ test('sets input value', async () => {
 
 test('sets key as input to key value', async () => {
   const { getByRole } = render(<TestAutoComplete />)
-  const uat = getByRole('textbox')
+  const uat = getByRole('combobox')
   await act(async () => {
     fireEvent.change(uat, { target: { name: 'field', value: '1' } })
     await waitForDomChange()
