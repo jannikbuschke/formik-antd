@@ -4,7 +4,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
-[CodeSandbox (Ant Design 4)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
+[CodeSandbox (Ant Design 4)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example) / 
 [CodeSandbox (Ant Design 3)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example/tree/v1)
 
 :sparkles: **Ant Design 4 ready**
