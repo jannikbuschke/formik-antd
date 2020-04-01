@@ -5,6 +5,7 @@ import { render, fireEvent, waitForDomChange } from '@testing-library/react'
 import Form from '../form/form'
 import AutoComplete from './index'
 import { act } from 'react-dom/test-utils'
+import { ResetButton } from '../reset-button'
 
 const TestAutoComplete = () => {
   return (
@@ -18,6 +19,7 @@ const TestAutoComplete = () => {
             { value: '2', text: 'Third Item' },
           ]}
         />
+        <ResetButton data-testid='reset' />
       </Form>
     </Formik>
   )
@@ -43,4 +45,21 @@ test('sets key as input to key value', async () => {
     await waitForDomChange()
   })
   expect(uat).toHaveValue('1')
+})
+
+test('resets value', async () => {
+  const { getByRole, getByTestId } = render(<TestAutoComplete />)
+  const uat = getByRole('combobox')
+  await act(async () => {
+    fireEvent.change(uat, { target: { name: 'field', value: 'search value' } })
+    await waitForDomChange()
+  })
+  expect(uat).toHaveValue('search value')
+
+  await act(async () => {
+    fireEvent.click(getByTestId('reset'))
+    await waitForDomChange()
+  })
+
+  expect(uat).toHaveValue('hello')
 })
