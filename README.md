@@ -57,7 +57,6 @@ npm install formik-antd
 
 Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced setup](https://github.com/jannikbuschke/formik-antd#advanced-setup) section
 
-
 ## Core Components
 
 |                    | Name                   | Props                                                                                                                   |
@@ -95,13 +94,15 @@ import { Form, SubmitButton, ResetButton /* ... */ } from 'formik-antd'
 import { Formik } from 'formik'
 
 function App() {
-  return <Formik initialValues={/* ... */} onSubmit={/* ... */}>
-    <Form>
-      {/* ... */}
-      <SubmitButton />
-      <ResetButton />
-    </Form>
-  </Formik>
+  return (
+    <Formik initialValues={/* ... */} onSubmit={/* ... */}>
+      <Form>
+        {/* ... */}
+        <SubmitButton />
+        <ResetButton />
+      </Form>
+    </Formik>
+  )
 }
 ```
 
@@ -119,6 +120,38 @@ There is one special case to be aware of when using field-level validation: When
 ```jsx
 <Form.Item name='firstName' validate={validator}>
   <Input name='firstName' />
+</Form.Item>
+```
+
+## Combined Form.Item and input components
+
+If you happen to wrap each input component in a `Form.Item` component, you might end up with quite a bit of nesting and boilerplate (always duplicating the `name` prop as well as potentially aria labels/values with `htmlFor` and `id`). Instead you can import the components from the path `es/form-items`. There all components are wrapped with a `Form.Item`. Additionally `htmlFor` on `Form.Item` and `id` prop on the ant d input component are set based on the `name` prop.
+The following two examples are identicall:
+
+```jsx
+import { Input } from 'formik-antd/es/form-items'
+```
+
+```jsx
+<Input
+  name='firstName'
+  formItem={{ validate: validator, conol: false, label: 'First name' }}
+/>
+```
+
+```jsx
+import { Form, Input } from 'formik-antd'
+```
+
+```jsx
+<Form.Item
+  htmlFor='firstName'
+  name='firstName'
+  label='First name'
+  validate={validator}
+  colon={false}
+>
+  <Input id='firstName' name='firstName' />
 </Form.Item>
 ```
 
@@ -159,7 +192,7 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 
 ## Advanced setup
 
- > You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
+> You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
 
 If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
 
@@ -228,7 +261,7 @@ Typescript cannot (yet) enforce types of children. In the future this hopefully 
 
 ## Related projects
 
- - [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fash refresh, themeable), typescript and react-router.
+- [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fash refresh, themeable), typescript and react-router.
 
 ## License
 
