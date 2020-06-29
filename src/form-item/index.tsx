@@ -5,6 +5,7 @@ import { FormItemProps as $FormItemProps } from 'antd/lib/form/FormItem'
 export type FormItemProps = {
   showValidateSuccess?: boolean
   showInitialErrorAfterTouched?: boolean
+  formatError?: (error) => React.ReactNode
   children: React.ReactNode
 } & { name: string } & $FormItemProps &
   Pick<FieldConfig, 'validate'>
@@ -15,6 +16,7 @@ export const FormItem = ({
   showInitialErrorAfterTouched = false,
   children,
   validate,
+  formatError,
   ...restProps
 }: FormItemProps) => (
   <Field name={name} validate={validate}>
@@ -47,7 +49,9 @@ export const FormItem = ({
           help={
             showHelp && (
               <>
-                {hasError && <li>{error}</li>}
+                {hasError && (
+                  <li>{formatError ? formatError(error) : error}</li>
+                )}
                 {hasInitialError &&
                   (!isTouched || showInitialErrorAfterTouched) && (
                     <li>{initialError}</li>

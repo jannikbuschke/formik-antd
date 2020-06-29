@@ -193,6 +193,29 @@ test('displays validation result on nested input', async () => {
   expect(queryByText('error')).toBeInTheDocument()
 })
 
+test('allows errors to be customised with a callback', async () => {
+  const validate = () => 'error'
+  const formatError = (error: any) => `formatted-${error}`
+  const { getByTestId, queryByText } = render(
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      <Form>
+        <FormItem name='test' validate={validate} formatError={formatError}>
+          <Input name='test' data-testid='input' />
+        </FormItem>
+        <SubmitButton data-testid='submit' />
+      </Form>
+    </Formik>,
+  )
+  expect(queryByText('formatted-error')).not.toBeInTheDocument()
+  fireEvent.change(getByTestId('input'), {
+    target: { name: 'test', value: 'test' },
+  })
+  fireEvent.blur(getByTestId('input'))
+  fireEvent.click(getByTestId('submit'))
+  await waitForDomChange()
+  expect(queryByText('formatted-error')).toBeInTheDocument()
+})
+
 test('displays validation success ', async () => {
   const validate = () => undefined
   const { getByTestId, queryByLabelText } = render(
