@@ -17,13 +17,15 @@ const {
   WeekPicker: $WeekPicker,
 } = $DatePicker
 
-export type DatePickerProps = $DatePickerProps & FormikFieldProps
+export type DatePickerProps = $DatePickerProps &
+  FormikFieldProps & { keepOffset?: boolean }
 
 export const DatePicker = ({
   name,
   validate,
   onChange,
   fast,
+  keepOffset,
   ...restProps
 }: DatePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>
@@ -34,7 +36,7 @@ export const DatePicker = ({
       <$DatePicker
         value={value ? moment(value) : undefined}
         onChange={(date, dateString) => {
-          setFieldValue(name, date ? date.toISOString() : null)
+          setFieldValue(name, date ? date.toISOString(keepOffset) : null)
           setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
@@ -50,6 +52,7 @@ DatePicker.MonthPicker = ({
   name,
   validate,
   onChange,
+  keepOffset,
   ...restProps
 }: MonthPickerProps) => (
   <Field name={name} validate={validate}>
@@ -60,7 +63,7 @@ DatePicker.MonthPicker = ({
       <$MonthPicker
         value={value ? moment(value) : undefined}
         onChange={(date, dateString) => {
-          setFieldValue(name, date ? date.toISOString() : null)
+          setFieldValue(name, date ? date.toISOString(keepOffset) : null)
           setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
@@ -122,4 +125,5 @@ DatePicker.WeekPicker = ({
 
 export type WeekPickerProps = FormikFieldProps & $WeekPickerProps
 export type RangePickerProps = FormikFieldProps & $RangePickerProps
-export type MonthPickerProps = FormikFieldProps & $MonthPickerProps
+export type MonthPickerProps = FormikFieldProps &
+  $MonthPickerProps & { keepOffset?: boolean }

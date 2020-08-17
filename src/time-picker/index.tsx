@@ -6,13 +6,15 @@ import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { TimePickerProps as $TimePickerProps } from 'antd/lib/time-picker'
 
-export type TimePickerProps = FormikFieldProps & $TimePickerProps
+export type TimePickerProps = FormikFieldProps &
+  $TimePickerProps & { keepOffset?: boolean }
 
 export const TimePicker = ({
   name,
   validate,
   fast,
   onChange,
+  keepOffset,
   ...restProps
 }: TimePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>
@@ -23,7 +25,7 @@ export const TimePicker = ({
       <$TimePicker
         value={value ? moment(value) : undefined}
         onChange={(time, timeString) => {
-          setFieldValue(name, time ? time.toISOString() : null)
+          setFieldValue(name, time ? time.toISOString(keepOffset) : null)
           setFieldTouched(name, true, false)
           onChange && onChange(time, timeString)
         }}
