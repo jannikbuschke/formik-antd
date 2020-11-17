@@ -5,7 +5,7 @@ import {
   render,
   fireEvent,
   waitForDomChange,
-  wait,
+  waitFor,
   getAllByRole,
 } from '@testing-library/react'
 import FormItem from '.'
@@ -162,13 +162,34 @@ test('handles changes on multiselect without prop-types error', async () => {
   await act(async () => {
     fireEvent.click(uat)
   })
-  await wait(() => getAllByRole(baseElement, 'option'))
+  await waitFor(() => getAllByRole(baseElement, 'option'))
   const one = getAllByRole(baseElement, 'option')
   fireEvent.click(one[0])
 
   expect(console.error).not.toHaveBeenCalled()
   //@ts-ignore
   console.error.mockRestore()
+})
+
+test('handles changes on multiselect with array field error', async () => {
+  const validate = () => 'error'
+  const { getByTestId, queryByText } = render(
+    <Formik initialValues={{ test: [] }} onSubmit={() => {}}>
+      <Form>
+        <FormItem name='test' validate={validate}>
+          <Select name='test' data-testid='input' mode='multiple' open={true}>
+            <Option value={1}>1</Option>
+            <Option value={2}>2</Option>
+          </Select>
+        </FormItem>
+        <SubmitButton data-testid='submit' />
+      </Form>
+    </Formik>,
+  )
+  expect(queryByText('error')).not.toBeInTheDocument()
+  fireEvent.click(getByTestId('submit'))
+  await waitForDomChange()
+  expect(queryByText('error')).toBeInTheDocument()
 })
 
 test('displays validation result on nested input', async () => {
