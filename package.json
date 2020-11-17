@@ -49,16 +49,17 @@
     "@types/node": "14.0.5",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
+    "@types/testing-library__react": "10.2.0",
     "antd": "4.2.4",
     "formik": "2.1.4",
     "jest": "26.0.1",
     "moment": "2.26.0",
+    "prettier": "2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "ts-jest": "26.0.0",
     "tslib": "2.0.0",
-    "typescript": "3.9.3",
-    "prettier": "2.0.5"
+    "typescript": "3.9.3"
   },
   "repository": {
     "type": "git",
