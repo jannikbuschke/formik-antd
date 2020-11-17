@@ -147,7 +147,7 @@ test('should not display help if no display is required', async () => {
 })
 
 test('handles changes on multiselect without prop-types error', async () => {
-  const { getByTestId, queryByText, baseElement } = render(
+  const { getAllByTestId, queryByText, baseElement } = render(
     <Test>
       <Select name='test' data-testid='input' mode='multiple' open={true}>
         <Option value={1}>1</Option>
@@ -157,7 +157,7 @@ test('handles changes on multiselect without prop-types error', async () => {
   )
   expect(queryByText('error')).not.toBeInTheDocument()
   console.error = jest.fn()
-  const uat = getByTestId('input')
+  const uat = getAllByTestId('input')[0]
 
   await act(async () => {
     fireEvent.click(uat)
