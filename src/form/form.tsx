@@ -11,7 +11,7 @@ export function Form(props: FormProps) {
       {({ form: { handleReset, handleSubmit } }: FieldProps) => (
         <$Form
           onReset={handleReset}
-          onSubmitCapture={handleSubmit}
+          onFinish={handleSubmit}
           {...props}
         />
       )}
