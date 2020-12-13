@@ -147,7 +147,7 @@ test('should not display help if no display is required', async () => {
 })
 
 test('handles changes on multiselect without prop-types error', async () => {
-  const { getByTestId, queryByText, baseElement } = render(
+  const { getByTestId, queryByText, baseElement, container } = render(
     <Test>
       <Select name='test' data-testid='input' mode='multiple' open={true}>
         <Option value={1}>1</Option>
@@ -162,8 +162,10 @@ test('handles changes on multiselect without prop-types error', async () => {
   await act(async () => {
     fireEvent.click(uat)
   })
-  await wait(() => getAllByRole(baseElement, 'option'))
-  const one = getAllByRole(baseElement, 'option')
+  // work around type error: cast to any
+  await wait(() => getAllByRole(baseElement as any, 'option'))
+  // work around type error: cast to any
+  const one = getAllByRole(baseElement as any, 'option')
   fireEvent.click(one[0])
 
   expect(console.error).not.toHaveBeenCalled()
