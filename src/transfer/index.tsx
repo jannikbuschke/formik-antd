@@ -10,7 +10,7 @@ import {
 
 export type TransferProps<T> = FormikFieldProps & $TransferProps<T>
 
-function Transfer<T extends TransferItem = TransferItem>({
+export function Transfer<T extends TransferItem = TransferItem>({
   name,
   validate,
   fast,
