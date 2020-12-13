@@ -3,9 +3,10 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { SliderProps as $SliderProps } from 'antd/lib/slider'
+import { SliderSingleProps, SliderRangeProps } from 'antd/lib/slider'
 
-export type SliderProps = FormikFieldProps & $SliderProps
+export type SliderProps = FormikFieldProps &
+  (SliderSingleProps | SliderRangeProps)
 
 export const Slider = ({
   name,
@@ -21,7 +22,7 @@ export const Slider = ({
     }: FieldProps) => (
       <$Slider
         value={value}
-        onChange={(value) => {
+        onChange={(value: any) => {
           setFieldValue(name, value != null ? value.valueOf() : value)
           setFieldTouched(name, true, false)
           onChange && onChange(value)
