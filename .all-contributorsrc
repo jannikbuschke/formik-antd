@@ -167,6 +167,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "C-Higgins",
+      "name": "Chris Higgins",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14954741?v=4",
+      "profile": "https://github.com/C-Higgins",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
