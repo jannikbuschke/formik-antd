@@ -266,6 +266,7 @@ Special thanks to all contributors:
     <td align="center"><a href="http://alexandregiard.me"><img src="https://avatars1.githubusercontent.com/u/6423582?v=4" width="100px;" alt=""/><br /><sub><b>Alexandre Giard</b></sub></a><br /><a href="#ideas-heuristicAL" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/kissthom"><img src="https://avatars3.githubusercontent.com/u/6662590?v=4" width="100px;" alt=""/><br /><sub><b>kissthom</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/issues?q=author%3Akissthom" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/C-Higgins"><img src="https://avatars2.githubusercontent.com/u/14954741?v=4" width="100px;" alt=""/><br /><sub><b>Chris Higgins</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=C-Higgins" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/felipeptcho"><img src="https://avatars1.githubusercontent.com/u/656062?v=4" width="100px;" alt=""/><br /><sub><b>Felipe Lima</b></sub></a><br /><a href="https://github.com/jannikbuschke/formik-antd/commits?author=felipeptcho" title="Code">💻</a></td>
   </tr>
 </table>
 
