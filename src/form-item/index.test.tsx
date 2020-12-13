@@ -215,3 +215,16 @@ test('displays validation success ', async () => {
   })
   expect(queryByLabelText('check-circle')).toBeInTheDocument()
 })
+
+test('labels link to the input element', async () => {
+  const { getByTestId, getByLabelText } = render(
+    <Formik initialValues={{}} onSubmit={() => {}}>
+      <Form>
+        <FormItem name='test' label='The label'>
+          <Input name='test' data-testid='input' />
+        </FormItem>
+      </Form>
+    </Formik>,
+  )
+  expect(getByLabelText('The label')).toEqual(getByTestId('input'))
+})
