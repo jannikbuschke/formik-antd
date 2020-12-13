@@ -160,7 +160,7 @@ export function TimePicker({
   )
 }
 
-export function Transfer({ formItem, ...rest }: TransferProps & FormItemProps) {
+export function Transfer<T>({ formItem, ...rest }: TransferProps<T> & FormItemProps) {
   return (
     <FormItem {...formItem} name={rest.name} htmlFor={rest.name} id={rest.name}>
       <$Transfer {...rest} />
