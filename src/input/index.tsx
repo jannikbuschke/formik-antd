@@ -8,7 +8,7 @@ import {
 } from 'antd/lib/input'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import TextArea from 'antd/lib/input/TextArea'
+import TextArea, { TextAreaRef } from 'antd/lib/input/TextArea'
 import Password from 'antd/lib/input/Password'
 
 export type InputProps = FormikFieldProps & $InputProps
@@ -18,10 +18,10 @@ interface InputType
     FormikFieldProps & $InputProps & React.RefAttributes<$Input>
   > {
   Password: React.ForwardRefExoticComponent<
-    FormikFieldProps & $PasswordProps & React.RefAttributes<Password>
+    FormikFieldProps & $PasswordProps & React.RefAttributes<unknown>
   >
   TextArea: React.ForwardRefExoticComponent<
-    FormikFieldProps & $TextAreaProps & React.RefAttributes<TextArea>
+    FormikFieldProps & $TextAreaProps & React.RefAttributes<TextAreaRef>
   >
 }
 
@@ -70,7 +70,7 @@ TypedInput.Password = React.forwardRef(
       onBlur: $onBlur,
       ...restProps
     }: PasswordProps,
-    ref: React.Ref<Password>,
+    ref: React.Ref<unknown>,
   ) => (
     <Field name={name} validate={validate} fast={fast}>
       {({ field: { value, onChange, onBlur } }: FieldProps) => (
@@ -103,7 +103,7 @@ TypedInput.TextArea = React.forwardRef(
       onBlur: $onBlur,
       ...restProps
     }: TextAreaProps,
-    ref: React.Ref<TextArea>,
+    ref: React.Ref<TextAreaRef>,
   ) => (
     <Field name={name} validate={validate} fast={fast}>
       {({ field: { value, onChange, onBlur } }: FieldProps) => (
