@@ -185,6 +185,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fredericbarthelet",
+      "name": "Frédéric Barthelet",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/23530626?v=4",
+      "profile": "https://github.com/fredericbarthelet",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
