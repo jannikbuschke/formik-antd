@@ -81,8 +81,9 @@ Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced
 | :white_check_mark: | Slider                 | { name, validate?, fast? } & [SliderProps](https://ant.design/components/slider/)                                       |
 | :white_check_mark: | Switch                 | { name, validate?, fast? } & [SwitchProps](https://ant.design/components/switch/)                                       |
 | :white_check_mark: | Table                  | { name, fast? } & [TableProps](https://ant.design/components/table/)                                                    |
-| :white_check_mark: | TimePicker             | { name, validate?, fast? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
-| :white_check_mark: | Transfer               | { name, validate?, fast? } & [TransferProps](https://ant.design/components/transfer/)                                   |
+| :white_check_mark: | TimePicker             | { name, validate?, fast? } & [TimePickerProps](https://ant.design/components/time-picker/#API)    
+     |
+| :white_check_mark: | Transfer               | { name, validate?, fast? } & [TransferProps](https://ant.design/components/transfer/)                                    |
 | :white_check_mark: | TreeSelect             | { name, validate?, fast? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
 ## Submitting and Resetting Forms
