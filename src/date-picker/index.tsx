@@ -18,7 +18,10 @@ const {
 } = $DatePicker
 
 export type DatePickerProps = $DatePickerProps &
-  FormikFieldProps & { keepOffset?: boolean }
+  FormikFieldProps & { 
+    keepOffset?: boolean,
+    useStringValue?: boolean 
+  }
 
 export const DatePicker = ({
   name,
@@ -26,6 +29,7 @@ export const DatePicker = ({
   onChange,
   fast,
   keepOffset,
+  useStringValue,
   ...restProps
 }: DatePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>
@@ -36,7 +40,12 @@ export const DatePicker = ({
       <$DatePicker
         value={value ? moment(value) : undefined}
         onChange={(date, dateString) => {
-          setFieldValue(name, date ? date.toISOString(keepOffset) : null)
+          if (useStringValue) {
+            setFieldValue(name, dateString)
+          } else {
+            setFieldValue(name, date ? date.toISOString(keepOffset) : null)
+          }
+          
           setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
