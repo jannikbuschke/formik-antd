@@ -66,7 +66,7 @@ Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced
 | :white_check_mark: | Cascader               | { name, validate?, fast? } & [CascaderProps](https://ant.design/components/cascader/)                                   |
 | :white_check_mark: | Checkbox               | { name, validate?, fast? } & [CheckboxProps](https://ant.design/components/checkbox/)                                   |
 | :white_check_mark: | Checkbox.Group         | { name, validate?, fast? } & [CheckboxGroupProps](https://ant.design/components/checkbox/#Checkbox-Group)               |
-| :white_check_mark: | DatePicker             | { name, validate?, fast? } & [DatePickerProps](https://ant.design/components/date-picker/)                              |
+| :white_check_mark: | DatePicker             | { name, validate?, fast?, keepOffset?, useStringValue? } & [DatePickerProps](https://ant.design/components/date-picker/)                              |
 | :white_check_mark: | DatePicker.WeekPicker  | { name, validate?, fast? } & [WeekPickerProps](https://ant.design/components/date-picker/#WeekPicker)                   |
 | :white_check_mark: | DatePicker.RangePicker | { name, validate?, fast? } & [RangePickerProps](https://ant.design/components/date-picker/#RangePicker)                 |
 | :white_check_mark: | DatePicker.MonthPicker | { name, validate?, fast? } & [MonthPickerProps](https://ant.design/components/date-picker/#MonthPicker)                 |
@@ -81,7 +81,7 @@ Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced
 | :white_check_mark: | Slider                 | { name, validate?, fast? } & [SliderProps](https://ant.design/components/slider/)                                       |
 | :white_check_mark: | Switch                 | { name, validate?, fast? } & [SwitchProps](https://ant.design/components/switch/)                                       |
 | :white_check_mark: | Table                  | { name, fast? } & [TableProps](https://ant.design/components/table/)                                                    |
-| :white_check_mark: | TimePicker             | { name, validate?, fast? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
+| :white_check_mark: | TimePicker             | { name, validate?, fast?, keepOffset? } & [TimePickerProps](https://ant.design/components/input/#components-input-demo-textarea)     |
 | :white_check_mark: | Transfer               | { name, validate?, fast? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark: | TreeSelect             | { name, validate?, fast? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
