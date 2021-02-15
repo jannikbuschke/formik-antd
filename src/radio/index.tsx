@@ -20,6 +20,7 @@ export const Radio = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$Radio
+        name={name}
         value={value}
         onChange={(event) => {
           setFieldValue(name, event.target.value)
@@ -47,6 +48,7 @@ Radio.Group = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$Radio.Group
+        name={name}
         value={value}
         onChange={(event) => {
           setFieldValue(name, event.target.value)
