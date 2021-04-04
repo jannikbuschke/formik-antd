@@ -4,6 +4,7 @@ import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { TreeSelectProps as $TreeSelectProps } from 'antd/lib/tree-select'
+import { TreeNodeProps } from 'antd/node_modules/rc-tree-select/lib/TreeNode'
 
 export type TreeSelectProps = FormikFieldProps &
   $TreeSelectProps<any> & { children?: React.ReactNode }
