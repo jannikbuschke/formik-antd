@@ -4,6 +4,8 @@ import * as React from 'react'
 import { SelectProps as $SelectProps } from 'antd/lib/select'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
+import { OptionFC } from 'antd/node_modules/rc-select/lib/Option'
+import { OptionGroupFC } from 'antd/node_modules/rc-select/lib/OptGroup'
 
 export type SelectProps<T = any> = FormikFieldProps &
   $SelectProps<T> & { children?: React.ReactNode }
