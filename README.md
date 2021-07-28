@@ -57,7 +57,6 @@ npm install formik-antd
 
 Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced setup](https://github.com/jannikbuschke/formik-antd#advanced-setup) section
 
-
 ## Core Components
 
 |                    | Name                   | Props                                                                                                                   |
@@ -81,9 +80,9 @@ Add `import "antd/dist/antd.css"` to your `index.js` file or check the [Advanced
 | :white_check_mark: | Slider                 | { name, validate?, fast? } & [SliderProps](https://ant.design/components/slider/)                                       |
 | :white_check_mark: | Switch                 | { name, validate?, fast? } & [SwitchProps](https://ant.design/components/switch/)                                       |
 | :white_check_mark: | Table                  | { name, fast? } & [TableProps](https://ant.design/components/table/)                                                    |
-| :white_check_mark: | TimePicker             | { name, validate?, fast? } & [TimePickerProps](https://ant.design/components/time-picker/#API)    
-     |
-| :white_check_mark: | Transfer               | { name, validate?, fast? } & [TransferProps](https://ant.design/components/transfer/)                                    |
+| :white_check_mark: | TimePicker             | { name, validate?, fast? } & [TimePickerProps](https://ant.design/components/time-picker/#API)                          |
+|  |
+| :white_check_mark: | Transfer               | { name, validate?, fast? } & [TransferProps](https://ant.design/components/transfer/)                                   |
 | :white_check_mark: | TreeSelect             | { name, validate?, fast? } & [TreeSelectProps](https://ant.design/components/tree-select/)                              |
 
 ## Submitting and Resetting Forms
@@ -96,13 +95,15 @@ import { Form, SubmitButton, ResetButton /* ... */ } from 'formik-antd'
 import { Formik } from 'formik'
 
 function App() {
-  return <Formik initialValues={/* ... */} onSubmit={/* ... */}>
-    <Form>
-      {/* ... */}
-      <SubmitButton />
-      <ResetButton />
-    </Form>
-  </Formik>
+  return (
+    <Formik initialValues={/* ... */} onSubmit={/* ... */}>
+      <Form>
+        {/* ... */}
+        <SubmitButton />
+        <ResetButton />
+      </Form>
+    </Formik>
+  )
 }
 ```
 
@@ -160,7 +161,7 @@ Nested objects and arrays can be accessed with lodash-like bracket syntax as des
 
 ## Advanced setup
 
- > You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
+> You can checkout [this](https://github.com/jannikbuschke/cra-antd-x) github template project get the following setup (and more).
 
 If you do not want to import the full ant design library and its stylesheet (in order to reduce the bundle size) you can import specific components and their stylesheet by their path, as it is described in the antd documentation https://ant.design/docs/react/getting-started#Import-on-Demand
 
@@ -229,7 +230,7 @@ Typescript cannot (yet) enforce types of children. In the future this hopefully 
 
 ## Related projects
 
- - [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fash refresh, themeable), typescript and react-router.
+- [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fash refresh, themeable), typescript and react-router.
 
 ## License
 
@@ -274,6 +275,7 @@ Special thanks to all contributors:
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
