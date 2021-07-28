@@ -4,7 +4,6 @@ import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { MentionProps as $MentionProps } from 'antd/lib/mentions'
-import { OptionProps } from 'antd/node_modules/rc-mentions/lib/Option'
 
 export type MentionProps = FormikFieldProps & $MentionProps
 
