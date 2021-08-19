@@ -59,7 +59,6 @@ export const FormItem = ({
               </>
             ) : null
           }
-          name={name}
           {...restProps}
         >
           {children}
