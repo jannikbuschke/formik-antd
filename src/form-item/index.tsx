@@ -25,7 +25,10 @@ export const FormItem = ({
       const initialError = getIn(initialErrors, name, undefined)
       let isTouched = getIn(touched, name, false) as boolean | boolean[]
       if (Array.isArray(isTouched)) {
-        isTouched = isTouched.reduce((acc, value) => acc || value, false)
+        isTouched =
+          isTouched.length === 0
+            ? true
+            : isTouched.reduce((acc, value) => acc || value, false)
       }
       const hasError = error !== undefined && isTouched
       const hasInitialError = initialError !== undefined
