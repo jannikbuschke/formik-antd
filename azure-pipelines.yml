@@ -2,7 +2,6 @@ trigger:
 - master
 - release/*
 - beta/*
-- test/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -10,11 +9,28 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '14.x' # replace this value with the version that you need for your project
-- script: |
-    npm install
-    npm run test
-    npm run build
+    versionSpec: '14.x' # 
+- script: npm -v
+- script: node -v
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm run test'
+  continueOnError: true
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run test'
+
+- task: Npm@1
+  displayName: 'npm run build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
 
 - task: Npm@1
   displayName: 'npm publish beta (conditionally)'
