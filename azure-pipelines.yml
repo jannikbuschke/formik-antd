@@ -8,6 +8,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.x' # replace this value with the version that you need for your project
 - script: |
     npm install
     npm run test
