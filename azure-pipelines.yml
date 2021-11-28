@@ -2,30 +2,16 @@ trigger:
 - master
 - release/*
 - beta/*
+- test/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    verbose: false
-
-- task: Npm@1
-  displayName: 'npm run test'
-  continueOnError: true
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run test'
-
-- task: Npm@1
-  displayName: 'npm run build'
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run build'
+- script: |
+    npm install
+    npm run test
+    npm run build
 
 - task: Npm@1
   displayName: 'npm publish beta (conditionally)'
