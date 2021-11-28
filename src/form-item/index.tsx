@@ -40,6 +40,7 @@ export const FormItem = ({
 
       return (
         <Form.Item
+          name={name}
           validateStatus={
             hasError || (hasInitialError && !isTouched)
               ? 'error'
