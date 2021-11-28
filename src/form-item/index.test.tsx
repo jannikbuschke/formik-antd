@@ -47,8 +47,7 @@ test('displays validation result', async () => {
     target: { name: 'test', value: 'test' },
   })
   fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
-  expect(queryByText('error')).toBeInTheDocument()
+  await waitFor(() => expect(queryByText('error')).toBeInTheDocument())
 })
 
 test('displayes initial error', async () => {
@@ -92,9 +91,10 @@ test('displayes error instead of initialError after touched when showInitialErro
   })
   fireEvent.blur(getByTestId('input'))
   fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
-  expect(queryByText('error')).toBeInTheDocument()
-  expect(queryByText('initialError')).not.toBeInTheDocument()
+  await waitFor(() => {
+    expect(queryByText('error')).toBeInTheDocument()
+    expect(queryByText('initialError')).not.toBeInTheDocument()
+  })
 })
 
 test('displayes initialError with error after touched when showInitialErrorAfterTouched is true', async () => {
@@ -124,9 +124,10 @@ test('displayes initialError with error after touched when showInitialErrorAfter
   })
   fireEvent.blur(getByTestId('input'))
   fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
-  expect(queryByText('error')).toBeInTheDocument()
-  expect(queryByText('initialError')).toBeInTheDocument()
+  await waitFor(() => {
+    expect(queryByText('error')).toBeInTheDocument()
+    expect(queryByText('initialError')).toBeInTheDocument()
+  })
 })
 
 test('should not display help if no display is required', async () => {
@@ -193,8 +194,7 @@ test('handles changes on multiselect with array field error', async () => {
   )
   expect(queryByText('error')).not.toBeInTheDocument()
   fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
-  expect(queryByText('error')).toBeInTheDocument()
+  await waitFor(() => expect(queryByText('error')).toBeInTheDocument())
 })
 
 test('displays validation result on nested input', async () => {
@@ -215,8 +215,7 @@ test('displays validation result on nested input', async () => {
   })
   fireEvent.blur(getByTestId('input'))
   fireEvent.click(getByTestId('submit'))
-  await waitForDomChange()
-  expect(queryByText('error')).toBeInTheDocument()
+  await waitFor(() => expect(queryByText('error')).toBeInTheDocument())
 })
 
 test('displays validation success ', async () => {

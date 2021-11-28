@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Form from '../form/form'
 import Mentions from './index'
 import { act } from 'react-dom/test-utils'
@@ -37,8 +37,9 @@ describe('should change', () => {
     const uat = await findByTestId('uat')
     await act(async () => {
       fireEvent.change(uat, { target: { value: 'new value' } })
-      await waitForDomChange()
+      await waitFor(async () =>
+        expect(await findByTestId('uat')).toHaveValue('new value'),
+      )
     })
-    expect(await findByTestId('uat')).toHaveValue('new value')
   })
 })

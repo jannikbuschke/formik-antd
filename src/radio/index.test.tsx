@@ -1,12 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Formik } from 'formik'
-import {
-  render,
-  fireEvent,
-  waitForDomChange,
-  waitFor,
-} from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Form from '../form/form'
 import Radio from './index'
 import { act } from 'react-dom/test-utils'
@@ -56,10 +51,11 @@ test.skip('should change', async () => {
   expect(radio2).not.toBeChecked()
   await act(async () => {
     fireEvent.click(radio2, { checked: true })
-    await waitForDomChange()
+    await waitFor(() => {
+      expect(radio2).toBeChecked()
+      expect(radio1).not.toBeChecked()
+    })
   })
-  expect(radio2).toBeChecked()
-  expect(radio1).not.toBeChecked()
 })
 
 test.skip('should change', async () => {
@@ -70,10 +66,11 @@ test.skip('should change', async () => {
   expect(radio2).not.toBeChecked()
   await act(async () => {
     fireEvent.click(radio2, { checked: true })
-    await waitForDomChange()
+    await waitFor(() => {
+      expect(radio2).toBeChecked()
+      expect(radio1).not.toBeChecked()
+    })
   })
-  expect(radio2).toBeChecked()
-  expect(radio1).not.toBeChecked()
 })
 
 test.skip('should validate once per click', async () => {
@@ -86,7 +83,6 @@ test.skip('should validate once per click', async () => {
 
   await act(async () => {
     fireEvent.click(radio2, { checked: true })
-    await waitForDomChange()
+    await waitFor(() => expect(validate).toBeCalledTimes(1))
   })
-  expect(validate).toBeCalledTimes(1)
 })

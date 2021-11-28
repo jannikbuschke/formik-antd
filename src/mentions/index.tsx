@@ -28,10 +28,6 @@ export const Mentions = ({
           onBlur(name)
           $onBlur && $onBlur(e)
         }}
-        // onBlur={(event) => {
-        //   onBlur(event)
-        //   $onBlur && $onBlur(event)
-        // }}
         {...restProps}
       />
     )}

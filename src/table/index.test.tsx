@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Form from '../form/form'
 import Table from './index'
 import { act } from 'react-dom/test-utils'
@@ -63,10 +63,11 @@ test('changes row', async () => {
   const uat = getByRole('textbox')
   await act(async () => {
     fireEvent.change(uat, { target: { value: '1' } })
-    await waitForDomChange()
+    await waitFor(() => {
+      expect(uat).toHaveValue('1')
+      expect(getByDisplayValue('1')).toBeInTheDocument()
+    })
   })
-  expect(uat).toHaveValue('1')
-  expect(getByDisplayValue('1')).toBeInTheDocument()
 })
 
 test('deletes row', async () => {
@@ -74,9 +75,10 @@ test('deletes row', async () => {
   const uat = getByTestId('remove')
   await act(async () => {
     fireEvent.click(uat)
-    await waitForDomChange()
+    await waitFor(() => {
+      expect(getByText('No Data')).toBeInTheDocument()
+    })
   })
-  expect(getByText('No Data')).toBeInTheDocument()
 })
 
 test('adds row', async () => {
@@ -84,7 +86,8 @@ test('adds row', async () => {
   const uat = getByTestId('add')
   await act(async () => {
     fireEvent.click(uat)
-    await waitForDomChange()
+    await waitFor(() =>
+      expect(getByDisplayValue('new item')).toBeInTheDocument(),
+    )
   })
-  expect(getByDisplayValue('new item')).toBeInTheDocument()
 })

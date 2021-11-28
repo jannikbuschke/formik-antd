@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Form from '../form/form'
 import AutoComplete from './index'
 import { act } from 'react-dom/test-utils'
@@ -32,9 +32,8 @@ test('sets input value', async () => {
   await act(async () => {
     uat.focus()
     fireEvent.change(uat, { target: { name: 'field', value: 'world' } })
-    await waitForDomChange()
+    await waitFor(() => expect(uat).toHaveValue('world'))
   })
-  expect(uat).toHaveValue('world')
 })
 
 test('sets key as input to key value', async () => {
@@ -42,26 +41,23 @@ test('sets key as input to key value', async () => {
   const uat = getByRole('combobox')
   await act(async () => {
     fireEvent.change(uat, { target: { name: 'field', value: '1' } })
-    await waitForDomChange()
+    await waitFor(() => expect(uat).toHaveValue('1'))
   })
-  expect(uat).toHaveValue('1')
 })
 
 // somehow the 'sets key as input to key value' and 'reset value' tests intefere.
 // we skip one of them to please the pipeline
-test.skip('resets value', async () => {
+test('resets value', async () => {
   const { getByRole, getByTestId } = render(<TestAutoComplete />)
   const uat = getByRole('combobox')
   await act(async () => {
     fireEvent.change(uat, { target: { name: 'field', value: 'search value' } })
-    await waitForDomChange()
+    await waitFor(() => expect(uat).toHaveValue('search value'))
   })
   expect(uat).toHaveValue('search value')
 
   await act(async () => {
     fireEvent.click(getByTestId('reset'))
-    await waitForDomChange()
+    await waitFor(() => expect(uat).toHaveValue('hello'))
   })
-
-  expect(uat).toHaveValue('hello')
 })

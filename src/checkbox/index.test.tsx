@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import React from 'react'
 import { Formik } from 'formik'
-import { render, fireEvent, waitForDomChange } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import Form from '../form/form'
 import Checkbox from './index'
 import { act } from 'react-dom/test-utils'
@@ -29,9 +29,8 @@ test('should check', async () => {
   const uat = getByRole('checkbox')
   await act(async () => {
     fireEvent.click(uat, { target: 'field', checked: true })
-    await waitForDomChange()
+    await waitFor(() => expect(uat).toBeChecked())
   })
-  expect(uat).toBeChecked()
 })
 
 test('should uncheck', async () => {
@@ -39,9 +38,8 @@ test('should uncheck', async () => {
   const uat = getByRole('checkbox')
   await act(async () => {
     fireEvent.click(uat, { target: 'field', checked: false })
-    await waitForDomChange()
+    await waitFor(() => expect(uat).not.toBeChecked())
   })
-  expect(uat).not.toBeChecked()
 })
 
 test('should validate once per click', async () => {
@@ -54,7 +52,6 @@ test('should validate once per click', async () => {
   await act(async () => {
     uat.focus()
     fireEvent.click(uat, { target: 'field', checked: true })
-    await waitForDomChange()
+    await waitFor(() => expect(validate).toBeCalledTimes(1))
   })
-  expect(validate).toBeCalledTimes(1)
 })
