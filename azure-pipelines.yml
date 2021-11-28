@@ -10,9 +10,7 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '14.x' # 
-- script: npm -v
-- script: node -v
-- script: node -v
+
 - task: Npm@1
   displayName: 'npm install'
   inputs:
