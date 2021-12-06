@@ -15,6 +15,7 @@ export const FormItem = ({
   showInitialErrorAfterTouched = false,
   children,
   validate,
+  hasFeedback,
   ...restProps
 }: FormItemProps) => (
   <Field name={name} validate={validate}>
@@ -46,7 +47,7 @@ export const FormItem = ({
               ? 'success'
               : undefined
           }
-          hasFeedback={isValid}
+          hasFeedback={hasFeedback && isValid}
           help={
             showHelp && (
               <>
