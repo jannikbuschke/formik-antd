@@ -24,6 +24,7 @@ export const TimePicker = ({
     }: FieldProps) => (
       <$TimePicker
         value={value ? moment(value) : undefined}
+        id={name}
         onChange={(time, timeString) => {
           setFieldValue(name, time ? time.toISOString(keepOffset) : null)
           setFieldTouched(name, true, false)

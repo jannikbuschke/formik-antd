@@ -42,6 +42,7 @@ const Input = React.forwardRef(
         <$Input
           ref={ref}
           name={name}
+          id={name}
           value={value}
           onChange={(event) => {
             onChange(event)
@@ -77,6 +78,7 @@ TypedInput.Password = React.forwardRef(
         <$Input.Password
           ref={ref}
           name={name}
+          id={name}
           value={value}
           onChange={(event) => {
             onChange(event)
@@ -110,6 +112,7 @@ TypedInput.TextArea = React.forwardRef(
         <$Input.TextArea
           ref={ref}
           name={name}
+          id={name}
           value={value}
           onChange={(event) => {
             onChange(event)

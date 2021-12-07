@@ -35,6 +35,7 @@ export const DatePicker = ({
     }: FieldProps) => (
       <$DatePicker
         value={value ? moment(value) : undefined}
+        id={name}
         onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString(keepOffset) : null)
           setFieldTouched(name, true, false)
