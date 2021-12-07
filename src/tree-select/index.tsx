@@ -20,6 +20,7 @@ export const TreeSelect = ({
     {({ field: { value }, form }: FieldProps) => (
       <$TreeSelect
         value={value}
+        id={name}
         onBlur={(event) => {
           form.setFieldTouched(name)
           onBlur && onBlur(event)

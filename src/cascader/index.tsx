@@ -21,6 +21,7 @@ export const Cascader = ({
     }: FieldProps) => (
       <$Cascader
         value={value}
+        id={name}
         onChange={(value) => {
           setFieldValue(name, value)
           setFieldTouched(name, true, false)

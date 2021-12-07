@@ -19,6 +19,7 @@ export const InputNumber = ({
     {({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
       <$InputNumber
         name={name}
+        id={name}
         value={value}
         onChange={(value) => {
           setFieldValue(name, value)

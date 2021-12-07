@@ -22,6 +22,7 @@ export const Slider = ({
     }: FieldProps) => (
       <$Slider
         value={value}
+        id={name}
         onChange={(value: any) => {
           setFieldValue(name, value != null ? value.valueOf() : value)
           setFieldTouched(name, true, false)

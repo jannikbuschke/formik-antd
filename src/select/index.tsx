@@ -34,6 +34,7 @@ export const Select = ({
           }}
           // setting undefined will show the placeholder
           value={value === '' || value === null ? undefined : value}
+          id={name}
           {...restProps}
         >
           {children}

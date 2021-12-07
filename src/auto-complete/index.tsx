@@ -19,6 +19,7 @@ export const AutoComplete = ({
     {({ field: { value }, form }: FieldProps) => (
       <$AutoComplete
         value={value}
+        id={name}
         onChange={(value, option) => {
           form.setFieldValue(name, value != null ? value.valueOf() : value)
           onChange && onChange(value, option)
