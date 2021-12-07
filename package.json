@@ -39,8 +39,8 @@
   "peerDependencies": {
     "antd": ">= 3.12.1 < 5",
     "formik": ">= 1.4.1 < 3",
-    "react": ">= 16.8.0 < 17",
-    "react-dom": ">= 16.8.0 < 17"
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
   },
   "devDependencies": {
     "antd": "4.9.2",
