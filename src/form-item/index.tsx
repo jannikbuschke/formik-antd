@@ -43,6 +43,8 @@ export const FormItem = ({
           htmlFor={name}
           id={name}
           name={name}
+          htmlFor={name}
+          id={name}
           validateStatus={
             hasError || (hasInitialError && !isTouched)
               ? 'error'
