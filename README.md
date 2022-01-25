@@ -230,7 +230,7 @@ Typescript cannot (yet) enforce types of children. In the future this hopefully 
 
 ## Related projects
 
-- [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fash refresh, themeable), typescript and react-router.
+- [cra-antd-x](https://github.com/jannikbuschke/cra-antd-x) a template project with react-app-rewired (babel imports, fast-refresh, themeable), typescript and react-router.
 
 ## License
 
