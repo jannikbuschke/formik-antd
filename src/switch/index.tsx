@@ -1,7 +1,7 @@
 import { Switch as $Switch } from 'antd'
 import { FieldProps } from 'formik'
 import * as React from 'react'
-import { SwitchProps as $SwitchProps } from 'antd/lib/switch'
+import { SwitchProps as $SwitchProps } from 'antd/es/switch'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 

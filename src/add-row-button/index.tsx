@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ButtonProps } from 'antd/lib/button'
+import { ButtonProps } from 'antd/es/button'
 import { ArrayButton } from '../array-button'
 
 export function AddRowButton<T = any>({

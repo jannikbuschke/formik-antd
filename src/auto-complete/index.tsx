@@ -3,7 +3,7 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { AutoCompleteProps as $AutoCompleteProps } from 'antd/lib/auto-complete'
+import { AutoCompleteProps as $AutoCompleteProps } from 'antd/es/auto-complete'
 
 export type AutoCompleteProps = FormikFieldProps & $AutoCompleteProps
 

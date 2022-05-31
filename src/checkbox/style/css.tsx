@@ -1,1 +1,1 @@
-import 'antd/lib/checkbox/style/css.js'
+import 'antd/es/checkbox/style/css.js'

@@ -1,8 +1,8 @@
 import { Field, FieldProps } from 'formik'
 import * as React from 'react'
 import { Table as $Table } from 'antd'
-import { TableProps } from 'antd/lib/table/Table'
-// import { TableProps, WithStore } from 'antd/lib/table';
+import { TableProps } from 'antd/es/table/Table'
+// import { TableProps, WithStore } from 'antd/es/table';
 
 // RecordType extends object = any>(props: TableProps<RecordType>
 

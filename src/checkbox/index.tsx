@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Checkbox as $Checkbox } from 'antd'
 import { FieldProps } from 'formik'
 import Field from '../field'
-import { CheckboxProps as $CheckboxProps } from 'antd/lib/checkbox/Checkbox'
+import { CheckboxProps as $CheckboxProps } from 'antd/es/checkbox/Checkbox'
 import { FormikFieldProps } from '../FieldProps'
-import { CheckboxGroupProps as $CheckboxGroupProps } from 'antd/lib/checkbox/Group'
+import { CheckboxGroupProps as $CheckboxGroupProps } from 'antd/es/checkbox/Group'
 
 export type CheckboxProps = FormikFieldProps & $CheckboxProps
 

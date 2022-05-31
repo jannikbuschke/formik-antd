@@ -9,7 +9,7 @@ import {
   MonthPickerProps as $MonthPickerProps,
   RangePickerProps as $RangePickerProps,
   WeekPickerProps as $WeekPickerProps,
-} from 'antd/lib/date-picker'
+} from 'antd/es/date-picker'
 
 const {
   MonthPicker: $MonthPicker,

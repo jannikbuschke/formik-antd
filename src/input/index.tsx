@@ -5,11 +5,11 @@ import {
   InputProps as $InputProps,
   PasswordProps as $PasswordProps,
   TextAreaProps as $TextAreaProps,
-} from 'antd/lib/input'
+} from 'antd/es/input'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import TextArea, { TextAreaRef } from 'antd/lib/input/TextArea'
-import Password from 'antd/lib/input/Password'
+import TextArea, { TextAreaRef } from 'antd/es/input/TextArea'
+import Password from 'antd/es/input/Password'
 
 export type InputProps = FormikFieldProps & $InputProps
 

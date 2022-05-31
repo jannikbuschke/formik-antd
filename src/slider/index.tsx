@@ -3,7 +3,7 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { SliderSingleProps, SliderRangeProps } from 'antd/lib/slider'
+import { SliderSingleProps, SliderRangeProps } from 'antd/es/slider'
 
 export type SliderProps = FormikFieldProps &
   (SliderSingleProps | SliderRangeProps)

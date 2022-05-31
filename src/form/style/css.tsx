@@ -1,1 +1,1 @@
-import 'antd/lib/form/style/css.js'
+import 'antd/es/form/style/css.js'

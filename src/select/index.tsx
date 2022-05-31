@@ -1,7 +1,7 @@
 import { Select as $Select } from 'antd'
 import { FieldProps } from 'formik'
 import * as React from 'react'
-import { SelectProps as $SelectProps } from 'antd/lib/select'
+import { SelectProps as $SelectProps } from 'antd/es/select'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 

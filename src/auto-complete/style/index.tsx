@@ -1,1 +1,1 @@
-import 'antd/lib/auto-complete/style'
+import 'antd/es/auto-complete/style'
