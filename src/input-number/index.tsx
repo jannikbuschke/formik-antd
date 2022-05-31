@@ -1,7 +1,7 @@
 import { InputNumber as $InputNumber } from 'antd'
 import { FieldProps } from 'formik'
 import * as React from 'react'
-import { InputNumberProps as $InputNumberProps } from 'antd/lib/input-number'
+import { InputNumberProps as $InputNumberProps } from 'antd/es/input-number'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 

@@ -1,7 +1,7 @@
 import { Radio as $Radio } from 'antd'
 import { FieldProps } from 'formik'
 import * as React from 'react'
-import { RadioGroupProps as $RadioGroupProps } from 'antd/lib/radio/interface'
+import { RadioGroupProps as $RadioGroupProps } from 'antd/es/radio/interface'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 

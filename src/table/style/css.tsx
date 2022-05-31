@@ -1,1 +1,1 @@
-import 'antd/lib/table/style/css.js'
+import 'antd/es/table/style/css.js'

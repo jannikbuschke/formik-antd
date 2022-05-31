@@ -1,1 +1,1 @@
-import 'antd/lib/date-picker/style/css.js'
+import 'antd/es/date-picker/style/css.js'

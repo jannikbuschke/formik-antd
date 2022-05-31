@@ -1,1 +1,1 @@
-import 'antd/lib/table/style'
+import 'antd/es/table/style'

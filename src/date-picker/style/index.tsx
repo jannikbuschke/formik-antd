@@ -1,1 +1,1 @@
-import 'antd/lib/date-picker/style'
+import 'antd/es/date-picker/style'

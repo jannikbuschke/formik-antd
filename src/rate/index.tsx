@@ -3,7 +3,7 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { RateProps as $RateProps } from 'antd/lib/rate'
+import { RateProps as $RateProps } from 'antd/es/rate'
 
 export type RateProps = FormikFieldProps & $RateProps
 

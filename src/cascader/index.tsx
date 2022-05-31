@@ -3,7 +3,7 @@ import { Cascader as $Cascader } from 'antd'
 import { FieldProps } from 'formik'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { CascaderProps as $CascaderProps } from 'antd/lib/cascader'
+import { CascaderProps as $CascaderProps } from 'antd/es/cascader'
 
 export type CascaderProps = FormikFieldProps & $CascaderProps
 

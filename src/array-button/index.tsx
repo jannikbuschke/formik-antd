@@ -1,6 +1,6 @@
 import { FieldArray, FieldArrayRenderProps } from 'formik'
 import * as React from 'react'
-import Button, { ButtonProps } from 'antd/lib/button'
+import Button, { ButtonProps } from 'antd/es/button'
 
 export function ArrayButton({
   name,

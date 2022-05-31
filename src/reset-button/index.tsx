@@ -1,7 +1,7 @@
 import { Button } from 'antd'
 import { Field, FieldProps, FormikProps } from 'formik'
 import * as React from 'react'
-import { ButtonProps } from 'antd/lib/button'
+import { ButtonProps } from 'antd/es/button'
 
 export const ResetButton = ({
   children,

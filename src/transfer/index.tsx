@@ -3,10 +3,7 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import {
-  TransferItem,
-  TransferProps as $TransferProps,
-} from 'antd/lib/transfer'
+import { TransferItem, TransferProps as $TransferProps } from 'antd/es/transfer'
 
 export type TransferProps<T> = FormikFieldProps & $TransferProps<T>
 

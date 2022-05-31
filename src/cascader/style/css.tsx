@@ -1,1 +1,1 @@
-import 'antd/lib/cascader/style/css.js'
+import 'antd/es/cascader/style/css.js'

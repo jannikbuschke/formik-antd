@@ -1,1 +1,1 @@
-import 'antd/lib/input-number/style/css.js'
+import 'antd/es/input-number/style/css.js'

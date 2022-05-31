@@ -1,1 +1,1 @@
-import 'antd/lib/switch/style'
+import 'antd/es/switch/style'

@@ -1,1 +1,1 @@
-import 'antd/lib/time-picker/style/css.js'
+import 'antd/es/time-picker/style/css.js'

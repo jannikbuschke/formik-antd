@@ -1,1 +1,1 @@
-import 'antd/lib/radio/style/css.js'
+import 'antd/es/radio/style/css.js'

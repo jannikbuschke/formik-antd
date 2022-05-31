@@ -1,1 +1,1 @@
-import 'antd/lib/rate/style'
+import 'antd/es/rate/style'

@@ -1,1 +1,1 @@
-import 'antd/lib/button/style/css.js'
+import 'antd/es/button/style/css.js'

@@ -3,7 +3,7 @@ import { FieldProps } from 'formik'
 import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { MentionProps as $MentionProps } from 'antd/lib/mentions'
+import { MentionProps as $MentionProps } from 'antd/es/mentions'
 
 export type MentionProps = FormikFieldProps & $MentionProps
 

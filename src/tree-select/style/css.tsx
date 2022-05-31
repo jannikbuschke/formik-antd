@@ -1,1 +1,1 @@
-import 'antd/lib/tree-select/style/css.js'
+import 'antd/es/tree-select/style/css.js'

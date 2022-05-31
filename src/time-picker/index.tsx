@@ -4,7 +4,7 @@ import * as React from 'react'
 import moment from 'moment'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
-import { TimePickerProps as $TimePickerProps } from 'antd/lib/time-picker'
+import { TimePickerProps as $TimePickerProps } from 'antd/es/time-picker'
 
 export type TimePickerProps = FormikFieldProps &
   $TimePickerProps & { keepOffset?: boolean }

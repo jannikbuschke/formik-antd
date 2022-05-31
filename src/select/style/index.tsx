@@ -1,1 +1,1 @@
-import 'antd/lib/select/style'
+import 'antd/es/select/style'

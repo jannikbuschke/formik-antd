@@ -1,1 +1,1 @@
-import 'antd/lib/tree-select/style'
+import 'antd/es/tree-select/style'
