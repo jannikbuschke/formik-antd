@@ -7,11 +7,13 @@ export type FormItemProps = {
   showValidateSuccess?: boolean
   showInitialErrorAfterTouched?: boolean
   children: React.ReactNode
+  __debug?: boolean
 } & { name: string } & $FormItemProps &
   Pick<FieldConfig, 'validate'>
 
 export const FormItem = ({
   name,
+  __debug,
   showValidateSuccess,
   showInitialErrorAfterTouched = false,
   children,
@@ -65,6 +67,11 @@ export const FormItem = ({
           {...restProps}
         >
           {children}
+          {__debug && (
+            <div>
+              {JSON.stringify({ hasError, isValid, showValidateSuccess })}
+            </div>
+          )}
         </Form.Item>
       )
     }}
