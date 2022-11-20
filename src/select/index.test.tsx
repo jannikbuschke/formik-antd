@@ -4,7 +4,7 @@ import { Form } from '../form'
 import Select from './index'
 import '@testing-library/jest-dom/extend-expect'
 import { act } from 'react-dom/test-utils'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 
 const TestSelect = () => {
 	return (
@@ -21,8 +21,8 @@ const TestSelect = () => {
 }
 
 test('renders select', async () => {
-	render(<TestSelect/>)
-	expect(screen.queryByRole('combobox')).toBeInTheDocument()
+	const { queryByRole } = render(<TestSelect />)
+	expect(queryByRole('combobox')).toBeInTheDocument()
 })
 
 test('sets initial value', async () => {
@@ -31,12 +31,12 @@ test('sets initial value', async () => {
 })
 
 test('changes selected upon clicking', async () => {
-	const { getByRole, queryByText, getByText, queryAllByText } = render(<TestSelect/>)
+	const { getByRole, queryByText, getByText, getAllByText } = render(<TestSelect/>)
 	const selector = getByRole('combobox')
 	expect(queryByText('Zero')).toBeInTheDocument()
 	fireEvent.mouseDown(selector)
 	await act(async () => {
 		fireEvent.click(getByText('One'))
 	})
-	expect(queryAllByText('One').length).toBeGreaterThan(1)
+	expect(getAllByText('One').length).toBeGreaterThan(1)
 })
