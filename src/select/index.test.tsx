@@ -1,21 +1,15 @@
-import { Formik } from "formik"
-import React from "react"
+import { Formik } from 'formik'
+import React from 'react'
 import { Form } from '../form'
 import Select from './index'
 import '@testing-library/jest-dom/extend-expect'
 import { act } from 'react-dom/test-utils'
-import { screen, render, fireEvent } from '@testing-library/react'
-import { SelectProps } from 'antd/lib/select'
-
-/*
-jest.mock('antd/lib/select', () = (props: SelectProps<any>) => {
-	return <select></select>
-})
-*/
+import { fireEvent, render, screen } from '@testing-library/react'
 
 const TestSelect = () => {
 	return (
-		<Formik initialValues={{field: 0}} onSubmit={() => {}}>
+		<Formik initialValues={{ field: 0 }} onSubmit={() => {
+		}}>
 			<Form>
 				<Select name={'field'}>
 					<Select.Option value={0}>Zero</Select.Option>
