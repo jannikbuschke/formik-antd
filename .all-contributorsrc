@@ -194,6 +194,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Dmitrienko-Nikita",
+      "name": "Nikita Dmitrienko",
+      "avatar_url": "https://avatars.githubusercontent.com/u/95695493?v=4",
+      "profile": "https://github.com/Dmitrienko-Nikita",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -201,5 +210,6 @@
   "projectOwner": "jannikbuschke",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
