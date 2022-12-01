@@ -2,10 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./lib",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
     "skipLibCheck": true,
@@ -24,10 +21,6 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "lib",
-    "es",
-    "node_modules",
-    "**/*.test.tsx"
-  ]
+  "include": ["src"],
+  "exclude": ["lib", "es", "node_modules", "**/*.test.tsx"]
 }

@@ -14,9 +14,9 @@ const TestAutoComplete = () => {
         <AutoComplete
           name='field'
           options={[
-            { value: '0', text: 'First Item' },
-            { value: '1', text: 'Second Item' },
-            { value: '2', text: 'Third Item' },
+            { value: '0', label: 'First Item' },
+            { value: '1', label: 'Second Item' },
+            { value: '2', label: 'Third Item' },
           ]}
         />
         <ResetButton data-testid='reset' />
