@@ -20,6 +20,8 @@ import { Switch as $Switch, SwitchProps } from '../switch'
 import { TimePicker as $TimePicker, TimePickerProps } from '../time-picker'
 import { Transfer as $Transfer, TransferProps } from '../transfer'
 import { TreeSelect as $TreeSelect, TreeSelectProps } from '../tree-select'
+import { TransferItem } from 'antd/es/transfer'
+import { BaseOptionType, DefaultOptionType } from 'antd/es/cascader'
 
 type FormItemProps = {
   formItem?: Omit<$FormItemProps, 'children' | 'name' | 'id' | 'htmlFor'>
@@ -71,10 +73,12 @@ export function Checkbox({ formItem, ...rest }: CheckboxProps & FormItemProps) {
   )
 }
 
-export function Cascader({ formItem, ...rest }: CascaderProps & FormItemProps) {
+export function Cascader<
+  OptionType extends DefaultOptionType | BaseOptionType = DefaultOptionType,
+>({ formItem, ...rest }: CascaderProps<OptionType> & FormItemProps) {
   return (
     <FormItem {...formItem} name={rest.name} htmlFor={rest.name} id={rest.name}>
-      <$Cascader {...rest} />
+      <$Cascader<OptionType> {...rest} />
     </FormItem>
   )
 }
@@ -160,7 +164,10 @@ export function TimePicker({
   )
 }
 
-export function Transfer<T>({ formItem, ...rest }: TransferProps<T> & FormItemProps) {
+export function Transfer<RecordType extends TransferItem = TransferItem>({
+  formItem,
+  ...rest
+}: TransferProps<RecordType> & FormItemProps) {
   return (
     <FormItem {...formItem} name={rest.name} htmlFor={rest.name} id={rest.name}>
       <$Transfer {...rest} />

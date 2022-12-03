@@ -19,15 +19,17 @@ export const Switch = ({
       field: { value },
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
-      <$Switch
-        checked={value}
-        onChange={(checked, event) => {
-          setFieldValue(name, checked)
-          setFieldTouched(name, true, false)
-          onChange && onChange(checked, event)
-        }}
-        {...restProps}
-      />
+      <div>
+        <$Switch
+          checked={value}
+          onChange={(checked, event) => {
+            setFieldValue(name, checked)
+            setFieldTouched(name, true, false)
+            onChange && onChange(checked, event)
+          }}
+          {...restProps}
+        />
+      </div>
     )}
   </Field>
 )

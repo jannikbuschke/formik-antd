@@ -5,22 +5,23 @@ import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { TransferItem, TransferProps as $TransferProps } from 'antd/es/transfer'
 
-export type TransferProps<T> = FormikFieldProps & $TransferProps<T>
+export type TransferProps<RecordType extends TransferItem = TransferItem> =
+  FormikFieldProps & $TransferProps<RecordType>
 
-export function Transfer<T extends TransferItem = TransferItem>({
+export function Transfer<RecordType extends TransferItem = TransferItem>({
   name,
   validate,
   fast,
   onChange,
   ...restProps
-}: TransferProps<T>) {
+}: TransferProps<RecordType>) {
   return (
     <Field name={name} validate={validate} fast={fast}>
       {({
         field: { value },
         form: { setFieldValue, setFieldTouched },
       }: FieldProps) => (
-        <$Transfer<T>
+        <$Transfer<RecordType>
           targetKeys={value || []}
           onChange={(targetKeys, direction, moveKeys) => {
             setFieldValue(name, targetKeys)

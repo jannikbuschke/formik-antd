@@ -1,31 +1,21 @@
 import * as React from 'react'
 import { Cascader as $Cascader } from 'antd'
-import { FieldProps, useField } from 'formik'
+import { FieldProps } from 'formik'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import {
   BaseOptionType,
   CascaderProps as $CascaderProps,
-  CascaderRef,
   DefaultOptionType,
 } from 'antd/es/cascader'
 
-// type CascaderType = <
-//   OptionType extends DefaultOptionType | BaseOptionType = DefaultOptionType,
-// >(
-//   props: React.PropsWithChildren<$CascaderProps<OptionType>> & {
-//     ref?: React.Ref<CascaderRef> | undefined
-//   } & FormikFieldProps,
-// ) => React.ReactElement
-
-// export type CascaderProps<T> = FormikFieldProps & $CascaderProps<T>
+export type CascaderProps<OptionType> = FormikFieldProps &
+  $CascaderProps<OptionType>
 
 export const Cascader = <
   OptionType extends DefaultOptionType | BaseOptionType = DefaultOptionType,
 >(
-  props: React.PropsWithChildren<$CascaderProps<OptionType>> & {
-    ref?: React.Ref<CascaderRef> | undefined
-  } & FormikFieldProps,
+  props: CascaderProps<OptionType>,
 ) => {
   const { name, validate, fast, onChange, ...restProps } = props
   return (
@@ -40,9 +30,9 @@ export const Cascader = <
           onChange={(value, e) => {
             setFieldValue(name, value)
             setFieldTouched(name, true, false)
-            // onChange && onChange(value, e)
+            onChange && onChange(value as any, e as any)
           }}
-          // {...restProps}
+          {...(restProps as any)}
         />
       )}
     </Field>

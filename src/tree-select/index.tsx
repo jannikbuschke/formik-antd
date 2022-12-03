@@ -4,9 +4,13 @@ import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { TreeSelectProps as $TreeSelectProps } from 'antd/es/tree-select'
+import { BaseOptionType, DefaultOptionType } from 'antd/es/select'
 
-export type TreeSelectProps = FormikFieldProps &
-  $TreeSelectProps<any> & { children?: React.ReactNode }
+export type TreeSelectProps<
+  ValueType = any,
+  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
+> = FormikFieldProps &
+  $TreeSelectProps<ValueType, OptionType> & { children?: React.ReactNode }
 
 export const TreeSelect = ({
   name,

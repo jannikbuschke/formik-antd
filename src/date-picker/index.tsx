@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { DatePicker as $DatePicker } from 'antd'
 import { FieldProps } from 'formik'
-import moment from 'moment'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import {
@@ -17,15 +16,13 @@ const {
   WeekPicker: $WeekPicker,
 } = $DatePicker
 
-export type DatePickerProps = $DatePickerProps &
-  FormikFieldProps & { keepOffset?: boolean }
+export type DatePickerProps = $DatePickerProps & FormikFieldProps
 
 export const DatePicker = ({
   name,
   validate,
   onChange,
   fast,
-  keepOffset,
   ...restProps
 }: DatePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>
@@ -34,10 +31,10 @@ export const DatePicker = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$DatePicker
-        value={value ? moment(value) : undefined}
+        value={value ? value : null}
         id={name}
         onChange={(date, dateString) => {
-          setFieldValue(name, date ? date.toISOString(keepOffset) : null)
+          setFieldValue(name, date ? date.toISOString() : null)
           setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
@@ -53,7 +50,6 @@ DatePicker.MonthPicker = ({
   name,
   validate,
   onChange,
-  keepOffset,
   ...restProps
 }: MonthPickerProps) => (
   <Field name={name} validate={validate}>
@@ -62,9 +58,9 @@ DatePicker.MonthPicker = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$MonthPicker
-        value={value ? moment(value) : undefined}
+        value={value ? value : null}
         onChange={(date, dateString) => {
-          setFieldValue(name, date ? date.toISOString(keepOffset) : null)
+          setFieldValue(name, date ? date.toISOString() : null)
           setFieldTouched(name, true, false)
           onChange && onChange(date, dateString)
         }}
@@ -126,5 +122,4 @@ DatePicker.WeekPicker = ({
 
 export type WeekPickerProps = FormikFieldProps & $WeekPickerProps
 export type RangePickerProps = FormikFieldProps & $RangePickerProps
-export type MonthPickerProps = FormikFieldProps &
-  $MonthPickerProps & { keepOffset?: boolean }
+export type MonthPickerProps = FormikFieldProps & $MonthPickerProps
