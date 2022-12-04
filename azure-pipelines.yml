@@ -1,48 +1,48 @@
 trigger:
-- master
-- release/*
-- beta/*
+  - master
+  - release/*
+  - beta/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    verbose: false
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      verbose: false
 
-- task: Npm@1
-  displayName: 'npm run test'
-  continueOnError: true
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run test'
+  - task: Npm@1
+    displayName: 'npm run test'
+    continueOnError: true
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'run test'
 
-- task: Npm@1
-  displayName: 'npm run build'
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'run build'
+  - task: Npm@1
+    displayName: 'npm run build'
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'run build'
 
-- task: Npm@1
-  displayName: 'npm publish beta (conditionally)'
-  inputs:
-    command: custom
-    verbose: false
-    customCommand: 'publish --tag beta'
-    publishEndpoint: npm
-    customEndpoint: npm
-  continueOnError: true
-  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/beta'))
+  - task: Npm@1
+    displayName: 'npm publish beta (conditionally)'
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'publish --tag beta'
+      publishEndpoint: npm
+      customEndpoint: npm
+    continueOnError: true
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/beta'))
 
-- task: Npm@1
-  displayName: 'npm publish release (conditionally)'
-  inputs:
-    command: publish
-    verbose: false
-    publishEndpoint: npm
-    customEndpoint: npm
-  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'))
+  - task: Npm@1
+    displayName: 'npm publish release (conditionally)'
+    inputs:
+      command: publish
+      verbose: false
+      publishEndpoint: npm
+      customEndpoint: npm
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'))
