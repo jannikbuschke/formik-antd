@@ -1,6 +1,6 @@
 {
   "name": "formik-antd",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "author": "Jannik Buschke",
   "description": "Dead simple declarative bindings for Formik and Ant Design.",
   "displayName": "formik-antd",
@@ -27,7 +27,7 @@
   "main": "./lib/index.js",
   "types": "./lib/types.d.ts",
   "scripts": {
-    "build": "tsc && tsc -p tsconfig.json",
+    "build": "tsc && tsc -p tsconfig.es.json",
     "tsc": "tsc && tsc -p tsconfig.json",
     "watch": "tsc --watch -p tsconfig.json",
     "cleanbuild": "rm -r node_modules && npm install && tsc",
