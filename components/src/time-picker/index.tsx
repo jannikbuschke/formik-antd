@@ -4,6 +4,7 @@ import * as React from 'react'
 import { FormikFieldProps } from '../FieldProps'
 import Field from '../field'
 import { TimePickerProps as $TimePickerProps } from 'antd/es/time-picker'
+import { valueToDayjs } from '../date-picker'
 
 export type TimePickerProps = FormikFieldProps & $TimePickerProps
 
@@ -20,7 +21,7 @@ export const TimePicker = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$TimePicker
-        value={value ? value : null}
+        value={valueToDayjs(value)}
         id={name}
         onChange={(time, timeString) => {
           setFieldValue(name, time ? time.toISOString() : null)

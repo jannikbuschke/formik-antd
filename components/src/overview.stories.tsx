@@ -22,6 +22,7 @@ import {
   Mentions,
 } from '.'
 import { Formik } from 'formik'
+import dayjs from 'dayjs'
 
 export default {
   title: 'Overview',
@@ -42,8 +43,8 @@ export function Overview() {
         newsletter: true,
         consent: false,
         description: '',
-        time: new Date().toISOString(),
-        date: new Date().toISOString(),
+        time: dayjs().toISOString(),
+        date: dayjs().toISOString(),
         city: 3,
         radioGroup: '1',
         todos: ['2', '3'],
@@ -119,20 +120,19 @@ export function Overview() {
               <Slider name='slider1' />
               <Slider name='slider2' range={true} />
               <Checkbox name='newsletter'>Checkbox</Checkbox>
-              {/* <div>
+              <div>
                 <Switch
                   name='consent'
                   checkedChildren='开'
                   unCheckedChildren='关'
                 />
-              </div> */}
+              </div>
               <TimePicker name='time' placeholder='TimePicker' />
               <DatePicker
                 name='date'
                 showTime={true}
                 placeholder='DatePicker'
               />
-
               <Radio.Group
                 name='radioGroup'
                 options={[
@@ -181,7 +181,7 @@ export function Overview() {
                   <Select.Option value={6}>item 6</Select.Option>
                 </Select.OptGroup>
               </Select>
-              {/* <Cascader
+              <Cascader
                 options={[
                   {
                     value: 'zhejiang',
@@ -212,7 +212,7 @@ export function Overview() {
                 ]}
                 name='cascader'
                 placeholder='Cascader'
-              /> */}
+              />
               {/* <TreeSelect name='treeselect' placeholder='Treeselect'>
                 <TreeNode value='parent 1' title='parent 1' key='0-1'>
                   <TreeNode value='parent 1-0' title='parent 1-0' key='0-1-1'>

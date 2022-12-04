@@ -9,12 +9,31 @@ import {
   RangePickerProps as $RangePickerProps,
   WeekPickerProps as $WeekPickerProps,
 } from 'antd/es/date-picker'
+import dayjs, { Dayjs } from 'dayjs'
 
 const {
   MonthPicker: $MonthPicker,
   RangePicker: $RangePicker,
   WeekPicker: $WeekPicker,
 } = $DatePicker
+
+export function valueToDayjs(value: any) {
+  return typeof value === 'string'
+    ? dayjs(value)
+    : typeof value === 'object'
+    ? (value as Dayjs)
+    : null
+}
+
+function valueArrayToDayjsArray(value: any) {
+  return Array.isArray(value)
+    ? value[0] && value[1]
+      ? [valueToDayjs(value[0])!, valueToDayjs(value[1])!]
+      : value[0]
+      ? [valueToDayjs(value[0])!]
+      : null
+    : null
+}
 
 export type DatePickerProps = $DatePickerProps & FormikFieldProps
 
@@ -31,7 +50,7 @@ export const DatePicker = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$DatePicker
-        value={value ? value : null}
+        value={valueToDayjs(value)}
         id={name}
         onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null)
@@ -58,7 +77,7 @@ DatePicker.MonthPicker = ({
       form: { setFieldValue, setFieldTouched },
     }: FieldProps) => (
       <$MonthPicker
-        value={value ? value : null}
+        value={valueToDayjs(value)}
         onChange={(date, dateString) => {
           setFieldValue(name, date ? date.toISOString() : null)
           setFieldTouched(name, true, false)
@@ -83,7 +102,7 @@ DatePicker.RangePicker = ({
     }: FieldProps) => (
       <$RangePicker
         name={name}
-        value={value}
+        value={valueArrayToDayjsArray(value) as any}
         onChange={(dates, dateStrings) => {
           setFieldValue(name, dates)
           setFieldTouched(name, true, false)
@@ -108,7 +127,7 @@ DatePicker.WeekPicker = ({
     }: FieldProps) => (
       <$WeekPicker
         name={name}
-        value={value}
+        value={valueToDayjs(value)}
         onChange={(date, dateString) => {
           setFieldValue(name, date)
           setFieldTouched(name, true, false)

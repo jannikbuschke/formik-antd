@@ -13,10 +13,12 @@ const Template: ComponentStory<typeof Component> = (args, { argTypes }) => {
     <StoryTemplate
       initialValues={{
         value: null,
+        range: [],
       }}
     >
       <div>
         <Component name='value' />
+        <Component.RangePicker name='range' />
       </div>
     </StoryTemplate>
   )
