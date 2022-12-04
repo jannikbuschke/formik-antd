@@ -10,6 +10,7 @@ steps:
   - task: Npm@1
     displayName: 'npm install'
     inputs:
+      workingDir: "components"
       verbose: false
 
   - task: Npm@1
@@ -18,6 +19,7 @@ steps:
     inputs:
       command: custom
       verbose: false
+      workingDir: "components"
       customCommand: 'run test'
 
   - task: Npm@1
@@ -25,6 +27,7 @@ steps:
     inputs:
       command: custom
       verbose: false
+      workingDir: "components"
       customCommand: 'run build'
 
   - task: Npm@1
@@ -32,6 +35,7 @@ steps:
     inputs:
       command: custom
       verbose: false
+      workingDir: "components"
       customCommand: 'publish --tag beta'
       publishEndpoint: npm
       customEndpoint: npm
@@ -42,6 +46,7 @@ steps:
     displayName: 'npm publish release (conditionally)'
     inputs:
       command: publish
+      workingDir: "components"
       verbose: false
       publishEndpoint: npm
       customEndpoint: npm
