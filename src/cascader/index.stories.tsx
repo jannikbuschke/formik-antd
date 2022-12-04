@@ -4,7 +4,7 @@ import { StoryTemplate } from '../shared'
 import Component from './'
 
 export default {
-  title: 'Autocomplete',
+  title: 'Cascader',
   component: Component,
 } as ComponentMeta<typeof Component>
 
