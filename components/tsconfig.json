@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "./lib",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
@@ -18,9 +19,7 @@
     "noUnusedLocals": false,
     "declaration": true,
     "declarationMap": true,
-    "allowSyntheticDefaultImports": true,
-    "outDir": "./es",
-    "target": "es6"
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "exclude": ["lib", "es", "node_modules", "**/*.test.tsx"]
