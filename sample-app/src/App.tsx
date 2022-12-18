@@ -6,7 +6,6 @@ import{Formik }from"formik"
 import { Overview } from './overview'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
@@ -21,14 +20,7 @@ function App() {
       <h1>Vite + React + Formik + Antd</h1>
       
       <Overview />
-      <Formik initialValues={{}} onSubmit={()=>{}}>
-        <Form>
-          <Form.Item name="value" label="Value">
-            <Input name="value"/>
-          </Form.Item>
-        <FormikDebug/>
-        </Form>
-      </Formik>
+    
     </div>
   )
 }
