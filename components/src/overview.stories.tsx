@@ -23,6 +23,8 @@ import {
 } from '.'
 import { Formik } from 'formik'
 import dayjs from 'dayjs'
+import { TreeNode } from 'antd/es/tree-select'
+import { Button } from 'antd'
 
 export default {
   title: 'Overview',
@@ -51,7 +53,9 @@ export function Overview() {
         slider1: 30,
         slider2: [20, 60],
       }}
-      onSubmit={() => {}}
+      onSubmit={(values) => {
+        alert(JSON.stringify(values))
+      }}
       validate={(values) => {
         if (!values.userName) {
           return { userName: 'required' }
@@ -214,7 +218,7 @@ export function Overview() {
                 name='cascader'
                 placeholder='Cascader'
               />
-              {/* <TreeSelect name='treeselect' placeholder='Treeselect'>
+              <TreeSelect name='treeselect' placeholder='Treeselect'>
                 <TreeNode value='parent 1' title='parent 1' key='0-1'>
                   <TreeNode value='parent 1-0' title='parent 1-0' key='0-1-1'>
                     <TreeNode value='leaf1' title='my leaf' key='random' />
@@ -228,8 +232,8 @@ export function Overview() {
                     />
                   </TreeNode>
                 </TreeNode>
-              </TreeSelect>  */}
-              {/* <Transfer
+              </TreeSelect>
+              <Transfer
                 name='transfer'
                 dataSource={[
                   { key: '1', title: 'item 1' },
@@ -237,14 +241,13 @@ export function Overview() {
                   { key: '3', title: 'item 3' },
                 ]}
                 render={(item) => item.title as string}
-                listStyle={() => ({})}
-              /> */}
-              {/* <Button.Group size='large'>
+              />
+              <Button.Group size='large'>
                 <ResetButton>Reset</ResetButton>
                 <SubmitButton type='primary' disabled={false}>
                   Submit
                 </SubmitButton>
-              </Button.Group> */}
+              </Button.Group>
             </div>
           </div>
 
