@@ -82,6 +82,7 @@ export function Overview() {
                 name='userName'
                 hasFeedback={true}
                 showValidateSuccess={true}
+                __debug={true}
               >
                 <Input name='userName' placeholder='Validated input' />
               </Form.Item>

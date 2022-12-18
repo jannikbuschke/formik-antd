@@ -41,38 +41,40 @@ export const FormItem = ({
         (hasInitialError && (!isTouched || showInitialErrorAfterTouched))
 
       return (
-        <Form.Item
-          htmlFor={name}
-          id={name}
-          name={name}
-          validateStatus={
-            hasError || (hasInitialError && !isTouched)
-              ? 'error'
-              : isValid && showValidateSuccess
-              ? 'success'
-              : undefined
-          }
-          hasFeedback={isValid}
-          help={
-            showHelp ? (
-              <>
-                {hasError && <li>{error}</li>}
-                {hasInitialError &&
-                  (!isTouched || showInitialErrorAfterTouched) && (
-                    <li>{initialError}</li>
-                  )}
-              </>
-            ) : null
-          }
-          {...restProps}
-        >
-          {children}
+        <>
+          <Form.Item
+            htmlFor={name}
+            id={name}
+            name={name}
+            validateStatus={
+              hasError || (hasInitialError && !isTouched)
+                ? 'error'
+                : isValid && showValidateSuccess
+                ? 'success'
+                : undefined
+            }
+            hasFeedback={isValid}
+            help={
+              showHelp ? (
+                <>
+                  {hasError && <li>{error}</li>}
+                  {hasInitialError &&
+                    (!isTouched || showInitialErrorAfterTouched) && (
+                      <li>{initialError}</li>
+                    )}
+                </>
+              ) : null
+            }
+            {...restProps}
+          >
+            {children}
+          </Form.Item>
           {__debug && (
             <div>
               {JSON.stringify({ hasError, isValid, showValidateSuccess })}
             </div>
           )}
-        </Form.Item>
+        </>
       )
     }}
   </Field>

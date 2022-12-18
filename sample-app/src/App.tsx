@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import{Input,Form,FormikDebug}from "formik-antd"
 import{Formik }from"formik"
+import { Overview } from './overview'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       </div>
       <h1>Vite + React + Formik + Antd</h1>
       
+      <Overview />
       <Formik initialValues={{}} onSubmit={()=>{}}>
         <Form>
           <Form.Item name="value" label="Value">
