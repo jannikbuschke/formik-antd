@@ -6,7 +6,13 @@ export function StoryTemplate<Values extends FormikValues>({
   ...rest
 }: { children: React.ReactNode } & Omit<FormikConfig<Values>, 'onSubmit'>) {
   return (
-    <Formik {...rest} onSubmit={(values) => console.log({ values })}>
+    <Formik
+      {...rest}
+      onSubmit={(values, formikHelpers) => {
+        console.log('submit', { values })
+        formikHelpers.setSubmitting(false)
+      }}
+    >
       {(f) => (
         <Form>
           <div
