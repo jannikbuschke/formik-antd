@@ -33,7 +33,7 @@ export function Overview() {
   return (
     <Formik
       initialValues={{
-        userName: '',
+        userName: 'joe',
         //set default/initial values via formik
         email: 'sample@email.com',
         address: { city: '' },
@@ -58,12 +58,11 @@ export function Overview() {
         }
         return undefined
       }}
-      render={(formik) => (
-        <Form>
+      >
+       {(f)=>(<Form>
           <div
             style={{
               display: 'flex',
-      
               maxWidth: '850px',
               gridTemplateColumns: '1fr 1fr',
             }}
@@ -77,13 +76,13 @@ export function Overview() {
               }}
             >
               <Input name='email' placeholder='Basic Input' />
-              <Form.Item
+              <FormItem
                 name='userName'
                 hasFeedback={true}
                 showValidateSuccess={true}
               >
                 <Input name='userName' placeholder='Validated input' />
-              </Form.Item>
+              </FormItem>
 
               <Input
                 addonBefore='city'
@@ -249,6 +248,7 @@ export function Overview() {
 
         </Form>
       )}
-    />
+      </Formik>
+
   )
 }
