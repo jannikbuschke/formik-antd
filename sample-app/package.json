@@ -7,7 +7,8 @@
     "start": "vite",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier ./src/**/*.{js,jsx,ts,tsx,css,scss,md}"
   },
   "dependencies": {
     "react": "^18.2.0",
