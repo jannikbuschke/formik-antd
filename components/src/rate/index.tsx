@@ -12,6 +12,7 @@ export const Rate = ({
   validate,
   fast,
   onChange,
+  value,
   ...restProps
 }: RateProps) => (
   <Field name={name} validate={validate} fast={fast}>

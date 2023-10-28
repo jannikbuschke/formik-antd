@@ -13,6 +13,7 @@ export const Mentions = ({
   fast,
   onChange: $onChange,
   onBlur: $onBlur,
+  value,
   ...restProps
 }: MentionProps) => (
   <Field name={name} validate={validate} fast={fast}>

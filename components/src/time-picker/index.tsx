@@ -13,6 +13,7 @@ export const TimePicker = ({
   validate,
   fast,
   onChange,
+  value,
   ...restProps
 }: TimePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>

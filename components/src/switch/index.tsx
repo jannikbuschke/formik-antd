@@ -11,6 +11,7 @@ export const Switch = ({
   validate,
   fast,
   onChange,
+  checked,
   ...restProps
 }: SwitchProps) => (
   <Field name={name} validate={validate} fast={fast}>

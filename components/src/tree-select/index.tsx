@@ -18,6 +18,7 @@ export const TreeSelect = ({
   fast,
   onChange,
   onBlur,
+  value,
   ...restProps
 }: TreeSelectProps) => (
   <Field name={name} validate={validate} fast={fast}>

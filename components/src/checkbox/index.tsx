@@ -13,6 +13,7 @@ export const Checkbox = ({
   validate,
   fast,
   onChange,
+  value,
   ...restProps
 }: CheckboxProps) => (
   <Field name={name} validate={validate} fast={fast}>

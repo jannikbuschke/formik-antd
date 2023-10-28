@@ -17,7 +17,7 @@ export const Cascader = <
 >(
   props: CascaderProps<OptionType>,
 ) => {
-  const { name, validate, fast, onChange, ...restProps } = props
+  const { name, validate, fast, onChange, value, ...restProps } = props
   return (
     <Field name={name} validate={validate} fast={fast}>
       {({

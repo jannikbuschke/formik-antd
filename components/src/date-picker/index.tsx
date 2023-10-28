@@ -42,6 +42,7 @@ export const DatePicker = ({
   validate,
   onChange,
   fast,
+  value,
   ...restProps
 }: DatePickerProps) => (
   <Field name={name} validate={validate} fast={fast}>

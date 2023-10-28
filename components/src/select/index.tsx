@@ -15,6 +15,7 @@ export const Select = ({
   children,
   onChange,
   onBlur,
+  value,
   ...restProps
 }: SelectProps) => {
   return (

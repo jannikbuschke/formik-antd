@@ -13,6 +13,7 @@ export const Slider = ({
   validate,
   fast,
   onChange,
+  value,
   ...restProps
 }: SliderProps) => (
   <Field name={name} validate={validate} fast={fast}>

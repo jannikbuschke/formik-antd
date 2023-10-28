@@ -13,6 +13,7 @@ export const InputNumber = ({
   fast,
   onChange: $onChange,
   onBlur: $onBlur,
+  value,
   ...restProps
 }: InputNumberProps) => (
   <Field name={name} validate={validate} fast={fast}>

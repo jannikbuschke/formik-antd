@@ -33,6 +33,7 @@ const Input = React.forwardRef(
       fast,
       onChange: $onChange,
       onBlur: $onBlur,
+      value,
       ...restProps
     }: InputProps,
     ref: React.Ref<InputRef>,

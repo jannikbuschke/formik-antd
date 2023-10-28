@@ -13,6 +13,7 @@ export const AutoComplete = ({
   fast,
   onChange,
   onBlur,
+  value,
   ...restProps
 }: AutoCompleteProps) => (
   <Field name={name} validate={validate} fast={fast}>
