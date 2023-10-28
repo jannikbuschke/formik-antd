@@ -124,6 +124,38 @@ There is one special case to be aware of when using field-level validation: When
 </Form.Item>
 ```
 
+## Combined Form.Item and input components
+
+If you happen to wrap each input component in a `Form.Item` component, you might end up with quite a bit of nesting and boilerplate (always duplicating the `name` prop as well as potentially aria labels/values with `htmlFor` and `id`). Instead you can import the components from the path `es/form-items`. There all components are wrapped with a `Form.Item`. Additionally `htmlFor` on `Form.Item` and `id` prop on the ant d input component are set based on the `name` prop.
+The following two examples are identicall:
+
+```jsx
+import { Input } from 'formik-antd/es/form-items'
+```
+
+```jsx
+<Input
+  name='firstName'
+  formItem={{ validate: validator, conol: false, label: 'First name' }}
+/>
+```
+
+```jsx
+import { Form, Input } from 'formik-antd'
+```
+
+```jsx
+<Form.Item
+  htmlFor='firstName'
+  name='firstName'
+  label='First name'
+  validate={validator}
+  colon={false}
+>
+  <Input id='firstName' name='firstName' />
+</Form.Item>
+```
+
 ## Rendering Validation Feedback
 
 Showing validation messages can be accomplished with the `Form.Item` component (or `FormItem` which is the same). It
