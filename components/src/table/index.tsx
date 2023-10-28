@@ -4,10 +4,6 @@ import { Table as $Table } from 'antd'
 import { TableProps as $TableProps } from 'antd/es/table/Table'
 import { FormikFieldProps } from '../FieldProps'
 
-// RecordType extends object = any>(props: TableProps<RecordType>
-
-// declare function Table<RecordType extends object = any>(props: TableProps<RecordType>): JSX.Element;
-
 export type TableProps<RecordType> = FormikFieldProps & $TableProps<RecordType>
 
 export function Table<RecordType extends object = any>({

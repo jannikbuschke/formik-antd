@@ -9,8 +9,8 @@ import {
   DefaultOptionType,
 } from 'antd/es/cascader'
 
-export type CascaderProps<OptionType> = FormikFieldProps &
-  $CascaderProps<OptionType>
+export type CascaderProps<OptionType extends BaseOptionType> =
+  FormikFieldProps & $CascaderProps<OptionType>
 
 export const Cascader = <
   OptionType extends DefaultOptionType | BaseOptionType = DefaultOptionType,
