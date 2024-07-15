@@ -70,6 +70,7 @@ TypedInput.Password = React.forwardRef(
       fast,
       onChange: $onChange,
       onBlur: $onBlur,
+      value,
       ...restProps
     }: PasswordProps,
     ref: React.Ref<InputRef>,
@@ -104,6 +105,7 @@ TypedInput.TextArea = React.forwardRef(
       fast,
       onChange: $onChange,
       onBlur: $onBlur,
+      value,
       ...restProps
     }: TextAreaProps,
     ref: React.Ref<TextAreaRef>,
