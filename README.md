@@ -4,14 +4,18 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
+Install for ant design 5 (beta)
+```
+npm i formik-antd@beta
+```
+
+Install for ant design 4
+```
+npm i formik-antd
+```
+
 - [formik-antd v2 CodeSandbox (Ant Design 4)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example)
-- [formik-antd v1 CodeSandbox (Ant Design 3)](https://codesandbox.io/s/github/jannikbuschke/formik-antd-example/tree/v1)
-- [cra-antd-x (cra based template with an advanced setup)](https://github.com/jannikbuschke/cra-antd-x)
 
-:sparkles: **Ant Design 4 ready**
-
-`Ant Design v4` has landed and so has `formik-antd v2`.
-Version 1 of this library, which is now in maintenance mode, supports Ant Design v3. Version 2 of this library supports Ant Design 4. Both v1 and v2 of this library work with Formik v1 and v2.
 
 # formik-antd
 
