@@ -194,6 +194,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Vincz",
+      "name": "Vincent",
+      "avatar_url": "https://avatars.githubusercontent.com/u/400525?v=4",
+      "profile": "https://sparklink.pro",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -201,5 +210,7 @@
   "projectOwner": "jannikbuschke",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
