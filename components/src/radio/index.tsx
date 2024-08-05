@@ -42,6 +42,7 @@ Radio.Group = ({
   validate,
   fast,
   onChange,
+  value,
   ...restProps
 }: RadioGroupProps) => (
   <Field name={name} validate={validate} fast={fast}>
