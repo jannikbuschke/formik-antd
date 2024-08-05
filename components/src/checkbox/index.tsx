@@ -44,6 +44,7 @@ Checkbox.Group = ({
   name,
   validate,
   onChange,
+  value,
   ...restProps
 }: CheckboxGroupProps) => (
   <Field name={name} validate={validate}>
