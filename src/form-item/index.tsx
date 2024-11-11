@@ -39,6 +39,8 @@ export const FormItem = ({
 
       return (
         <Form.Item
+          htmlFor={name}
+          id={name}
           validateStatus={
             hasError || (hasInitialError && !isTouched)
               ? 'error'
@@ -58,7 +60,6 @@ export const FormItem = ({
               </>
             ) : null
           }
-          name={name}
           {...restProps}
         >
           {children}

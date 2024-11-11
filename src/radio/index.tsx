@@ -21,6 +21,7 @@ export const Radio = ({
     }: FieldProps) => (
       <$Radio
         name={name}
+        id={name}
         value={value}
         onChange={(event) => {
           setFieldValue(name, event.target.value)

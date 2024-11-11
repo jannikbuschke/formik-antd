@@ -22,6 +22,7 @@ export const Checkbox = ({
     }: FieldProps) => (
       <$Checkbox
         name={name}
+        id={name}
         checked={value}
         onChange={(event) => {
           setFieldValue(name, event.target.checked)

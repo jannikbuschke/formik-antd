@@ -19,6 +19,7 @@ export const Mentions = ({
     {({ field: { value, onChange, onBlur }, form }: FieldProps) => (
       <$Mentions
         name={name}
+        id={name}
         value={value}
         onChange={(event) => {
           form.setFieldValue(name, event)
